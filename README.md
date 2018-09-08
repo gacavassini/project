@@ -16,3 +16,18 @@ linux: /var/www/html/
 ```bash
 git clone https://github.com/dgodiegocarvalho/Libellus.git
 ```
+
+## Trabalhando com branches
+Para criar uma nova branch
+```bash
+git checkout -b NOME_DA_BRANCH
+```
+Para subir a sua branch para a master e criar uma merge request
+```bash
+git push --set-upstream origin NOME_DA_BRANCH
+```
+Quando sua change request for aprovada, volte para a master e atualize ela
+```bash
+git checkout master
+git pull
+```
