@@ -3,7 +3,7 @@
 Este é o projeto designado ao TCC de Ana Paula e Gabrielly.
 
 ## Dependências
-Se você está no windows, precisa apenas instala o xampp e seguir as configurações padrão e, um editor de texto de sua preferência.
+Se você está no windows, precisa apenas instalar o xampp e seguir as configurações padrão e, um editor de texto de sua preferência. Também vai precissar do git instalado na máquina para clonar o projeto, subir alterações e pegar as que forem enviadas para a master.
 
 ## Clonagem do repositório
 
