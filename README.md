@@ -1,51 +1,18 @@
-# CakePHP Application Skeleton
+# Libellus
 
-[![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
+Este é o projeto designado ao TCC de Ana Paula e Gabrielly.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
+## Dependências
+Se você está no windows, precisa apenas instala o xampp e seguir as configurações padrão e, um editor de texto de sua preferência.
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## Clonagem do repositório
 
-## Installation
-
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-
+1. Usando um cmd/terminal, entre na pasta que deseja clonar o projeto (se seguiu a instalação padrão), normalmente nesse caminho:
 ```bash
-composer create-project --prefer-dist cakephp/app
+windows: C:\xampp\htdocs\
+linux: /var/www/html/
 ```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
+2. Clone o projeto com:
 ```bash
-composer create-project --prefer-dist cakephp/app myapp
+git clone https://github.com/dgodiegocarvalho/Libellus.git
 ```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
-```
-
-Then visit `http://localhost:8765` to see the welcome page.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the `'Datasources'` and any other
-configuration relevant for your application.
-
-## Layout
-
-The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5) CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
