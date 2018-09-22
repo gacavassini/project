@@ -17,6 +17,7 @@ class Cliente extends Model
         'celular', 'estadoCivil', 'cliStatus',
     ];
 
+	//coloquei alguma coisa
     public function ProcurarCliente($nome){
       $cliente = DB::table('clientes')->where('nome', $nome)->first();
 
