@@ -12,8 +12,11 @@
 */
 Route::group(['middleware'=>'auth'],function(){
   Route::get('/',['as'=>'home','uses'=>'Home@index']);
+  Route::get('/peticoes/novo',['as'=>'novaPeticao','uses'=>'Peticoes@novo']);
 });
 
 Route::get('/login',['as'=>'login','uses'=>'Login@index']);
 Route::get('/login/sair',['as'=>'login.sair','uses'=>'Login@sair']);
 Route::post('/login/entrar',['as'=>'login.entrar','uses'=>'Login@entrar']);
+
+Route::get('/peticoes/novo',['as'=>'novaPeticao','uses'=>'Peticoes@novo']);
