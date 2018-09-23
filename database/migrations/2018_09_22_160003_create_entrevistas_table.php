@@ -13,9 +13,21 @@ class CreateEntrevistasTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('entrevistas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('codEntrevista')->unsigned();
+            $table->text('descResposta');
+            //foreign keys
+            $table->integer('cliCpf')->unsigned();
+            $table->integer('empresaCnpj')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('entrevistas', function($table){
+          //adiciona a referencia
+          $table->foreign('cliCpf')->references('cpf')->on('clientes');
+          $table->foreign('empresaCnpj')->references('cnpj')->on('empresas');
         });
     }
 

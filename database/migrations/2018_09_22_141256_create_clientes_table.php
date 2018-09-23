@@ -14,7 +14,8 @@ class CreateClientesTable extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->increments('codCliente');
+            $table->integer('cpf')->unique()->unsigned();
+            $table->primary('cpf');
             $table->string('nome', 100);
             $table->string('rua', 100);
             $table->integer('numEndereco');
@@ -22,7 +23,6 @@ class CreateClientesTable extends Migration
             $table->string('cep', 9);
             $table->string('cidade', 50);
             $table->string('complemento')->nullable();
-            $table->string('cpf', 14);
             $table->string('rg', 11);
             $table->string('profissao', 50);
             $table->string('email', 70)->nullable();

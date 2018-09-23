@@ -15,4 +15,9 @@ class Empresa extends Model
         'nome', 'rua', 'numEndereco', 'bairro', 'cep', 'cidade', 'complemento',
         'cnpj', 'telefone',
     ];
+
+    public function entrevistas()
+    {
+        return $this->hasMany('App\Entrevista');
+    }
 }

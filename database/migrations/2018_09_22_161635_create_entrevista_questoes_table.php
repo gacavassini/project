@@ -13,8 +13,15 @@ class CreateEntrevistaQuestoesTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('entrevista_questoes', function (Blueprint $table) {
             $table->increments('id');
+            //foreign keys
+            $table->integer('eq_codEntrevista')->unsigned();
+            $table->integer('eq_codQuestao')->unsigned();
+            $table->foreign('eq_codEntrevista')->references('codEntrevista')->on('entrevistas');
+            $table->foreign('eq_codQuestao')->references('codQuestao')->on('questoes');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateEntrevistaQuestoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entrevista_questaos');
+        Schema::dropIfExists('entrevista_questoes');
     }
 }

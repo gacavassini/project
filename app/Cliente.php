@@ -17,9 +17,8 @@ class Cliente extends Model
         'celular', 'estadoCivil', 'cliStatus',
     ];
 
-    public function ProcurarCliente($nome){
-      $cliente = DB::table('clientes')->where('nome', $nome)->first();
-
-      echo $cliente->nome;
+    public function entrevistas()
+    {
+        return $this->hasMany('App\Entrevista');
     }
 }

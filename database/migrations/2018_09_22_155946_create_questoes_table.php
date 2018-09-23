@@ -14,7 +14,9 @@ class CreateQuestoesTable extends Migration
     public function up()
     {
         Schema::create('questoes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('codQuestao')->unsigned();
+            $table->text('descQuestao');
+            $table->string('tipo', 45)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateQuestoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questaos');
+        Schema::dropIfExists('questoes');
     }
 }
