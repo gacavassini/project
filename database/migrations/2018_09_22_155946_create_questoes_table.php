@@ -16,7 +16,7 @@ class CreateQuestoesTable extends Migration
         Schema::create('questoes', function (Blueprint $table) {
             $table->increments('codQuestao')->unsigned();
             $table->text('descQuestao');
-            $table->string('tipo', 45)->nullable();
+            $table->string('tipo', 45);
             $table->timestamps();
         });
     }

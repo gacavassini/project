@@ -21,4 +21,9 @@ class Cliente extends Model
     {
         return $this->hasMany('App\Entrevista');
     }
+
+    public function atividades()
+    {
+        return $this->hasMany('App\Atividade');
+    }
 }

@@ -17,7 +17,7 @@ class CreatePeticoesTable extends Migration
 
         Schema::create('peticoes', function (Blueprint $table) {
             $table->increments('codPeticao')->unsigned();
-            $table->text('fatos');
+            $table->text('fatos')->nullable();
             //foreign keys
             $table->integer('codEntrevista')->unsigned();
             $table->foreign('codEntrevista')->references('codEntrevista')->on('entrevistas');

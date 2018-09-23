@@ -22,7 +22,7 @@ class CreateEmpresasTable extends Migration
             $table->string('bairro', 50);
             $table->string('cep', 9);
             $table->string('cidade', 50);
-            $table->string('complemento');
+            $table->string('complemento')->nullable();
             $table->string('telefone', 15);
             $table->timestamps();
         });
