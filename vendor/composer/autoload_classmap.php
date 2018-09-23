@@ -6,12 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'BaseSeeder' => $baseDir . '/database/seeds/BaseSeeder.php',
     'ClienteSeeder' => $baseDir . '/database/seeds/ClienteSeeder.php',
     'CreateAtividadesTable' => $baseDir . '/database/migrations/2018_09_23_194404_create_atividades_table.php',
     'CreateBasesTable' => $baseDir . '/database/migrations/2018_09_23_191135_create_bases_table.php',
     'CreateClientesTable' => $baseDir . '/database/migrations/2018_09_22_141256_create_clientes_table.php',
     'CreateEmpresasTable' => $baseDir . '/database/migrations/2018_09_22_141500_create_empresas_table.php',
-    'CreateEntrevistaQuestoesTable' => $baseDir . '/database/migrations/2018_09_22_161635_create_entrevista_questoes_table.php',
+    'CreateEntrevistasQuestoesTable' => $baseDir . '/database/migrations/2018_09_22_161635_create_entrevistas_questoes_table.php',
     'CreateEntrevistasTable' => $baseDir . '/database/migrations/2018_09_22_160003_create_entrevistas_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePedidosPeticoesTable' => $baseDir . '/database/migrations/2018_09_23_195934_create_pedidos_peticoes_table.php',
@@ -22,6 +23,7 @@ return array(
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'EmpresaSeeder' => $baseDir . '/database/seeds/EmpresaSeeder.php',
+    'Entrevista' => $baseDir . '/database/seeds/EntrevistaSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
@@ -475,6 +477,9 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PedidoSeeder' => $baseDir . '/database/seeds/PedidoSeeder.php',
+    'PeticaoSeeder' => $baseDir . '/database/seeds/PeticaoSeeder.php',
+    'QuestaoSeeder' => $baseDir . '/database/seeds/QuestaoSeeder.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -556,4 +561,5 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
 );

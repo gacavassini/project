@@ -280,12 +280,13 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
     );
 
     public static $classMap = array (
+        'BaseSeeder' => __DIR__ . '/../..' . '/database/seeds/BaseSeeder.php',
         'ClienteSeeder' => __DIR__ . '/../..' . '/database/seeds/ClienteSeeder.php',
         'CreateAtividadesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_194404_create_atividades_table.php',
         'CreateBasesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_191135_create_bases_table.php',
         'CreateClientesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_141256_create_clientes_table.php',
         'CreateEmpresasTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_141500_create_empresas_table.php',
-        'CreateEntrevistaQuestoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_161635_create_entrevista_questoes_table.php',
+        'CreateEntrevistasQuestoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_161635_create_entrevistas_questoes_table.php',
         'CreateEntrevistasTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_160003_create_entrevistas_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePedidosPeticoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_195934_create_pedidos_peticoes_table.php',
@@ -296,6 +297,7 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'EmpresaSeeder' => __DIR__ . '/../..' . '/database/seeds/EmpresaSeeder.php',
+        'Entrevista' => __DIR__ . '/../..' . '/database/seeds/EntrevistaSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -749,6 +751,9 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PedidoSeeder' => __DIR__ . '/../..' . '/database/seeds/PedidoSeeder.php',
+        'PeticaoSeeder' => __DIR__ . '/../..' . '/database/seeds/PeticaoSeeder.php',
+        'QuestaoSeeder' => __DIR__ . '/../..' . '/database/seeds/QuestaoSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -830,6 +835,7 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
