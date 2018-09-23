@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEntrevistaQuestoesTable extends Migration
+class CreateEntrevistasQuestoesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateEntrevistaQuestoesTable extends Migration
     {
         Schema::enableForeignKeyConstraints();
 
-        Schema::create('entrevista_questoes', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('entrevistas_questoes', function (Blueprint $table) {
+            $table->increments('codEntrevistaQuestao');
             //foreign keys
             $table->integer('eq_codEntrevista')->unsigned();
             $table->integer('eq_codQuestao')->unsigned();
@@ -33,6 +33,6 @@ class CreateEntrevistaQuestoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entrevista_questoes');
+        Schema::dropIfExists('entrevistas_questoes');
     }
 }

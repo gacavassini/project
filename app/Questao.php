@@ -17,6 +17,6 @@ class Questao extends Model
 
     public function entrevistas()
     {
-        return $this->belongsToMany('App\Entrevista', 'entrevista_questoes');
+        return $this->belongsToMany('App\Entrevista', 'entrevistas_questoes');
     }
 }

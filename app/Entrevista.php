@@ -32,6 +32,6 @@ class Entrevista extends Model
 
     public function questoes()
     {
-        return $this->belongsToMany('App\Questao', 'entrevista_questoes');
+        return $this->belongsToMany('App\Questao', 'entrevistas_questoes');
     }
 }
