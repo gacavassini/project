@@ -25,6 +25,11 @@ class Entrevista extends Model
         return $this->belongsTo('App\Empresa');
     }
 
+    public function peticao()
+    {
+        return $this->belongsTo('App\Peticao');
+    }
+
     public function questoes()
     {
         return $this->belongsToMany('App\Questao', 'entrevista_questoes');
