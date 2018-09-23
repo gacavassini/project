@@ -24,4 +24,9 @@ class Peticao extends Model
     {
         return $this->belongsToMany('App\Base', 'peticoes_bases');
     }
+
+    public function pedidos()
+    {
+        return $this->belongsToMany('App\Pedido', 'pedidos_peticoes');
+    }
 }

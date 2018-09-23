@@ -288,6 +288,8 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'CreateEntrevistaQuestoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_161635_create_entrevista_questoes_table.php',
         'CreateEntrevistasTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_160003_create_entrevistas_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePedidosPeticoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_195934_create_pedidos_peticoes_table.php',
+        'CreatePedidosTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_195904_create_pedidos_table.php',
         'CreatePeticoesBasesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_191221_create_peticoes_bases_table.php',
         'CreatePeticoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_191109_create_peticoes_table.php',
         'CreateQuestoesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_155946_create_questoes_table.php',
