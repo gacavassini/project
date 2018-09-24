@@ -14,8 +14,8 @@ class CreateEmpresasTable extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table) {
-            $table->integer('cnpj')->unique()->unsigned();
-            $table->primary('cnpj');
+            $table->increments('codEmpresa')->unsigned();
+            $table->string('cnpj', 16)->unique();
             $table->string('nome', 100);
             $table->string('rua', 100);
             $table->integer('numEndereco');

@@ -19,15 +19,15 @@ class CreateEntrevistasTable extends Migration
             $table->increments('codEntrevista')->unsigned();
             $table->text('descResposta');
             //foreign keys
-            $table->integer('cliCpf')->unsigned();
-            $table->integer('empresaCnpj')->unsigned();
+            $table->integer('codCliente')->unsigned();
+            $table->integer('codEmpresa')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('entrevistas', function($table){
           //adiciona a referencia
-          $table->foreign('cliCpf')->references('cpf')->on('clientes');
-          $table->foreign('empresaCnpj')->references('cnpj')->on('empresas');
+          $table->foreign('codCliente')->references('codCliente')->on('clientes');
+          $table->foreign('codEmpresa')->references('codEmpresa')->on('empresas');
         });
     }
 

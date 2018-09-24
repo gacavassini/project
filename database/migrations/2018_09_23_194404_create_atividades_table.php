@@ -17,9 +17,9 @@ class CreateAtividadesTable extends Migration
 
         Schema::create('atividades', function (Blueprint $table) {
             $table->increments('codAtividade');
-            $table->integer('cpf')->unsigned();
-            $table->foreign('cpf')->references('cpf')->on('clientes');
-            $table->integer('numProcesso')->nullable();
+            $table->integer('codCliente')->unsigned();
+            $table->foreign('codCliente')->references('codCliente')->on('clientes');
+            $table->bigInteger('numProcesso')->nullable();
             $table->string('atividade', 45)->nullable();
             $table->string('tipo', 45)->nullable();
             $table->integer('qtdDia')->nullable();
