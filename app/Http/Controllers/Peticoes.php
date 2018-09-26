@@ -14,4 +14,12 @@ class Peticoes extends Controller
     	$empresas = Empresa::all();
     	return view('peticoes.novo', compact('empresas'));
     }
+
+    public function salvar(){}
+
+    public function index(){}
+
+    public function editar(){}
+
+    public function atualizar(){}
 }
