@@ -17,6 +17,7 @@ class CreateEntrevistasQuestoesTable extends Migration
 
         Schema::create('entrevistas_questoes', function (Blueprint $table) {
             $table->increments('codEntrevistaQuestao');
+            $table->text('descResposta');
             //foreign keys
             $table->integer('eq_codEntrevista')->unsigned();
             $table->integer('eq_codQuestao')->unsigned();

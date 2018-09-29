@@ -16,7 +16,7 @@ class CreatePedidosTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('codPedido')->unsigned();
             $table->string('nomePedido', 45);
-            $table->string('tipo', 45);
+            $table->boolean('tipo')->default(false);
             $table->text('fundamento')->nullable();
             $table->text('resumo');
             $table->timestamps();

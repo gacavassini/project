@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Questao extends Model
 {
+  //recisou disso pq procurava tabela peticaos
+  protected $table = 'questoes';
     /**
      * The attributes that are mass assignable.
      *

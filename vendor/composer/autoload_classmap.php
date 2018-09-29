@@ -23,6 +23,7 @@ return array(
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'EmpresaSeeder' => $baseDir . '/database/seeds/EmpresaSeeder.php',
+    'EntrevistaQuestaoSeeder' => $baseDir . '/database/seeds/EntrevistaQuestaoSeeder.php',
     'EntrevistaSeeder' => $baseDir . '/database/seeds/EntrevistaSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
