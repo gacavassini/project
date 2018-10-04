@@ -16,7 +16,7 @@ class EntrevistaQuestaoSeeder extends Seeder
         ['eq_codEntrevista' => 1, 'eq_codQuestao' => 1, 'descResposta' => '27/05/2008'],
         ['eq_codEntrevista' => 1, 'eq_codQuestao' => 2, 'descResposta' => '07/08/2012'],
         ['eq_codEntrevista' => 1, 'eq_codQuestao' => 3, 'descResposta' => 'R$780,00'],
-        ['eq_codEntrevista' => 1, 'eq_codQuestao' => 3, 'descResposta' => 'Seg a Sex'],
+        ['eq_codEntrevista' => 1, 'eq_codQuestao' => 4, 'descResposta' => 'Seg a Sex'],
 
         ['eq_codEntrevista' => 2, 'eq_codQuestao' => 1, 'descResposta' => '07/08/2012'],
         ['eq_codEntrevista' => 2, 'eq_codQuestao' => 2, 'descResposta' => '07/12/2012'],
