@@ -19,10 +19,10 @@
 						<div id="Base">
 							<br />
 							<div class="select-box">
-								<label for="select-box1" class="label select-box1"><span class="label-desc">Selecionar Item</span> </label>
-								<select id="select-box1" class="select">
-									@foreach($empresas as $empresa)
-										<option value="{{$empresa->nome}}">{{$empresa->nome}}</option>
+								<label for="base" class="label select-box1"><span class="label-desc">Selecionar Item</span> </label>
+								<select id="base" class="select">
+									@foreach($bases as $base)
+										<option value="{{$base->codbase}}">{{$base->rotulo}}</option>
 									@endforeach
 								</select>
 							</div><!--Fechou select box -->
@@ -42,8 +42,9 @@
 							<h2>Selecione os Pedidos</h2>
 							<div class="checkBoxContainer">
 								<div class="checkbox">
-									<INPUT TYPE="checkbox" NAME="OPCAO" VALUE="op1"> opção1 <br />
-
+									@foreach($pedidos as $pedido)
+										<INPUT TYPE="checkbox" NAME="OPCAO" VALUE="{{$pedido->codPedido}}"> {{$pedido->nomePedido}} <br /><br />
+									@endforeach
 								</div><!--Fechou check -->
 							</div><!--Fechou checkBoxContainer -->
 							<button  id="savePed" type="button" name="inserePedido">Inserir</button>
@@ -71,11 +72,9 @@
 					</select>
 				</div><!--Fechou select box do cliente -->
 				<div id="entrevistas" style="display:none;">
-					<label for="select-box1" class="label select-box2"><span class="label-desc">Selecionar Entrevista</span> </label>
-					<select id="select-box1" class="select">
-						@foreach($entrevistas as $entrevista)
-							<option value="{{$entrevista->codEntrevista}}">{{$entrevista->descResposta}}</option>
-						@endforeach
+					<label for="entrevistaSelect"><span>Selecionar Entrevista</span> </label>
+					<select id="entrevistaSelect">
+
 					</select>
 				</div><!--Fechou select box -->
 				<br />
@@ -92,12 +91,24 @@
 @endsection
 
 @section('javascript')
+	<script src="{{ url('/js/abas.js') }}"></script>
+	<script src="{{ url('/js/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
 		$('#clienteSelect').change(function(){
-			if('#clienteSelect').value() == ""){
-				$('#entrevistas').show();
-			}else{
+			if($('#clienteSelect').val() == ""){
+				$('#entrevistaSelect').empty();
 				$('#entrevistas').hide();
+			}else{
+				$.getJSON('/api/entrevistas/' + $('#clienteSelect').val(), function(data){
+					$('#entrevistaSelect').empty();
+					$('#entrevistaSelect').append('<option value=""></option>');
+					for(var i = 0; i < data.length; i++){
+						opcao = '<option value="' + data[i].codEntrevista + '">' +
+							data[i].created_at + '</option>';
+						$('#entrevistaSelect').append(opcao);
+					}
+				});
+				$('#entrevistas').show();
 			}
 		});
 	</script>

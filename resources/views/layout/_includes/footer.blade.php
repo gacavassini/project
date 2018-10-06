@@ -1,23 +1,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="{{ url('/js/scripts.js') }}"></script>
-    <script src="{{ url('/js/abas.js') }}"></script>
-    <script src="{{ url('/js/ckeditor/ckeditor.js') }}"></script>
 
-    <script> CKEDITOR.replace( 'editor1' ); </script> 
+    <script> CKEDITOR.replace( 'editor1' ); </script>
 
-    	<script>  
-	        
+    	<script>
+
 	        CKEDITOR.config.resize_enabled = true;
 	        CKEDITOR.config.width = '100%';
 	        CKEDITOR.config.resize_enabled = false;
 	        CKEDITOR.config.height = '50vh';
    		 </script>
-   		 
+
    		 <script type="text/javascript">
    		 	$("select").on("click" , function() {
-  
+
 	  		$(this).parent(".select-box").toggleClass("open");
-  
+
 			});
 
 			$(document).mouseup(function (e)
@@ -32,17 +30,15 @@
 
 
 			$("select").on("change" , function() {
-			  
+
 			  var selection = $(this).find("option:selected").text(),
 			      labelFor = $(this).attr("id"),
 			      label = $("[for='" + labelFor + "']");
-			    
+
 			  label.find(".label-desc").html(selection);
-			    
+
 			});
    		 </script>
-
-   		<script type="text/javascript" src="javascript/abas.js"></script>
   </body>
 
 </html>

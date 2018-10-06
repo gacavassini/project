@@ -19,4 +19,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/clientes', 'Clientes@indexJson');
 
-Route::get('/entrevistas', 'Entrevistas@indexJson');
+Route::get('/entrevistas/{codEntrevista}', 'Entrevistas@indexJson');

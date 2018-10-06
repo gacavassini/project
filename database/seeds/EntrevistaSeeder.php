@@ -13,8 +13,8 @@ class EntrevistaSeeder extends Seeder
     public function run()
     {
       $dados = [
-        ['codCliente' => 1, 'codEmpresa' => 2],
-        ['codCliente' => 2, 'codEmpresa' => 1],
+        ['codCliente' => 1, 'codEmpresa' => 2, 'created_at' => date("Y-m-d H:i:s")],
+        ['codCliente' => 2, 'codEmpresa' => 1, 'created_at' => date("Y-m-d H:i:s")],
       ];
         DB::table('entrevistas')->insert($dados);
     }
