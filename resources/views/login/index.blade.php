@@ -3,25 +3,34 @@
 @section('titulo',Route::currentRouteName())
 
 @section('conteudo')
-  <div class="container">
-    <h3 class="center">Entrar</h3>
-    <div class="row">
-      <form class="" action="{{route('login.entrar')}}" method="post">
-        {{ csrf_field() }}
 
-        <div class="input-field">
-          <input type="text" name="email">
-          <label>E-mail</label>
-        </div>
-        <div class="input-field">
-          <input type="password" name="senha">
-          <label>Senha</label>
-        </div>
+<div class="conteudo" id="contlog"> 
 
-        <button class="btn deep-orange">Entrar</button>
+    
+    <div class="conteudoLogin">
+      <div class="login"> 
+        <p style="font-size: 20px; text-align: center"><b>Entrar</b> </p>
+
+        <form action="{{route('login.entrar')}}" method="post">
+          {{ csrf_field() }}
+
+          <div class="input-field">
+             <label> <br>E-mail <br></label>
+            <input class="campo" type="text" name="email">
+           
+          </div>
+          <div class="input-field">
+            <label>Senha <br></label> 
+            <input class="campo" type="password" name="senha">
+          </div>  
+            <button id="enviar" ">Entrar</button>
+        </div>  
+
+
       </form>
-    </div>
-  </div>
+    </div><!-- fim da div conteudoLogin -->
+    
+</div>
 
 
 

@@ -10,8 +10,19 @@
 <body>
   <div class="header">
 		<div class="logo">
-			<img id="img" src="images/logoB.png" >
+			<img id="img" src="	images/logoB.png" >
 		</div> <!--logo-->
+
+		<div class="loginInfo" >
+  			  <ul class="side-nav" id="mobile">
+			   @if(Auth::guest())
+			     <li><a href="{{route('login')}}">Login</a></li>
+			   @else
+			     <li>{{Auth::user()->name}}</li>
+			     <li><a href="{{ route('login.sair') }}">Sair</a></li>
+			   @endif
+			  </ul>
+		</div>
 	</div><!--header-->
 
   <div class="menu">
@@ -66,15 +77,4 @@
 
 
 
-<div style="background:#ff0045">
-  <h2>POR FAVOR NAO APAGUE AINDA ESTA AREA VERMELHA</h2>
-  <ul class="side-nav" id="mobile">
-   <li><a href="/">Home</a></li>
-   @if(Auth::guest())
-     <li><a href="{{route('login')}}">Login</a></li>
-   @else
-     <li><a href="#">{{Auth::user()->name}}</a></li>
-     <li><a href="{{ route('login.sair') }}">Sair</a></li>
-   @endif
-  </ul>
-</div>
+
