@@ -61,8 +61,16 @@
 
 				<!-- (2): textarea will replace by CKEditor -->
 				<!-- por enqnto um select para clientes -->
-				<input name="cliente" id="cliente" /><!--Fechou input do cliente -->
 				<div class="select-box">
+					<label for="clienteSelect"><span>Selecionar Cliente</span></label>
+					<select id="clienteSelect">
+						<option value=""></option>
+						@foreach($clientes as $cliente)
+							<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
+						@endforeach
+					</select>
+				</div><!--Fechou select box do cliente -->
+				<div id="entrevistas" style="display:none;">
 					<label for="select-box1" class="label select-box2"><span class="label-desc">Selecionar Entrevista</span> </label>
 					<select id="select-box1" class="select">
 						@foreach($entrevistas as $entrevista)
@@ -81,4 +89,16 @@
 		<div style="clear: both;"></div>
 	</form>
 
+@endsection
+
+@section('javascript')
+	<script type="text/javascript">
+		$('#clienteSelect').change(function(){
+			if('#clienteSelect').value() == ""){
+				$('#entrevistas').show();
+			}else{
+				$('#entrevistas').hide();
+			}
+		});
+	</script>
 @endsection

@@ -3,3 +3,7 @@
 @yield('conteudo')
 
 @include('layout._includes.footer')
+
+@hasSection('javascript')
+  @yield('javascript')
+@endif
