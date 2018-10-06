@@ -21,6 +21,11 @@ Route::group(['middleware'=>'auth'],function(){
   Route::post('/peticoes/salvar',['as'=>'peticoes.salvar','uses'=>'Peticoes@salvar']);
   Route::get('/peticoes/editar/{id}',['as'=>'peticoes.editar','uses'=>'Peticoes@editar']);
   Route::put('/peticoes/atualizar/{id}',['as'=>'peticoes.atualizar','uses'=>'Peticoes@atualizar']);
+
+//Rota clientes
+  Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
+  Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
+
 });
 
 Route::get('/login',['as'=>'login','uses'=>'Login@index']);
