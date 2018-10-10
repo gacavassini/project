@@ -19,17 +19,18 @@
 						<div id="Base">
 							<br />
 							<div class="select-box">
-								<label for="base" class="label select-box1"><span class="label-desc">Selecionar Item</span> </label>
-								<select id="base" class="select">
+								<label for="baseSelect" class="label select-box1"><span class="label-desc">Selecionar Item</span> </label>
+								<select id="baseSelect" class="select">
+									<option value=""></option>
 									@foreach($bases as $base)
-										<option value="{{$base->codbase}}">{{$base->rotulo}}</option>
+										<option value="{{$base->rotulo}}">{{$base->rotulo}}</option>
 									@endforeach
 								</select>
 							</div><!--Fechou select box -->
 							<!-- se selecionar o endereçamento -->
 							<div class="select-box">
-								<label for="select-box1" class="label select-box1"><span class="label-desc">Selecionar Endereçamento</span> </label>
-								<select id="select-box1" class="select">
+								<label for="enderecamentoSelect" class="label select-box1"><span class="label-desc">Selecionar Endereçamento</span> </label>
+								<select id="enderecamentoSelect" class="select">
 									<option value="Choice 1">Endereçamento 1</option>
 									<option value="Choice 2">Endereçamento 2</option>
 									<option value="Choice 2">Endereçamento 3</option>
@@ -94,6 +95,7 @@
 	<script src="{{ url('/js/abas.js') }}"></script>
 	<script src="{{ url('/js/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
+		//isso roda quando cliente eh alterado
 		$('#clienteSelect').change(function(){
 			if($('#clienteSelect').val() == ""){
 				$('#entrevistaSelect').empty();
@@ -109,6 +111,13 @@
 					}
 				});
 				$('#entrevistas').show();
+			}
+		});
+
+		//isso roda quando base eh alterada
+		$('#baseSelect').change(function(){
+			if($('#baseSelect').val() == ""){
+				$('#enderecamentoSelect').hide();
 			}
 		});
 	</script>

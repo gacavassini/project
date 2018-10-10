@@ -14,7 +14,7 @@ use App\Peticao;
 class Peticoes extends Controller
 {
     public function novo(){
-    	$bases = Base::all();
+    	$bases = Base::select('rotulo')->orderBy('rotulo')->groupBy('rotulo')->get();
     	$pedidos = Pedido::all();
       $clientes = Cliente::all();
       $empresas = Empresa::all();
