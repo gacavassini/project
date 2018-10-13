@@ -20,3 +20,6 @@ Route::get('/user', function (Request $request) {
 Route::get('/clientes', 'Clientes@indexJson');
 
 Route::get('/entrevistas/{codEntrevista}', 'Entrevistas@indexJson');
+
+Route::get('/bases/rotulo/{codRot}', 'Bases@getBasesPorRotuloJson');
+Route::get('/bases/{codRot}', 'Bases@getBaseJson');

@@ -17,7 +17,7 @@ Route::group(['middleware'=>'auth'],function(){
   //rota de peticoes
   Route::get('/peticoes/novo',['as'=>'peticoes.novo','uses'=>'Peticoes@novo']);
   Route::get('/peticoes/editar',['as'=>'peticoes.editar','uses'=>'Peticoes@editar']);
-  Route::get('/peticoes',['as'=>'eticoes.index','uses'=>'Peticoes@index']);
+  Route::get('/peticoes',['as'=>'peticoes.index','uses'=>'Peticoes@index']);
   Route::post('/peticoes/salvar',['as'=>'peticoes.salvar','uses'=>'Peticoes@salvar']);
   Route::get('/peticoes/editar/{id}',['as'=>'peticoes.editar','uses'=>'Peticoes@editar']);
   Route::put('/peticoes/atualizar/{id}',['as'=>'peticoes.atualizar','uses'=>'Peticoes@atualizar']);

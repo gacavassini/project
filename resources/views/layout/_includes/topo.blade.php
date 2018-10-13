@@ -10,7 +10,7 @@
 <body>
   <div class="header">
 		<div class="logo">
-			<img id="img" src="	images/logoB.png" >
+			<img id="img" src="{{ url('images/logoB.png') }}" >
 		</div> <!--logo-->
 
 		<div class="loginInfo" >
@@ -31,13 +31,13 @@
         <nav>
           <div class="nav-fostrap">
             <ul>
-              <li><a href="">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="javascript:void(0)">Atividades</a>
               </li>
               <li><a href="javascript:void(0)" >Petição<span class="arrow-down"></span></a>
                 <ul class="dropdown">
-                  <li><a href="montarPeticao.html">Montar Petição</a></li>
-                  <li><a href="consulta_Peticao">Consultar</a></li>
+                  <li><a href="{{ route('peticoes.novo') }}">Montar Petição</a></li>
+                  <li><a href="{{ route('peticoes.index') }}">Consultar</a></li>
                   <li><a href="base">Base</a></li>
                   <li><a href="pedidos">Pedidos</a></li>
                 </ul>
@@ -72,9 +72,3 @@
     </div>
 
   </div>
-
-
-
-
-
-
