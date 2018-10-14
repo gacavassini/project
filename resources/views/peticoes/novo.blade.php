@@ -19,7 +19,7 @@
 						<div id="Base">
 							<br />
 							<div class="select-box">
-								<label for="baseSelect"><span>Selecionar Item</span> </label>
+								<label for="baseSelect"><span>Selecionar Item</span><br> </label>
 								<select id="baseSelect">
 									<option value=""></option>
 									@foreach($bases as $base)
@@ -30,7 +30,7 @@
 
 							<!-- se selecionar o endereçamento -->
 							<div class="select-box" id="enderecamento" style="display:none">
-								<label for="enderecamentoSelect"><span>Selecionar Endereçamento</span> </label>
+								<label for="enderecamentoSelect"><span>Selecionar Endereçamento</span><br> </label>
 								<select id="enderecamentoSelect">
 								</select>
 							</div><!--Fechou select box -->
@@ -62,24 +62,29 @@
 
 				<!-- (2): textarea will replace by CKEditor -->
 				<!-- por enqnto um select para clientes -->
-				<div class="select-box">
-					<label for="clienteSelect"><span>Selecionar Cliente</span></label>
-					<select id="clienteSelect">
-						<option value=""></option>
-						@foreach($clientes as $cliente)
-							<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
-						@endforeach
-					</select>
-				</div><!--Fechou select box do cliente -->
-				<div id="entrevistas" style="display:none;">
-					<label for="entrevistaSelect"><span>Selecionar Entrevista</span> </label>
-					<select id="entrevistaSelect"></select>
-				</div><!--Fechou select box -->
-				<br />
-				<textarea class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
-				<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
-				<button class="myButton" name="btnSaveP">Salvar</button>
-				<button class="myButton" id="cancel" name="btnCancelP">Cancelar</button>
+				<div id="CliEnt">
+					<div class="select-box">
+						<label for="clienteSelect"><span>Selecionar Cliente</span><br></label>
+						<select id="clienteSelect" style="width: 40%" >
+							<option value=""></option>
+							@foreach($clientes as $cliente)
+								<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
+							@endforeach
+						</select>
+					</div><!--Fechou select box do cliente -->
+					<div id="entrevistas" style="display:none;">
+						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
+						<select id="entrevistaSelect"></select>
+					</div><!--Fechou select box -->
+					<br />
+				</div> <!--Fechou select cliEnt -->
+				<div class="editor">
+
+					<textarea class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
+					<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
+					<button class="myButton" name="btnSaveP">Salvar</button>
+					<button class="myButton" id="cancel" name="btnCancelP">Cancelar</button>
+				</div>
 			</div><!--Fechou peticao -->
 		</div><!--Fechou conteudo -->
 
