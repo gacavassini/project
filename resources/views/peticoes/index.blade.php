@@ -18,7 +18,7 @@
           <td>{{ $peticao->fatos }}</td>
           <td>{{ $peticao->created_at }}</td>
           <td>
-            <a class="btn deep-orange" href="{{ route('peticoes.editar',$peticao->codPeticao) }}">Editar</a>
+            <a href="{{ route('peticoes.editar',$peticao->codPeticao) }}">Editar</a>
           </td>
         </tr>
       @endforeach

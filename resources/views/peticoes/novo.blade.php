@@ -20,7 +20,7 @@
 							<br />
 							<div class="select-box">
 								<label for="baseSelect"><span>Selecionar Item</span><br> </label>
-								<select id="baseSelect">
+								<select id="baseSelect" style="width: 70%; height:4vh" >
 									<option value=""></option>
 									@foreach($bases as $base)
 										<option value="{{$base->codRot}}">{{$base->rotulo}}</option>
@@ -65,7 +65,7 @@
 				<div id="CliEnt">
 					<div class="select-box">
 						<label for="clienteSelect"><span>Selecionar Cliente</span><br></label>
-						<select id="clienteSelect" style="width: 40%" >
+						<select id="clienteSelect" style="width: 68%; height:4vh" >
 							<option value=""></option>
 							@foreach($clientes as $cliente)
 								<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
@@ -74,7 +74,8 @@
 					</div><!--Fechou select box do cliente -->
 					<div id="entrevistas" style="display:none;">
 						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
-						<select id="entrevistaSelect"></select>
+						<select id="entrevistaSelect""></select>
+						<button class="myButton" name="btnConfirma" id="confirmaCliente">Confirmar Cliente	</button>	
 					</div><!--Fechou select box -->
 					<br />
 				</div> <!--Fechou select cliEnt -->
@@ -89,6 +90,8 @@
 		</div><!--Fechou conteudo -->
 
 		<div style="clear: both;"></div>
+		<div id="peticoesBases"> </div>
+		<div id="peticoesPedidos"> </div>
 	</form>
 
 @endsection
@@ -103,7 +106,7 @@
 		CKEDITOR.config.resize_enabled = true;
 		CKEDITOR.config.width = '100%';
 		CKEDITOR.config.resize_enabled = false;
-		CKEDITOR.config.height = '50vh';
+		CKEDITOR.config.height = '60vh';
 	</script>
 	<script type="text/javascript">
 		/*$("select").on("click" , function() {
