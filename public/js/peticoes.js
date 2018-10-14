@@ -90,16 +90,23 @@ $('.insereBase').click(function(){
 
 //funcao pra adicionar pedidos
 $('.inserePedido').click(function(){
-
+  var codPedido;
+  var editor = $('iframe').contents().find("body");
+  $('input:checked').each(function(){
+    $.getJSON('/api/pedidos/' + $(this).val(), function(data){
+      editor.append("<p>" + data.resumo + "</p>");
+      criarPeticaoPedido(data.codPedido);
+    });
+  });
 });
 
 //esse metodo cria os inputs e valores para a tabela de peticoes_bases
 function criarPeticaoBase(codBase){
-  //TODO apagar essa linha dps q der o pull
-  $('form').append('<div id="peticoesBases"></div>');
   var peticoesBases = $('#peticoesBases');
   var indexBase = peticoesBases.children().length;
   var novaBase = '<div id="_' + indexBase + '"> <input type="text" name="petBaseCodBase" value="' + codBase + '" disabled /> </div>';
 
   peticoesBases.append(novaBase);
 }
+
+function criarPeticaoPedido(codPedido){}

@@ -74,8 +74,8 @@
 					</div><!--Fechou select box do cliente -->
 					<div id="entrevistas" style="display:none;">
 						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
-						<select id="entrevistaSelect""></select>
-						<button class="myButton" name="btnConfirma" id="confirmaCliente">Confirmar Cliente	</button>	
+						<select id="entrevistaSelect"></select>
+						<button class="myButton" name="btnConfirma" id="confirmaCliente">Confirmar Cliente	</button>
 					</div><!--Fechou select box -->
 					<br />
 				</div> <!--Fechou select cliEnt -->

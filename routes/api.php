@@ -23,3 +23,5 @@ Route::get('/entrevistas/{codEntrevista}', 'Entrevistas@indexJson');
 
 Route::get('/bases/rotulo/{codRot}', 'Bases@getBasesPorRotuloJson');
 Route::get('/bases/{codRot}', 'Bases@getBaseJson');
+
+Route::get('/pedidos/{codPedido}', 'Pedidos@getPedidosByCodJson');
