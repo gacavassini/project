@@ -21,6 +21,8 @@ $('#clienteSelect').change(function(){
 $('#baseSelect').change(function(){
   if($('#baseSelect').val() == ""){
     $('#enderecamentoSelect').empty();
+    $('#enderecamentoSelect').val("");
+    $('#baseSelect').val("");
     $('#enderecamento').hide();
   }
   else{
@@ -33,6 +35,7 @@ $('#baseSelect').change(function(){
           opcao = '<option value="' + data[i].codBase + '">' +
             data[i].texto + '</option>';
           $('#enderecamentoSelect').append(opcao);
+          $('#enderecamento label').text("Selecionar " + $('#baseSelect option:selected').text());
         }
         $('#enderecamento').show();
       }
@@ -52,23 +55,34 @@ $('.insereBase').click(function(){
   }
   else{
     var base = $('#baseSelect').val();
-    var enderecamento = $('#enderecamentoSelect');
+    var enderecamento = $('#enderecamentoSelect option:selected');
     var editor = $('iframe').contents().find("body");
     var newBase;
 
     //checa se tem outra combo
-    if(enderecamento.children().length > 0){
-      if(enderecamento.val() == ""){
+    if($('#enderecamentoSelect').children().length > 0){
+      if($('#enderecamentoSelect').val() == ""){
         alert("Selecione um Endereçamento");
       }
       else{
         editor.append("<p>" + enderecamento.text() + "</p>");
+        criarPeticaoBase($('#enderecamentoSelect option:selected').val());
 
+        $('#enderecamentoSelect').val("");
+        $('#baseSelect').val("");
+        $('#enderecamentoSelect').empty();
+        $('#enderecamento').hide();
       }
     }
     else{
       $.getJSON('/api/bases/' + $('#baseSelect').val(), function(data){
         editor.append("<p>" + data.texto + "</p>");
+        criarPeticaoBase(data.codBase);
+
+        $('#enderecamentoSelect').val("");
+        $('#baseSelect').val("");
+        $('#enderecamentoSelect').empty();
+        $('#enderecamento').hide();
       });
     }
   }
@@ -76,5 +90,16 @@ $('.insereBase').click(function(){
 
 //funcao pra adicionar pedidos
 $('.inserePedido').click(function(){
-  
+
 });
+
+//esse metodo cria os inputs e valores para a tabela de peticoes_bases
+function criarPeticaoBase(codBase){
+  //TODO apagar essa linha dps q der o pull
+  $('form').append('<div id="peticoesBases"></div>');
+  var peticoesBases = $('#peticoesBases');
+  var indexBase = peticoesBases.children().length;
+  var novaBase = '<div id="_' + indexBase + '"> <input type="text" name="petBaseCodBase" value="' + codBase + '" disabled /> </div>';
+
+  peticoesBases.append(novaBase);
+}
