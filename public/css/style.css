@@ -147,6 +147,7 @@ a { text-decoration: none; }
 
 .nav-fostrap {
   display: block;
+  z-index: 1;
   margin-bottom: 15px 0;
   background:
 linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
@@ -202,6 +203,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313235', end
 .nav-fostrap li:hover ul.dropdown { display: block; }
 
 .nav-fostrap li ul.dropdown {
+	z-index: 1;
   position: absolute;
   display: none;
   width: 200px;
