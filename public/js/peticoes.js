@@ -1,3 +1,8 @@
+//confirma o cliente e trava os campos referentes a ele
+function disableCliente(){
+  $('#clienteSelect').prop('disabled', true);
+}
+
 //isso roda quando cliente eh alterado
 $('#clienteSelect').change(function(){
   if($('#clienteSelect').val() == ""){
@@ -109,4 +114,10 @@ function criarPeticaoBase(codBase){
   peticoesBases.append(novaBase);
 }
 
-function criarPeticaoPedido(codPedido){}
+function criarPeticaoPedido(codPedido){
+  var peticoesPedidos = $('#peticoesPedidos');
+  var indexPedido = peticoesPedidos.children().length;
+  var novoPedido = '<div id="_' + indexPedido + '"> <input type="text" name="petPedCodPedido" value="' + codPedido + '" disabled /> </div>';
+
+  peticoesPedidos.append(novoPedido);
+}
