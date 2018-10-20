@@ -16,5 +16,6 @@ class Empresas extends Controller
 
     public function listar(){
     	return view('empresas.listar');
+    	$empresas = Empresas::all();
     }
 }
