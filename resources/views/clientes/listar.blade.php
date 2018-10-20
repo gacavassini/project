@@ -2,7 +2,20 @@
 @section('titulo',Route::currentRouteName())
 
 @section('conteudo')
+{{ csrf_field() }}
+ <div class="conteudoForm">
+    <h3 class="center">Lista de Clientes</h3>
+    <div class="row">
+      <form class="" action="" method="post">
+        {{ csrf_field() }}
 
-<h3>Aqui vai a lista de CLIENTES</h3>
+      
+      </form>
+    </div>
+  </div>
+
+
+
+
  
 @endsection

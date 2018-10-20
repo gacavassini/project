@@ -2,7 +2,7 @@
 @section('titulo',Route::currentRouteName())
 
 @section('conteudo')
-    <div class="container">
+    <div class="conteudoForm">
     <h3 class="center">Cadastro de Cliente</h3>
     <div class="row">
       <form class="" action="{{route('clientes.salvar')}}" method="post">
