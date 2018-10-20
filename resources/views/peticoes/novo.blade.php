@@ -74,7 +74,10 @@
 					</div><!--Fechou select box do cliente -->
 					<div id="entrevistas" style="display:none;">
 						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
-						<select id="entrevistaSelect" name="entrevistaSelect"></select>
+						<select id="entrevistaSelect" name="entrevistaSelect">
+							
+							
+						</select>
 						<button class="myButton" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>
 					</div><!--Fechou select box -->
 					<br />
