@@ -13,4 +13,7 @@ class Clientes extends Controller
     public function salvar(){
     	return view('clientes.salvar');
     }
+    public function listar(){
+    	return view('clientes.listar');
+    }
 }

@@ -25,6 +25,12 @@ Route::group(['middleware'=>'auth'],function(){
 //Rota clientes
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
   Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
+  Route::get('/clientes/listar', ['as'=> 'clientes.listar', 'uses'=>'Clientes@listar']);
+
+//Rota empresas
+  Route::get('/empresas/novo',['as'=>'empresas.novo', 'uses'=>'Empresas@novo']);
+  Route::post('/empresas/salvar', ['as'=> 'empresas.salvar', 'uses'=>'Empresas@salvar']);
+  Route::get('/empresas/listar', ['as'=> 'empresas.listar', 'uses'=>'Empresas@listar']);
 
 });
 
