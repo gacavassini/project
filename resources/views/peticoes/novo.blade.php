@@ -81,7 +81,7 @@
 				</div> <!--Fechou select cliEnt -->
 				<div class="editor">
 
-					<textarea class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
+					<textarea id="editor" class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
 					<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
 					<button class="myButton">Salvar</button>
 					<button class="myButton" id="cancel">Cancelar</button>
@@ -97,9 +97,9 @@
 @endsection
 
 @section('javascript')
-	<script src="{{ url('/js/peticoes.js') }}"></script>
 	<script src="{{ url('/js/abas.js') }}"></script>
 	<script src="{{ url('/js/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ url('/js/peticoes.js') }}"></script>
 
 	<script> CKEDITOR.replace( 'editor1' ); </script>
 	<script>

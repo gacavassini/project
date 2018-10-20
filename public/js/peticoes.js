@@ -62,9 +62,6 @@ $('.insereBase').click(function(){
     var base = $('#baseSelect').val();
     var enderecamento = $('#enderecamentoSelect option:selected');
     var editor = $('iframe').contents().find("body");
-    var newBase;
-    var position = editor.getCursorPosition();
-    var content = editor.val();
 
     //checa se tem outra combo
     if($('#enderecamentoSelect').children().length > 0){
@@ -72,9 +69,7 @@ $('.insereBase').click(function(){
         alert("Selecione um Endereçamento");
       }
       else{
-        var newContent = content.substr(0, position) + "<p>" + enderecamento.text() + "</p>" + content.substr(position);
-        editor.append("<p>" + enderecamento.text() + "</p>");
-        //editor.val(newContent);
+        CKEDITOR.instances.editor.insertHtml("<p>" + enderecamento.text() + "<p/>");
         criarPeticaoBase($('#enderecamentoSelect option:selected').val());
 
         $('#enderecamentoSelect').val("");
@@ -86,6 +81,7 @@ $('.insereBase').click(function(){
     else{
       $.getJSON('/api/bases/' + $('#baseSelect').val(), function(data){
         editor.append("<p>" + data.texto + "</p>");
+        CKEDITOR.instances.editor.insertHtml("<p>" + data.texto + "<p/>");
         criarPeticaoBase(data.codBase);
 
         $('#enderecamentoSelect').val("");
@@ -103,7 +99,8 @@ $('.inserePedido').click(function(){
   var editor = $('iframe').contents().find("body");
   $('input:checked').each(function(){
     $.getJSON('/api/pedidos/' + $(this).val(), function(data){
-      editor.append("<p>" + data.resumo + "</p>");
+      //editor.append("<p>" + data.resumo + "</p>");
+      CKEDITOR.instances.editor.insertHtml("<p>" + data.resumo + "<p/>");
       criarPeticaoPedido(data.codPedido);
     });
   });
@@ -125,21 +122,3 @@ function criarPeticaoPedido(codPedido){
 
   peticoesPedidos.append(novoPedido);
 }
-
-//funcao para inserir o texto no cursor
-(function ($, undefined) {
-    $.fn.getCursorPosition = function () {
-        var el = $(this).get(0);
-        var pos = 0;
-        if ('selectionStart' in el) {
-            pos = el.selectionStart;
-        } else if ('selection' in document) {
-            el.focus();
-            var Sel = document.selection.createRange();
-            var SelLength = document.selection.createRange().text.length;
-            Sel.moveStart('character', -el.value.length);
-            pos = Sel.text.length - SelLength;
-        }
-        return pos;
-    }
-})(jQuery);
