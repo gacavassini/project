@@ -7,6 +7,9 @@
 
     <h3 class="center">Cadastro de Cliente</h3> <br>
    
+    <div class="conteudoForm">
+    <h3 class="center">Cadastro de Cliente</h3>
+    <div class="row">
       <form class="" action="{{route('clientes.salvar')}}" method="post">
         {{ csrf_field() }}
 

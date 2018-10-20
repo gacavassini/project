@@ -53,13 +53,13 @@
               </li>
               <li><a href="javascript:void(0)" >Cliente<span class="arrow-down"></span></a>
               <ul class="dropdown">
-                  <li><a href="cadastroCliente">Cadastrar</a></li>
-                  <li><a href="consultaCliente">Consultar</a></li>
+                  <li><a href="{{ route('clientes.novo')}}">Cadastrar</a></li>
+                  <li><a href="{{ route('clientes.listar')}}">Consultar</a></li>
               </ul>
               <li><a href="javascript:void(0)" >Empresa<span class="arrow-down"></span></a>
               <ul class="dropdown">
-                  <li><a href="cadastraEmpresa">Cadastrar</a></li>
-                  <li><a href="consultaEmpresa">Consultar</a></li>
+                  <li><a href="{{ route('empresas.novo')}}">Cadastrar</a></li>
+                  <li><a href="{{ route('empresas.listar')}}">Consultar</a></li>
               </ul>
 
             </ul>
