@@ -73,8 +73,8 @@ $('.insereBase').click(function(){
       }
       else{
         var newContent = content.substr(0, position) + "<p>" + enderecamento.text() + "</p>" + content.substr(position);
-        //editor.append("<p>" + enderecamento.text() + "</p>");
-        editor.val(newContent);
+        editor.append("<p>" + enderecamento.text() + "</p>");
+        //editor.val(newContent);
         criarPeticaoBase($('#enderecamentoSelect option:selected').val());
 
         $('#enderecamentoSelect').val("");
