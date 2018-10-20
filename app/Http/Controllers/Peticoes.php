@@ -24,7 +24,11 @@ class Peticoes extends Controller
         'pedidos', 'entrevistas'));
     }
 
-    public function salvar(){}
+    public function salvar(Request $req){
+      $dados = $req->all();
+      $bases = $req->input('name', 'peticoesbases.*');
+      dd($dados);
+    }
 
     public function index(){
       $peticoes = Peticao::all();

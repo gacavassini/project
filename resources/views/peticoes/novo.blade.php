@@ -65,7 +65,7 @@
 				<div id="CliEnt">
 					<div class="select-box">
 						<label for="clienteSelect"><span>Selecionar Cliente</span><br></label>
-						<select id="clienteSelect" style="width: 68%; height:4vh" >
+						<select id="clienteSelect" name="clienteSelect" style="width: 68%; height:4vh" >
 							<option value=""></option>
 							@foreach($clientes as $cliente)
 								<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
@@ -74,8 +74,8 @@
 					</div><!--Fechou select box do cliente -->
 					<div id="entrevistas" style="display:none;">
 						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
-						<select id="entrevistaSelect"></select>
-						<button class="myButton" name="btnConfirma" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>
+						<select id="entrevistaSelect" name="entrevistaSelect"></select>
+						<button class="myButton" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>
 					</div><!--Fechou select box -->
 					<br />
 				</div> <!--Fechou select cliEnt -->
@@ -83,8 +83,8 @@
 
 					<textarea class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
 					<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
-					<button class="myButton" name="btnSaveP">Salvar</button>
-					<button class="myButton" id="cancel" name="btnCancelP">Cancelar</button>
+					<button class="myButton">Salvar</button>
+					<button class="myButton" id="cancel">Cancelar</button>
 				</div>
 			</div><!--Fechou peticao -->
 		</div><!--Fechou conteudo -->

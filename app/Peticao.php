@@ -15,7 +15,7 @@ class Peticao extends Model
      * @var array
      */
     protected $fillable = [
-        'fatos',
+        'fatos', 'codCliente', 'codEntrevista',
     ];
 
     public function entrevista()

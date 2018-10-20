@@ -63,6 +63,8 @@ $('.insereBase').click(function(){
     var enderecamento = $('#enderecamentoSelect option:selected');
     var editor = $('iframe').contents().find("body");
     var newBase;
+    var position = editor.getCursorPosition();
+    var content = editor.val();
 
     //checa se tem outra combo
     if($('#enderecamentoSelect').children().length > 0){
@@ -70,7 +72,9 @@ $('.insereBase').click(function(){
         alert("Selecione um Endereçamento");
       }
       else{
-        editor.append("<p>" + enderecamento.text() + "</p>");
+        var newContent = content.substr(0, position) + "<p>" + enderecamento.text() + "</p>" + content.substr(position);
+        //editor.append("<p>" + enderecamento.text() + "</p>");
+        editor.val(newContent);
         criarPeticaoBase($('#enderecamentoSelect option:selected').val());
 
         $('#enderecamentoSelect').val("");
@@ -109,7 +113,7 @@ $('.inserePedido').click(function(){
 function criarPeticaoBase(codBase){
   var peticoesBases = $('#peticoesBases');
   var indexBase = peticoesBases.children().length;
-  var novaBase = '<div id="_' + indexBase + '"> <input type="text" name="petBaseCodBase" value="' + codBase + '" disabled /> </div>';
+  var novaBase = '<div id="_' + indexBase + '"> <input type="text" name="peticoesbases.'+indexBase+'" value="' + codBase + '" type="hidden" /> </div>';
 
   peticoesBases.append(novaBase);
 }
@@ -117,7 +121,25 @@ function criarPeticaoBase(codBase){
 function criarPeticaoPedido(codPedido){
   var peticoesPedidos = $('#peticoesPedidos');
   var indexPedido = peticoesPedidos.children().length;
-  var novoPedido = '<div id="_' + indexPedido + '"> <input type="text" name="petPedCodPedido" value="' + codPedido + '" disabled /> </div>';
+  var novoPedido = '<div id="_' + indexPedido + '"> <input type="text" name="peticoespedidos.'+indexPedido+'" value="' + codPedido + '" type="hidden" /> </div>';
 
   peticoesPedidos.append(novoPedido);
 }
+
+//funcao para inserir o texto no cursor
+(function ($, undefined) {
+    $.fn.getCursorPosition = function () {
+        var el = $(this).get(0);
+        var pos = 0;
+        if ('selectionStart' in el) {
+            pos = el.selectionStart;
+        } else if ('selection' in document) {
+            el.focus();
+            var Sel = document.selection.createRange();
+            var SelLength = document.selection.createRange().text.length;
+            Sel.moveStart('character', -el.value.length);
+            pos = Sel.text.length - SelLength;
+        }
+        return pos;
+    }
+})(jQuery);
