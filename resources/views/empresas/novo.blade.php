@@ -2,60 +2,69 @@
 @section('titulo',Route::currentRouteName())
 
 @section('conteudo')
-    <div class="conteudoForm">
+
+      <div class="conteudoForm">
     <h3 class="center">Cadastro de Empresa</h3>
-    <div class="row">
+
+
       <form class="" action="{{route('empresas.salvar')}}" method="post">
         {{ csrf_field() }}
 
-        <div class="input-field">
-          <label>Nome:<br> </label>
+        <div class="t1">
+          <label><br>Nome:<br> </label>
           <input type="text" name="nomeEmpresa" id ="grande">
         </div>
 
-        <div class="input-field">
-          <label>CNPJ:<br> </label>
+        <div class="t2">
+          <label><br> CNPJ:<br> </label>
           <input type="text" name="cnpj" id ="medio">
         </div>
 
-        <div class="input-field">
-          <label>Rua:<br> </label>
+        <div class="t1">
+          <label><br> Rua:<br> </label>
           <input type="text" name="ruaEmpresa" id ="grande">
         </div>
 
-        <div class="input-field">
-          <label>Número:<br> </label>
+        <div class="t3">
+          <label><br> Número:<br> </label>
           <input type="text" name="numEmpresa" id ="pequeno">
         </div>
 
-        <div class="input-field">
-          <label>Bairro:<br> </label>
+        <div class="t2">
+          <label><br> Bairro:<br> </label>
           <input type="text" name="bairroEmpresa" id ="medio">
         </div>     
 
-        <div class="input-field">
-          <label>Cidade:<br> </label>
-          <input type="text" name="cidadeEmpresa" id ="medio">
-        </div>   
-
-        <div class="input-field">
-          <label>Complemento:<br> </label>
+        
+        <div class="t2">
+          <label><br> Complemento:<br> </label>
           <input type="text" name="complEmpresa" id ="medio">
         </div>   
 
-        <div class="input-field">
-          <label>CEP:<br> </label>
+
+        <div class="t3">
+          <label><br> CEP:<br> </label>
           <input type="text" name="cepEmpresa" id ="pequeno">
         </div>
 
-        <div class="input-field">
-          <label>Telefone:<br> </label>
+        <div class="t2">
+          <label><br> Cidade:<br> </label>
+          <input type="text" name="cidadeEmpresa" id ="medio">
+        </div>   
+
+
+        <div class="t2">
+          <label><br> Telefone:<br> </label>
           <input type="text" name="telEmpresa" id ="medio">
         </div>
 
-        <br><button class="btn deep-orange">Salvar</button>
+         <br>
+        <div class="btn">
+          <button class="btnCancel">Cancelar</button>
+          <button class="btnSave" >Salvar</button>
+        </div>
       </form>
-    </div>
+
   </div>
 
 @endsection
