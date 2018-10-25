@@ -10,6 +10,8 @@ use App\Base;
 use App\Pedido;
 use App\Entrevista;
 use App\Peticao;
+use App\PeticaoBase;
+use App\PedidoPeticao;
 
 class Peticoes extends Controller
 {
@@ -25,9 +27,51 @@ class Peticoes extends Controller
     }
 
     public function salvar(Request $req){
-      $dados = $req->all();
-      $bases = $req->input('name', 'peticoesbases.*');
-      dd($dados);
+      $dados = $req->only(['codEntrevista', 'fatos']);
+      $bases = array();
+      $pedidos = array();
+
+      //pega os valores dos inputs com os ids das bases
+      $input = $req->all();
+      $pattern = 'peticoesbases';
+      array_walk($input, function ($v, $k) use ($pattern, &$bases) {
+          if(starts_with($k, $pattern)) {
+              $bases[$k] = $v;
+          }
+      });
+
+      //pega os valores dos inputs com os ids dos pedidos
+      $pattern = 'peticoespedidos';
+      array_walk($input, function ($v, $k) use ($pattern, &$pedidos) {
+          if(starts_with($k, $pattern)) {
+              $pedidos[$k] = $v;
+          }
+      });
+
+      //cria a peticao no banco
+      Peticao::create($dados);
+
+      //pega a ultima peticao criada
+      $peticao = Peticao::select('codPeticao', 'created_at')->orderBy('created_at', 'desc')->first();
+
+      //cria as peticoes_bases usando o id da peticao q foi criada
+      foreach($bases as $base){
+        $peticaoBase = new PeticaoBase;
+        $peticaoBase['codPeticao'] = $peticao->codPeticao;
+        $peticaoBase['codBase'] = $base;
+        $peticaoBase->save();
+      }
+
+      //cria os pedidos_peticoes usando o id da peticao q foi criada
+      foreach($pedidos as $pedido){
+        $pedPet = new PedidoPeticao;
+        $pedPet['codPeticao'] = $peticao->codPeticao;
+        $pedPet['codPedido'] = $pedido;
+        $pedPet->save();
+      }
+
+      //retorna pra index
+      return redirect()->route('peticoes.index');
     }
 
     public function index(){

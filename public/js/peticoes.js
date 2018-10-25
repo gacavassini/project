@@ -69,6 +69,7 @@ $('.insereBase').click(function(){
         alert("Selecione um Endereçamento");
       }
       else{
+        //essa linha adiciona o texto na posicao do cursor
         CKEDITOR.instances.editor.insertHtml("<p>" + enderecamento.text() + "<p/>");
         criarPeticaoBase($('#enderecamentoSelect option:selected').val());
 
@@ -80,7 +81,7 @@ $('.insereBase').click(function(){
     }
     else{
       $.getJSON('/api/bases/' + $('#baseSelect').val(), function(data){
-        editor.append("<p>" + data.texto + "</p>");
+        //essa linha adiciona o texto na posicao do cursor
         CKEDITOR.instances.editor.insertHtml("<p>" + data.texto + "<p/>");
         criarPeticaoBase(data.codBase);
 
@@ -93,13 +94,37 @@ $('.insereBase').click(function(){
   }
 });
 
+function insereBase(){
+  var codBase;
+  var texto;
+
+  $.each([ 1,2,4,5,6,8,9,10 ], function( i, value ) {
+    if(value == 1){
+      $.getJSON('/api/bases/rotulo/' + value, function(data){
+        codBase = data[0].codBase;
+        texto = data[0].texto;
+        CKEDITOR.instances.editor.insertHtml("<p>" + texto + "<p/>");
+        criarPeticaoBase(codBase);
+      });
+    }
+    else{
+      $.getJSON('/api/bases/' + value, function(data){
+        codBase = data.codBase;
+        texto = data.texto;
+        CKEDITOR.instances.editor.insertHtml("<p>" + texto + "<p/>");
+        criarPeticaoBase(codBase);
+      });
+    }
+  });
+}
+
 //funcao pra adicionar pedidos
 $('.inserePedido').click(function(){
   var codPedido;
   var editor = $('iframe').contents().find("body");
   $('input:checked').each(function(){
     $.getJSON('/api/pedidos/' + $(this).val(), function(data){
-      //editor.append("<p>" + data.resumo + "</p>");
+      //essa linha adiciona o texto na posicao do cursor
       CKEDITOR.instances.editor.insertHtml("<p>" + data.resumo + "<p/>");
       criarPeticaoPedido(data.codPedido);
     });

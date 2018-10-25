@@ -65,7 +65,7 @@
 				<div id="CliEnt">
 					<div class="select-box">
 						<label for="clienteSelect"><span>Selecionar Cliente</span><br></label>
-						<select id="clienteSelect" name="clienteSelect" style="width: 68%; height:4vh" >
+						<select id="clienteSelect" name="codCliente" style="width: 68%; height:4vh" >
 							<option value=""></option>
 							@foreach($clientes as $cliente)
 								<option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
@@ -74,9 +74,9 @@
 					</div><!--Fechou select box do cliente -->
 					<div id="entrevistas" style="display:none;">
 						<label for="entrevistaSelect"><span>Selecionar Entrevista</span> <br></label>
-						<select id="entrevistaSelect" name="entrevistaSelect">
-							
-							
+						<select id="entrevistaSelect" name="codEntrevista">
+
+
 						</select>
 						<button class="myButton" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>
 					</div><!--Fechou select box -->
@@ -84,7 +84,7 @@
 				</div> <!--Fechou select cliEnt -->
 				<div class="editor">
 
-					<textarea id="editor" class="ckeditor" name="editor1" cols="80" rows="30" style="height: 90%"></textarea>
+					<textarea id="editor" class="ckeditor" name="fatos" cols="80" rows="30" style="height: 90%"></textarea>
 					<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
 					<button class="myButton">Salvar</button>
 					<button class="myButton" id="cancel">Cancelar</button>
@@ -104,35 +104,22 @@
 	<script src="{{ url('/js/ckeditor/ckeditor.js') }}"></script>
 	<script src="{{ url('/js/peticoes.js') }}"></script>
 
-	<script> CKEDITOR.replace( 'editor1' ); </script>
+	<script> CKEDITOR.replace( 'fatos' ); </script>
+
 	<script>
 		CKEDITOR.config.resize_enabled = true;
 		CKEDITOR.config.width = '100%';
 		CKEDITOR.config.resize_enabled = false;
 		CKEDITOR.config.height = '60vh';
 	</script>
-	<script type="text/javascript">
-		/*$("select").on("click" , function() {
-			$(this).parent(".select-box").toggleClass("open");
+
+	<script>
+		$('iframe').contents().find("body").ready(function(){
+			setTimeout(
+		  function()
+		  {
+		    insereBase();
+		  }, 1000);
 		});
-
-		$(document).mouseup(function (e)
-		{
-			var container = $(".select-box");
-
-			if (container.has(e.target).length === 0)
-			{
-				container.removeClass("open");
-			}
-		});
-
-		$("select").on("change" , function() {
-			var selection = $(this).find("option:selected").text(),
-			labelFor = $(this).attr("id"),
-			label = $("[for='" + labelFor + "']");
-
-			label.find(".label-desc").html(selection);
-
-		});*/
 	</script>
 @endsection

@@ -8,7 +8,7 @@ class Peticao extends Model
 {
     //recisou disso pq procurava tabela peticaos
     protected $table = 'peticoes';
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +21,14 @@ class Peticao extends Model
     public function entrevista()
     {
         return $this->hasOne('App\Entrevista');
+    }
+
+    public function peticoes_bases(){
+      return $this->hasMany('App\PeticaoBase');
+    }
+
+    public function peticoes_pedidos(){
+      return $this->hasMany('App\PedidoPeticao');
     }
 
     public function bases()
