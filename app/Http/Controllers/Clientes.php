@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cliente;
 
 class Clientes extends Controller
 {
@@ -13,7 +14,7 @@ class Clientes extends Controller
     	return view('clientes.salvar');
     }
     public function listar(){
-    	return view('clientes.listar');
-        $clientes = Clientes::all();
+        $clientes = Cliente::all();
+    	return view('clientes.listar', compact('clientes'));
     }
 }

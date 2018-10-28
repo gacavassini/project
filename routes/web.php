@@ -26,6 +26,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
   Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
   Route::get('/clientes/listar', ['as'=> 'clientes.listar', 'uses'=>'Clientes@listar']);
+  Route::get('/clientes/editar/{id}', ['as'=> 'clientes.editar', 'uses'=>'Clientes@editar']);
 
 //Rota empresas
   Route::get('/empresas/novo',['as'=>'empresas.novo', 'uses'=>'Empresas@novo']);
