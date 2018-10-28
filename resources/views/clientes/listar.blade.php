@@ -1,17 +1,12 @@
+
 @extends('layout.site')
-@section('titulo',Route::currentRouteName())
+@section('titulo','Consultar Clientes')
 
 @section('conteudo')
 {{ csrf_field() }}
  <div class="conteudoForm">
-    <h3 class="center">Lista de Clientes</h3>
-    <div class="row">
-      <form class="" action="" method="post">
-        {{ csrf_field() }}
-
-      
-      </form>
-    </div>
+    <h3 class="center">Consultar Clientes</h3>
+    
   </div>
 
 

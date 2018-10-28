@@ -26,11 +26,17 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
   Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
   Route::get('/clientes/listar', ['as'=> 'clientes.listar', 'uses'=>'Clientes@listar']);
+  Route::get('/clientes/editar/{id}',['as'=>'clientes.editar','uses'=>'Clientes@editar']);
+  Route::put('/clientes/atualizar/{id}',['as'=>'clientes.atualizar','uses'=>'Clientes@atualizar']);
+
 
 //Rota empresas
   Route::get('/empresas/novo',['as'=>'empresas.novo', 'uses'=>'Empresas@novo']);
   Route::post('/empresas/salvar', ['as'=> 'empresas.salvar', 'uses'=>'Empresas@salvar']);
   Route::get('/empresas/listar', ['as'=> 'empresas.listar', 'uses'=>'Empresas@listar']);
+  Route::get('/empresas/editar/{id}',['as'=>'empresas.editar','uses'=>'Empresas@editar']);
+  Route::put('/empresas/atualizar/{id}',['as'=>'empresas.atualizar','uses'=>'Empresas@atualizar']);
+
 
 });
 
