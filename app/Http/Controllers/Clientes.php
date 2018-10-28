@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Http\Requests;
+=======
+>>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
 use App\Cliente;
 
 class Clientes extends Controller
@@ -24,8 +27,13 @@ class Clientes extends Controller
 
     }
     public function listar(){
+<<<<<<< HEAD
         $registros = Cliente::all();
     	return view('clientes.listar', compact('registros'));
       
+=======
+        $clientes = Cliente::all();
+    	return view('clientes.listar', compact('clientes'));
+>>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
     }
 }

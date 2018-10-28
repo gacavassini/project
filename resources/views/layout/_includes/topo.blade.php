@@ -5,7 +5,11 @@
   <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('/css/peticao.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('/css/form.css') }}" />
+<<<<<<< HEAD
   
+=======
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/listar.css') }}" />
+>>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
