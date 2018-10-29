@@ -17,6 +17,11 @@ class Cliente extends Model
         'celular', 'estadoCivil', 'cliStatus',
     ];
 
+    public function listar ()
+    {
+     return $this->hasMany('App\Cliente');  
+    }
+
     public function entrevistas()
     {
         return $this->hasMany('App\Entrevista');

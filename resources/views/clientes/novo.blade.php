@@ -1,12 +1,13 @@
+
 @extends('layout.site')
-@section('titulo',Route::currentRouteName())
+@section('titulo','Cadastrar Cliente')
 
 @section('conteudo')
 
 <div class="conteudoForm">
    
     
-    <h3 class="center">Cadastro de Cliente</h3>
+    <h3 class="center">Cadastrar Cliente</h3>
    
       <form class="" action="{{route('clientes.salvar')}}" method="post">
         {{ csrf_field() }}
@@ -25,7 +26,7 @@
            </div>
           <div class="t2">
           <label><br>RG:<br></label>
-          <input type="text" name="cpf"  id="medio">
+          <input type="text" name="rg"  id="medio">
         </div>
         </div>
         
@@ -38,12 +39,12 @@
         <div class="t2">
           <label><br>Estado Civil:<br></label>
           <select id="select" name="estadoCivil"> 
-            <option value="0">Solteiro</option>
-            <option value="1">Casado</option>
-            <option value="2">Separado</option>
-            <option value="3">Divorciado</option>
-            <option value="4">Viúvo</option>
-            <option value="5">Amasiado</option>
+            <option value="Solteiro">Solteiro(a)</option>
+            <option value="Casado">Casado(a)</option>
+            <option value="Separado">Separado(a)</option>
+            <option value="Divorciado">Divorciado(a)</option>
+            <option value="Viúvo">Viúvo(a)</option>
+            <option value="Amasiado">Amasiado(a)</option>
           </select> 
         </div>
         <div class="t1">
@@ -95,7 +96,9 @@
           <button class="btnCancel">Cancelar</button>
           <button class="btnSave">Salvar</button>
         </div>
-        
+
+
+
       </form>
    
 

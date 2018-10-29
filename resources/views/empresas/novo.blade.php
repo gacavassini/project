@@ -1,10 +1,11 @@
+
 @extends('layout.site')
-@section('titulo',Route::currentRouteName())
+@section('titulo','Cadastrar Empresa')
 
 @section('conteudo')
 
       <div class="conteudoForm">
-    <h3 class="center">Cadastro de Empresa</h3>
+    <h3 class="center">Cadastrar Empresa</h3>
 
 
       <form class="" action="{{route('empresas.salvar')}}" method="post">
@@ -54,7 +55,7 @@
 
 
         <div class="t2">
-          <label><br> Telefone:<br> </label>
+          <label><br>&#x0260E;Telefone:<br> </label>
           <input type="text" name="telEmpresa" id ="medio">
         </div>
 

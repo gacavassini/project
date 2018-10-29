@@ -30,7 +30,7 @@ class CreateClientesTable extends Migration
             $table->string('telefoneContato', 15)->nullable();
             $table->string('celular', 15);
             $table->string('estadoCivil', 30);
-            $table->string('cliStatus', 30);
+            $table->string('cliStatus', 30)->nullable();
             $table->timestamps();
         });
     }

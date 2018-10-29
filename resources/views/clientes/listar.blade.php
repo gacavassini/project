@@ -1,8 +1,14 @@
+
 @extends('layout.site')
-@section('titulo',Route::currentRouteName())
+@section('titulo','Consultar Clientes')
 
 @section('conteudo')
  <div class="conteudoForm">
+<<<<<<< HEAD
+    <h3 class="center">Consultar Clientes</h3>
+    
+  </div>
+=======
     <h3 class="center">Lista de Clientes</h3>
     <div class="search">
     	<form>
@@ -40,6 +46,7 @@
   
     </div>
 
+>>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
 
 
 
