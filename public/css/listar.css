@@ -1,3 +1,31 @@
+.consulta{
+	width: 100%	
+}
+.consulta th{
+	text-align: left;
+}
+.consulta tr{
+	text-align: left;
+	padding: 1%;
+
+}
+.consulta td{
+	text-align: left;
+	padding: 0.5%;,
+	font-size: 10px;
+}
+.consulta td, th{
+	border-bottom: 1px solid #ddd;}
+
+.consulta tr:hover {
+	background-color: #1B75BB;
+	color: white;
+}
+
+.consulta tr td img{
+	margin-right: 5%;: 
+}
+
 .search {
 	height: 10vh;
 }
