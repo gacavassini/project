@@ -35,7 +35,7 @@
           <div class="nav-fostrap">
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="javascript:void(0)">Atividades</a>
+              <li><a href="{{route('atividades.tela')}}">Atividades</a>
               </li>
               <li><a href="javascript:void(0)" >Petição<span class="arrow-down"></span></a>
                 <ul class="dropdown">

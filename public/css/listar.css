@@ -75,3 +75,30 @@
 .search input::-webkit-input-placeholder {
 	color: #999;
 }
+
+
+.telaLembretes{
+	width: 92%;
+	height: 95vh;
+	margin:0.5% 4%;
+	
+	float: left;
+}
+.listaAtividades{
+	float: left;
+	width: 33.33%;
+	height: 100%;
+	border-right: solid 0.1vw gray;
+	padding: 1% 1.5%;	
+
+	/*overflow-y: scroll;*/
+}
+ #depoisAmanha {
+	border-right: solid 0px ;
+	
+	/*overflow-y: scroll;*/
+}
+
+.consultarAtividade{
+	width: 100%;
+}

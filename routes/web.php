@@ -47,3 +47,6 @@ Route::get('/login/sair',['as'=>'login.sair','uses'=>'Login@sair']);
 Route::post('/login/entrar',['as'=>'login.entrar','uses'=>'Login@entrar']);
 
 //Route::get('/peticoes/novo',['as'=>'novaPeticao','uses'=>'Peticoes@novo']);
+
+
+Route::get('/tela',['as'=>'atividades.tela', 'uses'=>'Atividades@listar']);
