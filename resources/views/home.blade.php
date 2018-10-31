@@ -1,6 +1,6 @@
 @extends('layout.site')
 
-@section('titulo',Route::currentRouteName())
+@section('titulo','Página Inicial')
 
 @section('conteudo')
   <div class="container">

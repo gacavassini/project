@@ -1,5 +1,5 @@
 @extends('layout.site')
-
+@section('titulo','Montar Petição')
 @section('conteudo')
 	<form class="" action="{{route('peticoes.salvar')}}" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}

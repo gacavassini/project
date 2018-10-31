@@ -4,16 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
+use App\Cliente;
+
 class Clientes extends Controller
 {
+    
     public function novo(){
     	return view('clientes.novo');
+
     }
-    public function salvar(){
-    	return view('clientes.salvar');
+    public function salvar(Request $req){
+
+        $dados = $req->all();
+        
+
+        Cliente::create($dados);
+        return redirect()->route('clientes.listar');
+        //return listar();
+
     }
     public function listar(){
-    	return view('clientes.listar');
-        $clientes = Clientes::all();
+       $clientes = Cliente::all();
+    	return view('clientes.listar', compact('clientes'));
+
     }
 }

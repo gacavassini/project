@@ -1,5 +1,5 @@
 @extends('layout.site')
-
+@section('titulo','Lista de Petições')
 @section('conteudo')
   <h3 class="center">Lista de Petições</h3>
   <table>
