@@ -111,7 +111,17 @@ function insereBase(){
       $.getJSON('/api/bases/' + value, function(data){
         codBase = data.codBase;
         texto = data.texto;
-        CKEDITOR.instances.editor.insertHtml("<p>" + texto + "<p/>");
+        if(data.codRot == 9){
+          var div = CKEDITOR.instances.editor.document.createElement('div');
+          var divObject = "<div id='tituloPedido'>";
+          divObject += "<p>" + texto + "</p>";
+          divObject += "</div>";
+          div.setHtml(divObject);
+          CKEDITOR.instances.editor.insertElement(div);
+        }
+        else{
+          CKEDITOR.instances.editor.insertHtml("<p>" + texto + "<p/>");
+        }
         criarPeticaoBase(codBase);
       });
     }
@@ -125,7 +135,14 @@ $('.inserePedido').click(function(){
   $('input:checked').each(function(){
     $.getJSON('/api/pedidos/' + $(this).val(), function(data){
       //essa linha adiciona o texto na posicao do cursor
-      CKEDITOR.instances.editor.insertHtml("<p>" + data.resumo + "<p/>");
+      //se pedido for especifico
+      if(data.tipo === 0){
+        CKEDITOR.instances.editor.insertHtml("<p>" + data.fundamento + "<p/>");
+        CKEDITOR.instances.editor.insertHtml("<p>" + data.resumo + "<p/>");
+      }
+      else{//se o pedido for padrao
+
+      }
       criarPeticaoPedido(data.codPedido);
     });
   });
@@ -147,3 +164,9 @@ function criarPeticaoPedido(codPedido){
 
   peticoesPedidos.append(novoPedido);
 }
+
+/*
+//pega o paragrafo do titulo dos pedidos
+var editor = CKEDITOR.instances.editor;
+editor.document.find('#tituloPedido p');
+*/

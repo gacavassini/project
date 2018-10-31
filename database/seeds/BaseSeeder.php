@@ -16,13 +16,13 @@ class BaseSeeder extends Seeder
           ['codRot' => 1, 'rotulo' => 'Endereçamento', 'texto' => 'EXCELENTÍSSIMO (A) SENHOR (A) DOUTOR (A) JUIZ (A) DE DIREITO DA ____ VARA CÍVEL DA COMARCA DE MOGI GUAÇU/SP'],
           ['codRot' => 1, 'rotulo' => 'Endereçamento', 'texto' => 'EXCELENTÍSSIMO (A) SENHOR (A) DOUTOR (A) JUIZ (A) DA VARA DO TRABALHO DE MOGI GUAÇU/SP'],
 
-          ['codRot' => 2, 'rotulo' => 'Qualificação do Cliente', 'texto' => 'NOME, nacionalidade, estado civil, profissão, CPF nº , RG nº  SSP/SP, residente  e domiciliado à (endereço), por seu advogado que esta subscreve, vem, respeitosamente perante Vossa Excelência propor a presente'],
+          ['codRot' => 2, 'rotulo' => 'Qualificação do Cliente', 'texto' => 'nomeCliente, brasileira, estadoCivilCliente, profissãoCliente, CPF nº cpfCliente, RG nº rgCliente  SSP/SP, residente  e domiciliado à (enderecoCliente), por seu advogado que esta subscreve, vem, respeitosamente perante Vossa Excelência propor a presente'],
 
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'RECLAMAÇÃO TRABALHISTA'],
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'AÇÃO DE INDENIZAÇÃO'],
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'AÇÃO DE COBRANÇA'],
 
-          ['codRot' => 4, 'rotulo' => 'Qualificação Reclamada', 'texto' => ' em face de NOME DA EMPRESA, inscrita no CNPJ,  com sede na (endereço), nos termos do artigo 840 e seguintes da C.L.T., pelos motivos de fato e de direito que passa a expor:'],
+          ['codRot' => 4, 'rotulo' => 'Qualificação Reclamada', 'texto' => ' em face de nomeEmpresa, inscrita no CNPJ - cnpjEmpresa,  com sede na (enderecoEmpresa), nos termos do artigo 840 e seguintes da C.L.T., pelos motivos de fato e de direito que passa a expor:'],
 
           ['codRot' => 5, 'rotulo' => 'Gratuidade Processual', 'texto' => 'I - DA JUSTIÇA GRATUITA1 - Esclarece o Reclamante que é pessoa pobre na acepção jurídica do termo, não estando em condições de demandar, sem sacrifício do sustento próprio e de seus familiares, motivo pelo qual, pede a concessão dos benefícios da JUSTIÇA GRATUITA, com fundamentos no artigo 4º da lei 1.060/50, com nova redação dada pela Lei 7.510/84, que para tanto encarte declaração de hipossuficiência em anexo.'],
 
