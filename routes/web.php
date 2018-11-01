@@ -26,13 +26,11 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
   Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
   Route::get('/clientes/listar', ['as'=> 'clientes.listar', 'uses'=>'Clientes@listar']);
-<<<<<<< HEAD
-  Route::get('/clientes/editar/{id}',['as'=>'clientes.editar','uses'=>'Clientes@editar']);
-  Route::put('/clientes/atualizar/{id}',['as'=>'clientes.atualizar','uses'=>'Clientes@atualizar']);
+  Route::get('/clientes/editar/{codCliente}',['as'=>'clientes.editar','uses'=>'Clientes@editar']);
+  Route::put('/clientes/atualizar/{codCliente}',['as'=>'clientes.atualizar','uses'=>'Clientes@atualizar']);
 
-=======
-  Route::get('/clientes/editar/{id}', ['as'=> 'clientes.editar', 'uses'=>'Clientes@editar']);
->>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
+
+
 
 //Rota empresas
   Route::get('/empresas/novo',['as'=>'empresas.novo', 'uses'=>'Empresas@novo']);

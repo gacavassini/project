@@ -20,4 +20,9 @@ class Empresa extends Model
     {
         return $this->hasMany('App\Entrevista');
     }
+
+     public function listar ()
+    {
+     return $this->hasMany('App\Empresa');  
+    }
 }

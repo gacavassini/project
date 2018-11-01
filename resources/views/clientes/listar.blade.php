@@ -1,14 +1,8 @@
-
 @extends('layout.site')
 @section('titulo','Consultar Clientes')
 
 @section('conteudo')
  <div class="conteudoForm">
-<<<<<<< HEAD
-    <h3 class="center">Consultar Clientes</h3>
-    
-  </div>
-=======
     <h3 class="center">Lista de Clientes</h3>
     <div class="search">
     	<form>
@@ -20,6 +14,7 @@
     <table class="consulta">
     	<thead>
     		<tr>
+                <th>ID</th>
     			<th>Nome</th>
     			<th>CPF</th>
     			<th>RG</th>
@@ -32,7 +27,8 @@
     	<tbody>
     		@foreach($clientes as $cliente)
     		<tr>
-    			<td>{{$cliente->nome}}</td>
+    			<td>{{$cliente->codCliente}}</td>
+                <td>{{$cliente->nome}}</td>
     			<td>{{$cliente->cpf}}</td>
     			<td>{{$cliente->rg}}</td>
     			<td>{{$cliente->telefoneRes}}</td>
@@ -46,7 +42,6 @@
   
     </div>
 
->>>>>>> d8cf7610b81a435c6820ce0d3abb4d3da5c15eec
 
 
 
