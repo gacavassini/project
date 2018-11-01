@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url('/css/peticao.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('/css/form.css') }}" />
   <link rel="stylesheet" type="text/css" href="{{ url('/css/listar.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url('/css/jquery-ui.css') }}" />
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

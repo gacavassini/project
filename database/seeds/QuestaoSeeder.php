@@ -12,7 +12,7 @@ class QuestaoSeeder extends Seeder
     public function run()
     {
       $dados=[
-        ['descQuestao' => 'Data de Admissao', 'tipo' => 'Texto'],
+        ['descQuestao' => 'Data de Admissão', 'tipo' => 'Texto'],
         ['descQuestao' => 'Data de Demissão', 'tipo' => 'Texto'],
         ['descQuestao' => 'Salário', 'tipo' => 'Texto'],
         ['descQuestao' => 'Jornada', 'tipo' => 'Texto'],

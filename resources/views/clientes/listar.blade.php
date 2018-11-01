@@ -35,7 +35,27 @@
     			<td>{{$cliente->telefoneRes}}</td>
     			<td>{{$cliente->celular}}</td>
     			<td>{{$cliente->email}}</td>
-    			<td> <a href="{{ route('clientes.editar',$cliente->codCliente)}}"><img width="13%" src="{{ url('images/edit-01.png') }}"> </a> <a href=""><img width="18%" src="{{ url('images/see-01.png') }}"> </a></td>
+    			<td> 
+                    <a href="{{ route('clientes.editar',$cliente->codCliente)}}">
+                        <img width="13%" src="{{ url('images/edit-01.png') }}"> 
+                    </a> 
+                    <a href="javascript:void(0)">
+                        <img width="18%" src="{{ url('images/see-01.png') }}"> 
+                    </a>
+                </td>
+                <!-- TODO arrumar o esquema dos icons do jquery ui
+                <td>
+                    <ul id="icons" class="ui-widget ui-helper-clearfix">
+                        <li class="ui-state-default ui-corner-all">
+                            <a href="{{ route('clientes.editar',$cliente->codCliente)}}">
+                                <span class="ui-icon ui-icon-pencil"></span>
+                            </a>
+                            <a href="javascript:void(0)">
+                                <span class="ui-icon ui-icon-document"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </td>-->
     		</tr>
     		@endforeach
     	</tbody>
