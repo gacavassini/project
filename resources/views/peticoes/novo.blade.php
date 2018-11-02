@@ -78,7 +78,7 @@
 
 
 						</select>
-						<button class="myButton" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>
+						<!--<button class="myButton" id="confirmaCliente" action="disableCliente()">Confirmar Cliente	</button>-->
 					</div><!--Fechou select box -->
 					<br />
 				</div> <!--Fechou select cliEnt -->

@@ -173,14 +173,26 @@ function insereBase(){
 //funcao pra adicionar pedidos
 $('.inserePedido').click(function(){
   var codPedido;
-  var editor = $('iframe').contents().find("body");
+  var editor;
+  var range;
+
   $('input:checked').each(function(){
     $.getJSON('/api/pedidos/' + $(this).val(), function(data){
       //essa linha adiciona o texto na posicao do cursor
       //se pedido for especifico
       if(data.tipo === 0){
-        CKEDITOR.instances.editor.insertHtml("<p>" + data.fundamento + "<p/>");
-        CKEDITOR.instances.editor.insertHtml("<p>" + data.resumo + "<p/>");
+        editor = CKEDITOR.instances.editor;
+        range = editor.createRange();
+        range.setStart(editor.document.getById( 'dadosContrato' ), CKEDITOR.POSITION_AFTER_START);
+        // insere fundamento e resumo no meio do texto
+        editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.fundamento + "<p/>"), range );
+        editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
+
+        //insere soh o resumo apos o titulo dos pedidos
+        editor = CKEDITOR.instances.editor;
+        range = editor.createRange();
+        range.setStart(editor.document.getById( 'tituloPedido' ), CKEDITOR.POSITION_AFTER_START);
+        editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
       }
       else{//se o pedido for padrao
 
@@ -216,7 +228,7 @@ function setClienteValues(codcliente){
     var profissao = cliente.profissao;
     var cpf = cliente.cpf;
     var rg = cliente.rg;
-    var endereco = cliente.rua + ", nº" + cliente.numEnderco + ", " + cliente.cidade + "/SP";
+    var endereco = cliente.rua + ", nº" + cliente.numEndereco + ", " + cliente.cidade + "/SP";
 
     $(editor.editable().$).find("#qualiCliente p").text(function(){
       return $(this).text().replace("nomeCliente", nome).replace("estadoCivilCliente", estadcivil).replace("profissãoCliente", profissao).replace("cpfCliente", cpf).replace("rgCliente", rg).replace("enderecoCliente", endereco);
@@ -231,7 +243,7 @@ function setEmpresaValues(codEntrevista){
   $.getJSON('/api/empresas/' + codEntrevista, function(empresa){
     var nome = empresa.nome;
     var cnpj = empresa.cnpj;
-    var endereco = empresa.rua + ", nº" + empresa.numEnderco + ", " + empresa.cidade + "/SP";
+    var endereco = empresa.rua + ", nº" + empresa.numEndereco + ", " + empresa.cidade + "/SP";
 
     $(editor.editable().$).find("#qualiReclamada p").text(function(){
       return $(this).text().replace("nomeEmpresa", nome).replace("cnpjEmpresa", cnpj).replace("enderecoEmpresa", endereco);
@@ -273,3 +285,15 @@ editor.document.find('#tituloPedido p');
 //pra achar os elementos lah dentro
 $(editor.editable().$).find("")
 */
+//=========================================================================================
+// Having this HTML in editor:
+// <p id="someId1">foo <em id="someId2">bar</em>.</p>
+
+/*var range = editor.createRange();
+range.setStart( editor.document.getById( 'someId1' ), 0 ); // <p>^foo
+range.setEnd( editor.document.getById( 'someId2' ).getFirst(), 1 ); // <em>b^ar</em>
+
+editor.getSelection().selectRanges( [ range ] );*/
+
+// Will select:
+// <p id="someId1">[foo <em id="someId2">b]ar</em>.</p>
