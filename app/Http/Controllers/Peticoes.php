@@ -12,6 +12,7 @@ use App\Entrevista;
 use App\Peticao;
 use App\PeticaoBase;
 use App\PedidoPeticao;
+use App\Events\PeticaoCriada;
 
 class Peticoes extends Controller
 {
@@ -52,7 +53,7 @@ class Peticoes extends Controller
       Peticao::create($dados);
 
       //pega a ultima peticao criada
-      $peticao = Peticao::select('codPeticao', 'created_at')->orderBy('created_at', 'desc')->first();
+      $peticao = Peticao::orderBy('created_at', 'desc')->first();
 
       //cria as peticoes_bases usando o id da peticao q foi criada
       foreach($bases as $base){
@@ -69,6 +70,9 @@ class Peticoes extends Controller
         $pedPet['codPedido'] = $pedido;
         $pedPet->save();
       }
+
+      //faz o trigger do evento pós create, pra gerar o doc/pdf
+      event(new PeticaoCriada($peticao));
 
       //retorna pra index
       return redirect()->route('peticoes.index');

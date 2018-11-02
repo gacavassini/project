@@ -25,7 +25,7 @@ class Peticao extends Model
 
     public function entrevista()
     {
-        return $this->hasOne('App\Entrevista');
+        return $this->belongsTo('App\Entrevista', 'codEntrevista', 'codEntrevista');
     }
 
     public function peticoes_bases(){

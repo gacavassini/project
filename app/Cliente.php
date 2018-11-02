@@ -19,12 +19,12 @@ class Cliente extends Model
 
     public function listar ()
     {
-     return $this->hasMany('App\Cliente');  
+     return $this->hasMany('App\Cliente');
     }
 
     public function entrevistas()
     {
-        return $this->hasMany('App\Entrevista');
+        return $this->hasMany('App\Entrevista', 'codCliente', 'codCliente');
     }
 
     public function atividades()

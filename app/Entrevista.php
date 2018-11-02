@@ -17,7 +17,8 @@ class Entrevista extends Model
 
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        //belongsTo(modelPai, chaveModelPai, chaveModelAtual)
+        return $this->belongsTo('App\Cliente', 'codCliente', 'codCliente');
     }
 
     public function empresa()
@@ -27,7 +28,7 @@ class Entrevista extends Model
 
     public function peticao()
     {
-        return $this->belongsTo('App\Peticao');
+        return $this->hasOne('App\Peticao', 'codEntrevista', 'codEntrevista');
     }
 
     public function questoes()

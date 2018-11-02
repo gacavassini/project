@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Peticao;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,15 +15,15 @@ class PeticaoCriada
     use InteractsWithSockets, SerializesModels;
 
     public $peticao;
-    
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($peticao)
+    public function __construct(Peticao $pet)
     {
-        //
+        $this->peticao = $pet;
     }
 
     /**
