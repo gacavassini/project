@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests;
 
 use App\Cliente;
@@ -36,10 +38,16 @@ class Clientes extends Controller
     public function atualizar(){
 
     }
+   
     public function listar(){
-
-        $clientes = Cliente::all();
+       $clientes = Cliente::all();
     	return view('clientes.listar', compact('clientes'));
+
+    }
+
+    public function indexJson($id){
+        $cliente = DB::table('clientes')->where('codCliente', '=', $id)->get()->first();
+        return json_encode($cliente);
 
     }
 }

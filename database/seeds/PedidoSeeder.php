@@ -194,8 +194,31 @@ class PedidoSeeder extends Seeder
 
 
 
-          19: - Assim, durante todo o pacto laboral, caracterizou-se o acúmulo de funções da Reclamante, e a violação das características básicas do contrato de trabalho, já que não remunerado justa e razoavelmente pelos serviços prestados, motivo pelo qual pleiteia-se que seja a Reclamada condenada a pagar plus salarial referente aos meses em que trabalhou com acúmulo de função, em valor mensal de 50% sobre o salário base do obreiro, bem a pagar os reflexos dele decorrentes, tais quais sobre horas extras, férias mais um terço, décimo terceiro, aviso prévio, depósito FGTS e multas.', 'resumo' => 'durante todo o pacto laboral, caracterizou-se o acúmulo de funções da Reclamante, e a violação das características básicas do contrato de trabalho, já que não remunerado justa e razoavelmente pelos serviços prestados, motivo pelo qual pleiteia-se que seja a Reclamada condenada a pagar plus salarial referente aos meses em que trabalhou com acúmulo de função, em valor mensal de 50% sobre o salário base do obreiro, bem a pagar os reflexos dele decorrentes, tais quais sobre horas extras, férias mais um terço, décimo terceiro, aviso prévio, depósito FGTS e multas.'],
+          19: - Assim, durante todo o pacto laboral, caracterizou-se o acúmulo de funções da Reclamante, e a violação das características básicas do contrato de trabalho, já que não remunerado justa e razoavelmente pelos serviços prestados, motivo pelo qual pleiteia-se que seja a Reclamada condenada a pagar plus salarial referente aos meses em que trabalhou com acúmulo de função, em valor mensal de 50% sobre o salário base do obreiro, bem a pagar os reflexos dele decorrentes, tais quais sobre horas extras, férias mais um terço, décimo terceiro, aviso prévio, depósito FGTS e multas.',
+          'resumo' => 'durante todo o pacto laboral, caracterizou-se o acúmulo de funções da Reclamante, e a violação das características básicas do contrato de trabalho, já que não remunerado justa e razoavelmente pelos serviços prestados, motivo pelo qual pleiteia-se que seja a Reclamada condenada a pagar plus salarial referente aos meses em que trabalhou com acúmulo de função, em valor mensal de 50% sobre o salário base do obreiro, bem a pagar os reflexos dele decorrentes, tais quais sobre horas extras, férias mais um terço, décimo terceiro, aviso prévio, depósito FGTS e multas.'],
+
+          ['nomePedido' => '', 'tipo' => true, 'fundamento' => '', 'resumo' => ''],
         ];
         DB::table('pedidos')->insert($dados);
     }
 }
+
+/*
+6) A Expedição de ofícios ao INSS, CEF, DRF e DRT, ante as irregularidades ora apontadas.
+
+
+
+7))     Requer seja concedido à Reclamante os benefícios da Justiça Gratuita, nos termos da Lei 1.060/50 e da declaração de hipossuficiência anexa (doc.02).
+
+
+
+8) Por derradeiro, requer a condenação da Reclamada ao pagamento de honorários advocatícios no importe de 20%, por força do artigo 133 da Constituição Federal e do artigo 83 do Código de Processo Civil.
+
+
+
+9) Diante de tudo quanto foi exposto, requer-se a notificação da Reclamada, para contestar a presente ação reclamatória em todos os termos, sob pena de revelia e que ao final, que todos os pedidos ora formulados sejam julgados PROCEDENTES, com a condenação do Reclamado em todas as verbas indicadas, devidamente corrigidas monetariamente e acrescidas de juros de mora e multa pelo atraso no pagamento, respondendo ainda, pelas custas e despesas processuais e demais cominações legais aplicáveis.
+
+
+
+           Requer provar o alegado por todos os meios de prova admitidos, em especial pelo depoimento do demandado ou de seu representante legal, que desde já se requer, sob pena de confissão ficta, bem como a oitiva de testemunhas, que oportunamente serão arroladas.
+*/

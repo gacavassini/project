@@ -26,10 +26,16 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
   Route::post('/clientes/salvar', ['as'=> 'clientes.salvar', 'uses'=>'Clientes@salvar']);
   Route::get('/clientes/listar', ['as'=> 'clientes.listar', 'uses'=>'Clientes@listar']);
+
   Route::get('/clientes/editar/{codCliente}',['as'=>'clientes.editar','uses'=>'Clientes@editar']);
   Route::put('/clientes/atualizar/{codCliente}',['as'=>'clientes.atualizar','uses'=>'Clientes@atualizar']);
 
 
+
+
+  Route::get('/clientes/editar/{id}',['as'=>'clientes.editar','uses'=>'Clientes@editar']);
+  Route::put('/clientes/atualizar/{id}',['as'=>'clientes.atualizar','uses'=>'Clientes@atualizar']);
+  Route::get('/clientes/editar/{id}', ['as'=> 'clientes.editar', 'uses'=>'Clientes@editar']);
 
 
 //Rota empresas
@@ -47,3 +53,6 @@ Route::get('/login/sair',['as'=>'login.sair','uses'=>'Login@sair']);
 Route::post('/login/entrar',['as'=>'login.entrar','uses'=>'Login@entrar']);
 
 //Route::get('/peticoes/novo',['as'=>'novaPeticao','uses'=>'Peticoes@novo']);
+
+
+Route::get('/tela',['as'=>'atividades.tela', 'uses'=>'Atividades@listar']);

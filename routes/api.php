@@ -17,9 +17,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/clientes', 'Clientes@indexJson');
+Route::get('/clientes/{codCliente}', 'Clientes@indexJson');
+
+Route::get('/empresas/{codEntrevista}', 'Empresas@empresaPelaEntrevistaJson');
 
 Route::get('/entrevistas/{codEntrevista}', 'Entrevistas@indexJson');
+Route::get('/entrevistas/questoes/{codEntrevista}', 'Entrevistas@questoesJson');
 
 Route::get('/bases/rotulo/{codRot}', 'Bases@getBasesPorRotuloJson');
 Route::get('/bases/{codRot}', 'Bases@getBaseJson');

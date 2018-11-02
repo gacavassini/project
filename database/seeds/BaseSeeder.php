@@ -16,24 +16,20 @@ class BaseSeeder extends Seeder
           ['codRot' => 1, 'rotulo' => 'Endereçamento', 'texto' => 'EXCELENTÍSSIMO (A) SENHOR (A) DOUTOR (A) JUIZ (A) DE DIREITO DA ____ VARA CÍVEL DA COMARCA DE MOGI GUAÇU/SP'],
           ['codRot' => 1, 'rotulo' => 'Endereçamento', 'texto' => 'EXCELENTÍSSIMO (A) SENHOR (A) DOUTOR (A) JUIZ (A) DA VARA DO TRABALHO DE MOGI GUAÇU/SP'],
 
-          ['codRot' => 2, 'rotulo' => 'Qualificação do Cliente', 'texto' => 'NOME, nacionalidade, estado civil, profissão, CPF nº , RG nº  SSP/SP, residente  e domiciliado à (endereço), por seu advogado que esta subscreve, vem, respeitosamente perante Vossa Excelência propor a presente'],
+          ['codRot' => 2, 'rotulo' => 'Qualificação do Cliente', 'texto' => 'nomeCliente, brasileira, estadoCivilCliente, profissãoCliente, CPF nº cpfCliente, RG nº rgCliente  SSP/SP, residente  e domiciliado à (enderecoCliente), por seu advogado que esta subscreve, vem, respeitosamente perante Vossa Excelência propor a presente'],
 
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'RECLAMAÇÃO TRABALHISTA'],
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'AÇÃO DE INDENIZAÇÃO'],
           ['codRot' => 3, 'rotulo' => 'Nome da Ação', 'texto' => 'AÇÃO DE COBRANÇA'],
 
-          ['codRot' => 4, 'rotulo' => 'Qualificação Reclamada', 'texto' => ' em face de NOME DA EMPRESA, inscrita no CNPJ,  com sede na (endereço), nos termos do artigo 840 e seguintes da C.L.T., pelos motivos de fato e de direito que passa a expor:'],
+          ['codRot' => 4, 'rotulo' => 'Qualificação Reclamada', 'texto' => ' em face de nomeEmpresa, inscrita no CNPJ - cnpjEmpresa,  com sede na (enderecoEmpresa), nos termos do artigo 840 e seguintes da C.L.T., pelos motivos de fato e de direito que passa a expor:'],
 
           ['codRot' => 5, 'rotulo' => 'Gratuidade Processual', 'texto' => 'I - DA JUSTIÇA GRATUITA1 - Esclarece o Reclamante que é pessoa pobre na acepção jurídica do termo, não estando em condições de demandar, sem sacrifício do sustento próprio e de seus familiares, motivo pelo qual, pede a concessão dos benefícios da JUSTIÇA GRATUITA, com fundamentos no artigo 4º da lei 1.060/50, com nova redação dada pela Lei 7.510/84, que para tanto encarte declaração de hipossuficiência em anexo.'],
 
-          ['codRot' => 6, 'rotulo' => 'Dados do Contrato', 'texto' => 'II - DA ADMISSÃO, FUNÇÃO E SALÁRIO 2:-  O Reclamante foi admitido pela Reclamada na data de xx, sendo demitido imotivadamente em xx. percebia à titulo de salário a importância de R$xxxx.
-
-3: - O obreiro realizava a função de xxx, embora exercesse outras atividades não atinentes ao cargo, conforme se exporá.
-
-4: –  A jornada de trabalho regular do obreiro se dava das xxx, porém também frequentemente laborava em horas extraordinárias, inclusive aos finais de semana.
-
-5: - Algumas irregularidades marcaram o contrato de trabalho do Reclamante, motivo pelo qual se vale ele da presente medida.
-'],
+          ['codRot' => 6, 'rotulo' => 'Dados do Contrato', 'texto' => 'II - DA ADMISSÃO, FUNÇÃO E SALÁRIO 2:-  O Reclamante foi admitido pela Reclamada na data de dataAdmissao, sendo demitido imotivadamente em dataDemissao. percebia à titulo de salário a importância de salarioCliente.<br />
+3: - O obreiro realizava a função de xxx, embora exercesse outras atividades não atinentes ao cargo, conforme se exporá.<br />
+4: –  A jornada de trabalho regular do obreiro se dava das xxx, porém também frequentemente laborava em horas extraordinárias, inclusive aos finais de semana.<br />
+5: - Algumas irregularidades marcaram o contrato de trabalho do Reclamante, motivo pelo qual se vale ele da presente medida.'],
 
           ['codRot' => 7, 'rotulo' => 'Introdução Pedido Vínculo', 'texto' => 'III - DO VÍNCULO DE EMPREGO E ANOTAÇÃO NA CTPS
 7: - Em que pese a ausência de anotação do contrato de trabalho que existiu entre as partes na CTPS do Reclamante, imperioso que se reconheça o vínculo de emprego que os uniu, integralmente caracterizado nos termos da legislação trabalhista.
