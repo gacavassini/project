@@ -24,6 +24,7 @@ class Entrevistas extends Controller
     	$questoes = $empresa = DB::table('entrevistas_questoes')->
     		join('entrevistas', 'entrevistas_questoes.eq_codEntrevista', '=', 'entrevistas.codEntrevista')->
     		join('questoes', 'entrevistas_questoes.eq_codQuestao', '=', 'questoes.codQuestao')->
+        join('clientes', 'entrevistas.codCliente', '=', 'clientes.codCliente')->
     		where('entrevistas.codEntrevista', '=', $id)->get();
     	return json_encode($questoes);
     }

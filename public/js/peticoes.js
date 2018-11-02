@@ -273,7 +273,16 @@ function setEntrevistaValues(codEntrevista){
           return $(this).text().replace("salarioCliente", questoes[i].descResposta);
         });
       }
+
+      if(questoes[i].descQuestao == "Jornada"){
+        $(editor.editable().$).find("#dadosContrato p").text(function(){
+          return $(this).text().replace("jornadaCliente", questoes[i].descResposta);
+        });
+      }
     }
+    $(editor.editable().$).find("#dadosContrato p").text(function(){
+      return $(this).text().replace("funcaoCliente", questoes[0].profissao);
+    });
   });
 }
 
