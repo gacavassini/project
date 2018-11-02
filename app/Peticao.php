@@ -3,11 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Events\PeticaoCriada;
 
 class Peticao extends Model
 {
     //recisou disso pq procurava tabela peticaos
     protected $table = 'peticoes';
+
+    protected $events = [
+      'created' => PeticaoCriada::class
+    ];
 
     /**
      * The attributes that are mass assignable.
