@@ -17,10 +17,10 @@
 .consulta td, th{
 	border-bottom: 1px solid #ddd;}
 
-.consulta tr:hover {
+/*.consulta tr:hover {
 	background-color: #1B75BB;
 	color: white;
-}
+}*/
 
 .consulta tr td img{
 	margin-right: 5%;: 
@@ -28,6 +28,7 @@
 
 .search {
 	height: 10vh;
+	width: 40%;
 }
 .search input {
 	outline: none;
@@ -78,11 +79,15 @@
 
 
 .telaLembretes{
-	width: 92%;
+	width: 96%;
 	height: 95vh;
-	margin:0.5% 4%;
-	
+	margin:0.5% 2%;
+	text-align: left;
+	padding: 1%;
 	float: left;
+	overflow: hidden;
+
+
 }
 .listaAtividades{
 	float: left;
@@ -98,7 +103,39 @@
 	
 	/*overflow-y: scroll;*/
 }
+#maior{
+	width: 35%;
+	vertical-align: top;
+
+}
+
+
+#peq{
+	width: 20%;
+	vertical-align: top;
+}
 
 .consultarAtividade{
 	width: 100%;
+	font-size: 12px;
+	vertical-align: text-top;
+
+}
+.consultarAtividade tr{
+		vertical-align: text-top;
+}
+
+.consultarAtividade img{
+	width: 25%;
+}
+.consultarAtividade td #dialog-link{
+ width: 100%;
+ height: 3.5vh;
+
+}
+
+.consultarAtividade #checkAtiv{
+	padding-left: 3%;
+	width: 30%;
+	height: 3vh;
 }
