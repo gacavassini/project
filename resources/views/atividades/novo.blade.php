@@ -31,13 +31,13 @@
 
       <div class="t3">
         <label> <br>Tipo: <br> </label>
-        <input type="radio" name="tipo" value="fisico"> Físico
-        <input type="radio" name="tipo" value="eletronico"> Eletrônico
+        <input id="radio" type="radio" name="tipo" value="fisico"> Físico
+        <input id="radio" type="radio" name="tipo" value="eletronico"> Eletrônico
       </div>
 
       <div class="t2">
         <label><br>Data do Diário Oficial:<br></label>
-        <input id="medio" type="text" name="dataDiarioOficial">
+        <input id="grande" class="datepicker" type="text" name="dataDiarioOficial">
       </div>
 
       <div class="t3">
@@ -63,4 +63,10 @@
 
     </form>
 </div>
+@endsection
+
+@section('javascript')
+  <script>
+    $(".datepicker").datepicker();
+  </script>
 @endsection
