@@ -8,14 +8,13 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
     );
@@ -33,10 +32,13 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'T' => 
+        array (
+            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+        ),
         'S' => 
         array (
-            'Symfony\\Polyfill\\Util\\' => 22,
-            'Symfony\\Polyfill\\Php56\\' => 23,
+            'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
@@ -52,7 +54,6 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
-            'SuperClosure\\' => 13,
         ),
         'R' => 
         array (
@@ -61,7 +62,9 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -71,6 +74,12 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'L' => 
         array (
             'League\\Flysystem\\' => 17,
+            'Laravel\\Tinker\\' => 15,
+        ),
+        'J' => 
+        array (
+            'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
+            'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
         'I' => 
         array (
@@ -78,11 +87,17 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         ),
         'F' => 
         array (
+            'FontLib\\' => 8,
             'Faker\\' => 6,
+        ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
             'Dotenv\\' => 7,
+            'Dompdf\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
@@ -90,7 +105,11 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'C' => 
         array (
             'Cron\\' => 5,
-            'ClassPreloader\\' => 15,
+            'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'Barryvdh\\DomPDF\\' => 16,
         ),
         'A' => 
         array (
@@ -113,13 +132,13 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'Symfony\\Polyfill\\Util\\' => 
+        'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-util',
+            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
-        'Symfony\\Polyfill\\Php56\\' => 
+        'Symfony\\Polyfill\\Php72\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -181,21 +200,25 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'SuperClosure\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src',
-        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
         'Psy\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
+            0 => __DIR__ . '/..' . '/psy/psysh/src',
+        ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'PhpParser\\' => 
         array (
@@ -209,17 +232,41 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
+        'Laravel\\Tinker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'JakubOnderka\\PhpConsoleHighlighter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
+        ),
+        'JakubOnderka\\PhpConsoleColor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
+        ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
         ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -235,11 +282,15 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         ),
         'Cron\\' => 
         array (
-            0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
+            0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
-        'ClassPreloader\\' => 
+        'Carbon\\' => 
         array (
-            0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Barryvdh\\DomPDF\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
         ),
         'App\\' => 
         array (
@@ -247,16 +298,27 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         ),
     );
 
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
-    );
-
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Svg\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src',
+            ),
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
             ),
         ),
         'M' => 
@@ -266,15 +328,11 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
         ),
-        'J' => 
+        'D' => 
         array (
-            'JakubOnderka\\PhpConsoleHighlighter' => 
+            'Doctrine\\Common\\Lexer\\' => 
             array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
-            ),
-            'JakubOnderka\\PhpConsoleColor' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
         ),
     );
@@ -282,6 +340,7 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
     public static $classMap = array (
         'BaseSeeder' => __DIR__ . '/../..' . '/database/seeds/BaseSeeder.php',
         'ClienteSeeder' => __DIR__ . '/../..' . '/database/seeds/ClienteSeeder.php',
+        'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'CreateAtividadesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_194404_create_atividades_table.php',
         'CreateBasesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_23_191135_create_bases_table.php',
         'CreateClientesTable' => __DIR__ . '/../..' . '/database/migrations/2018_09_22_141256_create_clientes_table.php',
@@ -302,6 +361,11 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -844,7 +908,6 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf::$classMap;
 

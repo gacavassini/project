@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\PeticaoCriada' => [
             'App\Listeners\GerarDoc',
         ],
+        'App\Events\ClienteCriado' => [
+          'App\Listeners\CriaPastaCliente',
+        ],
     ];
 
     /**
