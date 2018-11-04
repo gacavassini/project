@@ -96,6 +96,7 @@
 	border-right: solid 0.1vw gray;
 	padding: 1% 1.5%;	
 
+
 	/*overflow-y: scroll;*/
 }
  #depoisAmanha {
@@ -104,14 +105,14 @@
 	/*overflow-y: scroll;*/
 }
 #maior{
-	width: 35%;
+	width: 40%;
 	vertical-align: top;
 
 }
 
 
 #peq{
-	width: 20%;
+	width: 18%;
 	vertical-align: top;
 }
 
@@ -119,23 +120,39 @@
 	width: 100%;
 	font-size: 12px;
 	vertical-align: text-top;
-
+		
 }
 .consultarAtividade tr{
-		vertical-align: text-top;
+	vertical-align: text-top;
+
+
 }
 
 .consultarAtividade img{
-	width: 25%;
+	width: 32%;
+
 }
-.consultarAtividade td #dialog-link{
- width: 100%;
- height: 3.5vh;
+.consultarAtividade td{ 
+	padding-bottom: 2%;
+	border-bottom: solid 0.05vh gray;
+	padding-left: 2%;
+
+}
+
+.consultarAtividade th{ 
+	padding-bottom: 2%;
+	border-bottom: solid 0.05vh gray;
+	padding-left: 2%;
 
 }
 
 .consultarAtividade #checkAtiv{
 	padding-left: 3%;
+	margin-left: 10%;
 	width: 30%;
 	height: 3vh;
+}
+
+.fisico{
+	color: #0b3e93;
 }

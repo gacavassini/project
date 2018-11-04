@@ -21,7 +21,7 @@
 
 	<div class="listaAtividades" id="hoje">
 		<h2> HOJE</h2> <br>
-		<table class="consultarAtividade">
+		<table class="consultarAtividade" >
 			<thead>
     		<tr>
     			<th id="maior">Atividade</th>
@@ -37,15 +37,8 @@
     			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
     				<input id="checkAtiv" type="checkbox" value="">
     			<br> 
-				<p>
-					<button id="dialog-link" class="ui-button ui-corner-all ui-widget">
-						<span class="ui-icon ui-icon-newwin"></span>Ver tudo
-					</button>
-					<!-- ui-dialog -->
-					<div id="dialog" title="Dialog Title">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-				</p> </td>
+				<a href="">Detalhes</a>
+				</td>
 
     		</tr>
 
@@ -56,15 +49,8 @@
     			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
     				<input id="checkAtiv" type="checkbox" value="">
     			<br> 
-				<p>
-					<button id="dialog-link2" class="ui-button ui-corner-all ui-widget">
-						<span class="ui-icon ui-icon-newwin"></span>Ver tudo
-					</button>
-					<!-- ui-dialog -->
-					<div id="dialog2" title="Dialog Title">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-				</p> </td>
+				<a href="">Detalhes</a>
+				</td>
 
     		</tr>
     	
