@@ -9,10 +9,11 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 
 use App\Cliente;
+use App\Events\ClienteCriado;
 
 class Clientes extends Controller
 {
-    
+
     public function novo(){
     	return view('clientes.novo');
 
@@ -20,9 +21,10 @@ class Clientes extends Controller
     public function salvar(Request $req){
 
         $dados = $req->all();
-        
 
-        Cliente::create($dados);
+
+        $cliente = Cliente::create($dados);
+        event(new ClienteCriado($cliente));
         return redirect()->route('clientes.listar');
         //return listar();
 
@@ -38,7 +40,7 @@ class Clientes extends Controller
     public function atualizar(){
 
     }
-   
+
     public function listar(){
        $clientes = Cliente::all();
     	return view('clientes.listar', compact('clientes'));

@@ -13,6 +13,7 @@ use App\Peticao;
 use App\PeticaoBase;
 use App\PedidoPeticao;
 use App\Events\PeticaoCriada;
+use PDF;
 
 class Peticoes extends Controller
 {
@@ -75,7 +76,9 @@ class Peticoes extends Controller
       event(new PeticaoCriada($peticao));
 
       //retorna pra index
-      return redirect()->route('peticoes.index');
+      $pdf = \App::make('dompdf.wrapper');
+      $pdf->loadHtml($peticao->fatos);
+      return $pdf->stream();
     }
 
     public function index(){

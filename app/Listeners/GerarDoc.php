@@ -6,6 +6,7 @@ use App\Peticao;
 use App\Events\PeticaoCriada;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use PDF;
 
 class GerarDoc
 {
@@ -32,17 +33,22 @@ class GerarDoc
         $cliente = $entrevista->cliente;
 
         $date = new \DateTime($entrevista->created_at);
-        $formatDate = $date->format('ddmmYYYY');
-        $nomeArquivo = str_replace(' ', '', $cliente->nome)."_".$formatDate.".doc";
+        $formatDate = $date->format('dmY');
+        $clienteNome = str_replace(' ', '', $cliente->nome);
+        $nomeArquivo = $clienteNome."_".$formatDate.".pdf";
 
-        /*header("Content-type: applicayion/vnd.ms-word");
-        header("content-Disposition: attachment;Filename=".$nomeArquivo);
-        header("Pragma: no-cache");
-        header("Expires: 0");
-        echo $peticao->fatos;*/
+        //=====================================================
+        //$pdf = \App::make('dompdf.wrapper');
+        //$pdf->loadHTML($peticao->fatos);
+        //=====================================================
 
-        \Log::info('criada', ['peticao' => $peticao,
-          'dataEntrevista' => $formatDate, 'cliente' => $cliente->nome,
-          'nomeDoArquivo' => $nomeArquivo]);
+        // \Log::info('criada', ['peticao' => $peticao,
+        //   'dataEntrevista' => $formatDate, 'cliente' => $cliente->nome,
+        //   'nomeDoArquivo' => $nomeArquivo]);
+
+        $dompdf = \App::make('dompdf.wrapper');
+        $dompdf->loadHtml($peticao->fatos);
+
+        $dompdf->save(base_path('storage/documentos/'.$clienteNome.'/'.$nomeArquivo));
     }
 }
