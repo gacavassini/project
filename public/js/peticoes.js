@@ -9,7 +9,7 @@ $('#clienteSelect').change(function(){
     $('#entrevistaSelect').empty();
     $('#entrevistas').hide();
   }else{
-    $('#clienteSelect').prop("disabled", true)
+    $('#clienteSelect').prop("disabled", true);
     var cliente = $('#clienteSelect').val();
     //esse ajax filtra as entrevistas pelo codigo do cliente
     $.getJSON('/api/entrevistas/' + cliente, function(data){
@@ -30,9 +30,12 @@ $('#clienteSelect').change(function(){
 
 $("#entrevistaSelect").change(function(){
   var entrevista = $("#entrevistaSelect").val();
+  $('#entrevistaSelect').prop("disabled", true)
   if(entrevista != ""){
     setEmpresaValues(entrevista);
     setEntrevistaValues(entrevista);
+    var entrevistaInput = '<input name="codEntrevista" id="codEntrevistaInput" value="' + entrevista + '" type="hidden" />';
+    $('#entrevistaSelect').parent().append(entrevistaInput);
   }
 });
 
@@ -206,7 +209,7 @@ $('.inserePedido').click(function(){
 function criarPeticaoBase(codBase){
   var peticoesBases = $('#peticoesBases');
   var indexBase = peticoesBases.children().length;
-  var novaBase = '<div id="_' + indexBase + '"> <input type="text" name="peticoesbases.'+indexBase+'" value="' + codBase + '" type="hidden" /> </div>';
+  var novaBase = '<div id="_' + indexBase + '"> <input name="peticoesbases.'+indexBase+'" value="' + codBase + '" type="hidden" /> </div>';
 
   peticoesBases.append(novaBase);
 }
@@ -214,7 +217,7 @@ function criarPeticaoBase(codBase){
 function criarPeticaoPedido(codPedido){
   var peticoesPedidos = $('#peticoesPedidos');
   var indexPedido = peticoesPedidos.children().length;
-  var novoPedido = '<div id="_' + indexPedido + '"> <input type="text" name="peticoespedidos.'+indexPedido+'" value="' + codPedido + '" type="hidden" /> </div>';
+  var novoPedido = '<div id="_' + indexPedido + '"> <input name="peticoespedidos.'+indexPedido+'" value="' + codPedido + '" type="hidden" /> </div>';
 
   peticoesPedidos.append(novoPedido);
 }
@@ -268,7 +271,7 @@ function setEntrevistaValues(codEntrevista){
         });
       }
 
-      if(questoes[i].descQuestao == "Salário"){
+      if(questoes[i].descQuestao == "Qual era seu salário?"){
         $(editor.editable().$).find("#dadosContrato p").text(function(){
           return $(this).text().replace("salarioCliente", questoes[i].descResposta);
         });
@@ -279,10 +282,13 @@ function setEntrevistaValues(codEntrevista){
           return $(this).text().replace("jornadaCliente", questoes[i].descResposta);
         });
       }
+
+      if(questoes[i].descQuestao == "Para qual função foi contratado?"){
+        $(editor.editable().$).find("#dadosContrato p").text(function(){
+          return $(this).text().replace("funcaoCliente", questoes[i].descResposta);
+        });
+      }
     }
-    $(editor.editable().$).find("#dadosContrato p").text(function(){
-      return $(this).text().replace("funcaoCliente", questoes[0].profissao);
-    });
   });
 }
 
