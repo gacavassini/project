@@ -14,8 +14,8 @@
 
       <div class="t2">
         <div class="select-box">
-          <label><span>Selecionar Cliente</span><br></label>
-          <select id="grande" name="codCliente" style="width: 68%; height:4vh" >
+          <label><span><br>Selecionar Cliente</span><br></label>
+          <select id="medio" name="codCliente" style="width: 68%; height:4vh" >
             <option value=""></option>
             @foreach($clientes as $cliente)
               <option value="{{$cliente->codCliente}}">{{$cliente->nome}}</option>
@@ -26,34 +26,35 @@
 
       <div class="t2">
         <label> <br>Numero Processo:<br> </label>
-        <input id="pequeno" type="text" name="Numero Processo">
+        <input id="medio" type="text" name="Numero Processo">
       </div>
+
+
+        <div class="t3">
+        <label> <br>Dias:<br> </label>
+        <input type="radio" name="dias" value="corrido"  id="radio" >Corrido
+        <input  type="radio" name="dias" value="util" id="radio">Útil
+      </div>
+
 
       <div class="t3">
         <label> <br>Tipo: <br> </label>
         <input id="radio" type="radio" name="tipo" value="fisico"> Físico
         <input id="radio" type="radio" name="tipo" value="eletronico"> Eletrônico
-      </div>
+      </div>  
 
-      <div class="t2">
+
+
+      <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input id="grande" class="datepicker" type="text" name="dataDiarioOficial">
+        <input class="datepicker" type="text" name="dataDiarioOficial" id="medio" > 
       </div>
+
+    
 
       <div class="t3">
-        <label> <br>Prazo (em dias):<br> </label>
-        <input id="pequeno" type="text" name="prazo">
-      </div>
-
-      <div class="t3">
-        <label> <br>Dias:<br> </label>
-        <input type="radio" name="dias" value="corrido">Corrido
-        <input type="radio" name="dias" value="util">Útil
-      </div>
-
-      <div class="t2">
         <label> <br>Data Limite:<br> </label>
-        <input id="pequeno" type="text" name="dataLimite">
+        <input id="medio" type="text" name="dataLimite">
       </div>
 
       <div class="t1">
