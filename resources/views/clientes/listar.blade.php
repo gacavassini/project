@@ -4,8 +4,6 @@
 @section('conteudo')
 
  <div class="conteudoForm">
-
-
     <h3 class="center">Lista de Clientes</h3>
     <div class="search">
     	<form>
