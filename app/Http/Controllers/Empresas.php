@@ -33,6 +33,24 @@ class Empresas extends Controller
     	return view('empresas.listar', compact('empresas'));
     }
 
+    public function editar($id){
+      $empresa = Empresa::where('codEmpresa', $id)->first();
+      return view('empresas.editar',compact('empresa'));
+    }
+
+    public function atualizar(Request $req, $id){
+      $dados = $req->all();
+
+      Empresa::where('codEmpresa', $id)->first()->update($dados);
+
+      return redirect()->route('empresas.listar');
+    }
+
+    public function visualizar($id){
+      $empresa = Empresa::where('codEmpresa', $id)->first();
+      return view('empresas.visualizar',compact('empresa'));
+    }
+
     public function empresaPelaEntrevistaJson($codEntrevista){
         /*select e.* from empresas e
             inner join entrevistas en on en.codEmpresa = e.codEmpresa

@@ -32,19 +32,28 @@ class Clientes extends Controller
 
      public function editar($codCliente){
 
-        $clientes = Cliente::find($codCliente);
-        return view('clientes.editar', compact('clientes'));
+        $cliente = Cliente::where('codCliente', $codCliente)->first();
+        return view('clientes.editar', compact('cliente'));
 
     }
 
-    public function atualizar(){
+    public function atualizar(Request $req, $id){
+        $dados = $req->all();
 
+        Cliente::where('codCliente', $id)->first()->update($dados);
+
+        return redirect()->route('clientes.listar');
     }
 
     public function listar(){
-       $clientes = Cliente::all();
-    	return view('clientes.listar', compact('clientes'));
+        $clientes = Cliente::all();
+        return view('clientes.listar', compact('clientes'));
 
+    }
+
+    public function visualizar($id){
+      $registro = Cliente::where('codCliente', $id)->first();
+      return view('cliente.visualizar',compact('registro'));
     }
 
     public function indexJson($id){

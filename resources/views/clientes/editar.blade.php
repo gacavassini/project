@@ -9,7 +9,7 @@
     
     <h3 class="center">Editar Cliente</h3>
    
-      <form class="" action="{{route('clientes.atualizar', $cliente->codCliente)}}" method="post">
+      <form class="" action="{{route('clientes.atualizar', $cliente->codCliente)}}" method="put">
         {{ csrf_field() }}
         <input type="hidden" name="_method" value="put">	
           <div class="t1" >

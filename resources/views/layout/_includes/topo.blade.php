@@ -42,15 +42,15 @@
                 <ul class="dropdown">
                   <li><a href="{{ route('peticoes.novo') }}">Montar Petição</a></li>
                   <li><a href="{{ route('peticoes.index') }}">Consultar</a></li>
-                  <li><a href="base">Base</a></li>
-                  <li><a href="pedidos">Pedidos</a></li>
+                  <li><a href="{{ route('bases.listar') }}">Base</a></li>
+                  <li><a href="{{ route('pedidos.listar') }}">Pedidos</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void(0)" >Entrevista<span class="arrow-down"></span></a>
                 <ul class="dropdown">
-                  <li><a href="novaEntrevista">Nova Entrevista</a></li>
-                  <li><a href="consultaEntrevista">Consultar Entrevistas</a></li>
-                  <li><a href="questoes">Questões</a></li>
+                  <li><a href="{{ route('entrevistas.novo') }}">Nova Entrevista</a></li>
+                  <li><a href="{{ route('entrevistas.listar') }}">Consultar Entrevistas</a></li>
+                  <li><a href="{{ route('questoes.listar') }}">Questões</a></li>
                 </ul>
               </li>
               <li><a href="javascript:void(0)" >Cliente<span class="arrow-down"></span></a>

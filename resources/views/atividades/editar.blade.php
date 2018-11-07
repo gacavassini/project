@@ -4,7 +4,7 @@
 @section('conteudo')
 <div class="conteudoForm">
   <h3 class="center">Cadastrar Cliente</h3>
-    <form class="" action="{{route('atividades.salvar')}}" method="post">
+    <form class="" action="{{route('atividades.atualizar', $regsitro->codAtividade)}}" method="put">
       {{ csrf_field() }}
 
       <div class="t1">

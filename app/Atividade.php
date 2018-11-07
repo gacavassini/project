@@ -12,8 +12,7 @@ class Atividade extends Model
      * @var array
      */
     protected $fillable = [
-        'numProcesso', 'atividade', 'tipo', 'qtdDia', 'prazo', 'dias',
-          'dataLimite', 'atividadeStatus',
+        'atividade', 'codCliente', 'numProcesso', 'prazo', 'tipo', 'dataDiarioOficial', 'dataLimite', 'observacao',
     ];
 
     public function cliente()

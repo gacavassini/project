@@ -8,6 +8,40 @@ use App\Entrevista;
 
 class Entrevistas extends Controller
 {
+    public function listar(){
+      $entrevistas = Entrevista::all();
+      return view('entrevistas.listar', compact('entrevistas'));
+    }
+
+    public function novo(){
+      return view('entrevistas.novo');
+    }
+
+    public function salvar(Request $req){
+      $dados = $req->all();
+      Entrevista::create($dados);
+      return redirect()->route('entrevistas.listar');
+    }
+
+    public function editar($id){
+      $registro = Entrevista::where('codEntrevista', $id)->first();
+      return view('entrevistas.editar',compact('registro'));
+    }
+
+    public function atualizar(Request $req, $id){
+      $dados = $req->all();
+
+      Entrevista::where('codEntrevista', $id)->first()->update($dados);
+
+      return redirect()->route('entrevistas.listar');
+    }
+
+    public function visualizar($id){
+      $registro = Entrevista::where('codEntrevista', $id)->first();
+      return view('entrevistas.visualizar',compact('registro'));
+    }
+
+
     //
     public function indexJson($id){
       $entrevistas = DB::table('entrevistas')->where('codCliente', '=', $id)->get();
