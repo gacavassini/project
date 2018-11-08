@@ -116,6 +116,7 @@ function insereBase(){
   var texto;
 
   $.each([ 1,2,4,5,6,8,9,10 ], function( i, value ) {
+    console.log(value);
     if(value == 1){
       $.getJSON('/api/bases/rotulo/' + value, function(data){
         codBase = data[0].codBase;

@@ -27,4 +27,10 @@ $("input[name=dias]").change(function(){
 
 function calculaDataLimite(){
   var dataOficial = new Date($("input[name=dataDiarioOficial]").val());
+  var prazo = $("input[name=prazo]").val();
+  var dias = $("input[name=dias]:checked").val();
+
+  console.log(dataOficial);
+  console.log(prazo);
+  console.log(dias);
 }

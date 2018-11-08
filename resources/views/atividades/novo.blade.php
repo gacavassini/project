@@ -41,20 +41,23 @@
         <label> <br>Tipo: <br> </label>
         <input id="radio" type="radio" name="tipo" value="fisico"> Físico
         <input id="radio" type="radio" name="tipo" value="eletronico"> Eletrônico
-      </div>  
+      </div>
 
 
 
       <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input class="datepicker" type="text" name="dataDiarioOficial" id="medio" > 
+        <input id="datepicker" type="text" name="dataDiarioOficial" class="pequeno" >
       </div>
-
-    
 
       <div class="t3">
         <label> <br>Data Limite:<br> </label>
         <input id="medio" type="text" name="dataLimite">
+      </div>
+
+      <div class="t3">
+        <label> <br>Prazo:<br></label>
+        <input name="prazo" id="pequeno" type="text">
       </div>
 
       <div class="t1">
@@ -68,6 +71,14 @@
 
 @section('javascript')
   <script>
-    $(".datepicker").datepicker();
+    $("#datepicker").datepicker();
   </script>
+  <style>
+    .pequeno{
+      width: 50%;
+      height: 4vh;
+      margin: 0.5% 0%;
+      display: inline-block;
+    }
+  </style>
 @endsection
