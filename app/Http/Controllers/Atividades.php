@@ -24,7 +24,6 @@ class Atividades extends Controller
 
     public function salvar(Request $req){
       $dados = $req->all();
-      //dd($dados);
       Atividade::create($dados);
       return redirect()->route('atividades.listar');
     }

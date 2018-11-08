@@ -9,7 +9,7 @@
 
       <div class="t1">
         <label> <br>Atividade:<br> </label>
-        <input id="grande" type="text" name="atividade">
+        <input id="grande" type="text" name="atividade" >
       </div>
 
       <div class="t2">
@@ -32,7 +32,7 @@
 
         <div class="t3">
         <label> <br>Dias:<br> </label>
-        <input type="radio" name="dias" value="0"  id="radio" >Corrido
+        <input type="radio" name="dias" value="0"  id="radio">Corrido
         <input  type="radio" name="dias" value="1" id="radio">Útil
       </div>
 
@@ -41,16 +41,16 @@
         <label> <br>Tipo: <br> </label>
         <input id="radio" type="radio" name="tipo" value="fisico"> Físico
         <input id="radio" type="radio" name="tipo" value="eletronico"> Eletrônico
-      </div>  
+      </div>
 
 
 
       <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input class="datepicker" type="text" name="dataDiarioOficial" id="medio" > 
+        <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
       </div>
 
-    
+
 
       <div class="t3">
         <label> <br>Data Limite:<br> </label>
@@ -74,6 +74,6 @@
 
 @section('javascript')
   <script>
-    $(".datepicker").datepicker();
+    $("#datepicker").datepicker();
   </script>
 @endsection
