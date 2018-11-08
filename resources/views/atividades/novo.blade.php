@@ -4,12 +4,12 @@
 @section('conteudo')
 <div class="conteudoForm">
   <h3 class="center">Cadastrar Cliente</h3>
-    <form class="" action="{{route('clientes.salvar')}}" method="post">
+    <form class="" action="{{route('atividades.salvar')}}" method="post">
       {{ csrf_field() }}
 
       <div class="t1">
         <label> <br>Atividade:<br> </label>
-        <input id="grande" type="text" name="Atividade">
+        <input id="grande" type="text" name="atividade" >
       </div>
 
       <div class="t2">
@@ -26,14 +26,14 @@
 
       <div class="t2">
         <label> <br>Numero Processo:<br> </label>
-        <input id="medio" type="text" name="Numero Processo">
+        <input id="medio" type="text" name="numProcesso">
       </div>
 
 
         <div class="t3">
         <label> <br>Dias:<br> </label>
-        <input type="radio" name="dias" value="corrido"  id="radio" >Corrido
-        <input  type="radio" name="dias" value="util" id="radio">Útil
+        <input type="radio" name="dias" value="0"  id="radio">Corrido
+        <input  type="radio" name="dias" value="1" id="radio">Útil
       </div>
 
 
@@ -47,8 +47,10 @@
 
       <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input id="datepicker" type="text" name="dataDiarioOficial" class="pequeno" >
+        <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
       </div>
+
+
 
       <div class="t3">
         <label> <br>Data Limite:<br> </label>
@@ -62,7 +64,13 @@
 
       <div class="t1">
         <label> <br>Obervações:<br> </label>
-        <textarea id="grande" name="observacoes" cols="80" rows="7" style="height: 90%"></textarea>
+        <textarea id="grande" name="observacao" cols="80" rows="7" style="height: 90%"></textarea>
+      </div>
+
+      <br>
+      <div class="btn">
+        <button class="btnCancel">Cancelar</button>
+        <button class="btnSave">Salvar</button>
       </div>
 
     </form>

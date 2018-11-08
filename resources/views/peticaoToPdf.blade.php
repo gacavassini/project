@@ -1,1 +1,0 @@
-{{ $peticao->fatos }}
