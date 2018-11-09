@@ -23,7 +23,7 @@ class Entrevista extends Model
 
     public function empresa()
     {
-        return $this->belongsTo('App\Empresa');
+        return $this->belongsTo('App\Empresa', 'codEmpresa', 'codEmpresa');
     }
 
     public function peticao()
@@ -33,6 +33,6 @@ class Entrevista extends Model
 
     public function questoes()
     {
-        return $this->belongsToMany('App\Questao', 'entrevistas_questoes');
+        return $this->belongsToMany('App\Questao', 'entrevistas_questoes', 'codEntrevista', 'eqCodEntrevista');
     }
 }
