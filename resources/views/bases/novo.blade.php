@@ -4,22 +4,15 @@
 
 @section('conteudo')
 
-      <div class="conteudoForm">
+    <div class="conteudoForm">
         <h3 class="center">Cadastrar Base</h3>
 
 
-      <form class="" action="{{route('bases.salvar')}}" method="post">
-        {{ csrf_field() }}
+        <form class="" action="{{route('bases.salvar')}}" method="post">
+            {{ csrf_field() }}
+            @include('bases._form')
+        </form>
 
-        
-
-         <br>
-        <div class="btn">
-          <button class="btnCancel">Cancelar</button>
-          <button class="btnSave" >Salvar</button>
-        </div>
-      </form>
-
-  </div>
+    </div>
 
 @endsection

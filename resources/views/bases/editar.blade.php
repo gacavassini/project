@@ -11,13 +11,8 @@
       <form class="" action="{{route('bases.atualizar', $registro->codBase)}}" method="put">
         {{ csrf_field() }}
 
-        
+        @include('bases._form')
 
-         <br>
-        <div class="btn">
-          <button class="btnCancel">Cancelar</button>
-          <button class="btnSave" >Salvar</button>
-        </div>
       </form>
 
   </div>

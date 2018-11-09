@@ -1,5 +1,5 @@
 @extends('layout.site')
-@section('titulo','Consultar Atividades')
+@section('titulo','Visualizar Atividades')
 
 @section('conteudo')
     <h3 class="center">Visualizar Atividade</h3>
