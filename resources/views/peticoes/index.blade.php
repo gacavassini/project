@@ -1,12 +1,15 @@
 @extends('layout.site')
 @section('titulo','Lista de Petições')
 @section('conteudo')
-  <h3 class="center">Lista de Petições</h3>
-  <table>
+ 
+<div class="conteudoForm">
+  <h3 class="center">Lista de Petições<br></h3>
+  <table class="consulta" id="tpeq">
+    <br>
     <thead>
       <tr>
         <th>Código da Petição</th>
-        <th>Fatos</th>
+
         <th>Data de Criação</th>
         <th>Ação</th>
       </tr>
@@ -15,14 +18,19 @@
       @foreach($peticoes as $peticao)
         <tr>
           <td>{{ $peticao->codPeticao }}</td>
-          <td>{{ $peticao->fatos }}</td>
           <td>{{ $peticao->created_at }}</td>
           <td>
-            <a href="{{ route('peticoes.editar',$peticao->codPeticao) }}">Editar</a>
+              <a href="{{ route('peticoes.editar',$peticao->codPeticao)}}">
+                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+              </a>
+              <a href="{{ route('peticoes.visualizar',$peticao->codPeticao)}}">
+                  <img width="18%" src="{{ url('images/see-01.png') }}">
+              </a>
           </td>
         </tr>
       @endforeach
     </tbody>
   </table>
   <a href="{{ route('peticoes.novo') }}">Adicionar</a>
+</div>
 @endsection

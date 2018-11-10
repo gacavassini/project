@@ -12,7 +12,7 @@
     </div>
 
 
-    <table class="consulta">
+    <table class="consulta" >
     	<thead>
     		<tr>
           		<th>ID</th>

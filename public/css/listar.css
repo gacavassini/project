@@ -1,6 +1,9 @@
 .consulta{
 	width: 100%	
 }
+#tpeq{
+	width: 50%;
+}
 .consulta th{
 	text-align: left;
 }

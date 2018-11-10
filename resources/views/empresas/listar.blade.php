@@ -31,8 +31,11 @@
                 <td>{{$empresa->cidade}}</td>
                 <td>{{$empresa->telefone}}</td>
      
-                <td> <a href="{{ route('empresas.editar',$empresa->codEmpresa)}}"> <img src="{{ url('images/edit-01.png') }}"> </a>  </td>
-                </tr>
+                <td> <a href="{{ route('empresas.editar',$empresa->codEmpresa)}}"> <img width="15%" src="{{ url('images/edit-01.png') }}"> </a>  
+                <a href="{{ route('empresas.visualizar', $empresa->codEmpresa) }}">
+                  <img width="21%" src="{{ url('images/see-01.png') }}">
+              </a>
+                </td></tr>
             @endforeach
         </tbody>
     </table>
