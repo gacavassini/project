@@ -3,18 +3,17 @@
 
 @section('conteudo')
 <div class="conteudoForm">
-  <h3 class="center">Cadastrar Cliente</h3>
-    <form class="" action="{{route('atividades.atualizar', $regsitro->codAtividade)}}" method="put">
+  <h3 class="center">Cadastrar Atividade</h3>
+    <form class="" action="{{route('atividades.atualizar', $registro->codAtividade)}}" method="put">
       {{ csrf_field() }}
 
       @include('atividades._form')
-
     </form>
 </div>
 @endsection
 
 @section('javascript')
   <script>
-    $(".datepicker").datepicker();
+    $("#datepicker").datepicker();
   </script>
 @endsection

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Entrevista;
+use App\Cliente;
+use App\Empresa;
 
 class Entrevistas extends Controller
 {
@@ -14,7 +16,9 @@ class Entrevistas extends Controller
     }
 
     public function novo(){
-      return view('entrevistas.novo');
+        $clientes = Cliente::all();
+        $empresas = Empresa::all();
+        return view('entrevistas.novo', compact('clientes', 'empresas'));
     }
 
     public function salvar(Request $req){
@@ -24,8 +28,10 @@ class Entrevistas extends Controller
     }
 
     public function editar($id){
-      $registro = Entrevista::where('codEntrevista', $id)->first();
-      return view('entrevistas.editar',compact('registro'));
+        $clientes = Cliente::all();
+        $empresas = Empresa::all();
+        $registro = Entrevista::where('codEntrevista', $id)->first();
+        return view('entrevistas.editar',compact('registro', 'clientes', 'empresas'));
     }
 
     public function atualizar(Request $req, $id){

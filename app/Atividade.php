@@ -17,6 +17,6 @@ class Atividade extends Model
 
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        return $this->belongsTo('App\Cliente', 'codCliente', 'codCliente');
     }
 }

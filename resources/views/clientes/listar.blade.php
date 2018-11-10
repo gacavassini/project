@@ -39,7 +39,7 @@
               <a href="{{ route('clientes.editar',$cliente->codCliente)}}">
                   <img width="13%" src="{{ url('images/edit-01.png') }}">
               </a>
-              <a href="javascript:void(0)">
+              <a href="{{ route('clientes.visualizar', $cliente->codCliente) }}">
                   <img width="18%" src="{{ url('images/see-01.png') }}">
               </a>
           </td>

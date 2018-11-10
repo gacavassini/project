@@ -53,7 +53,7 @@ class Clientes extends Controller
 
     public function visualizar($id){
       $registro = Cliente::where('codCliente', $id)->first();
-      return view('cliente.visualizar',compact('registro'));
+      return view('clientes.visualizar',compact('registro'));
     }
 
     public function indexJson($id){
