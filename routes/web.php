@@ -39,7 +39,7 @@ Route::group(['middleware'=>'auth'],function(){
 
   //rota atividades
   Route::get('/atividades', ['as'=>'atividades.listar', 'uses'=>'Atividades@listar']);
-  Route::get('/atividades/tela', ['as'=>'atividades.tela', 'uses'=>'Atividades@tela']);
+  Route::get('/atividades/lembretes', ['as'=>'atividades.tela', 'uses'=>'Atividades@tela']);
   Route::get('/atividades/novo', ['as'=>'atividades.novo', 'uses'=>'Atividades@novo']);
   Route::get('/atividades/visualizar/{id}', ['as'=>'atividades.visualizar', 'uses'=>'Atividades@visualizar']);
   Route::get('/atividades/editar/{id}', ['as'=>'atividades.editar', 'uses'=>'Atividades@editar']);

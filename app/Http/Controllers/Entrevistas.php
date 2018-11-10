@@ -39,7 +39,7 @@ class Entrevistas extends Controller
             $entrevistaQ = new EntrevistaQuestao;
             $entrevistaQ['eq_codEntrevista'] = $entrevista->codEntrevista;
             $entrevistaQ['eq_codQuestao'] = $key;
-            $entrevistaQ['descricaoResposta'] = $value;
+            $entrevistaQ['descResposta'] = $value;
             $entrevistaQ->save();
         }
       }
