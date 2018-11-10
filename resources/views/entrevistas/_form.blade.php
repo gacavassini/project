@@ -26,6 +26,13 @@
   </div><!--Fechou select box do cliente -->
 </div>
 
+@foreach($questoes as $questao)
+    <div class="t1">
+        <label><span><br />{{$questao->descQuestao}}</span><br /></label>
+        <input name="{{$questao->codQuestao}}" type="text" id="grande">
+    </div>
+@endforeach
+
 <br>
 <div class="btn">
 <button class="btnCancel">Cancelar</button>

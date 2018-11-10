@@ -57,6 +57,7 @@
 
 <br>
 <div class="btn">
-  <button class="btnCancel">Cancelar</button>
+  <!--<button class="btnCancel">Cancelar</button>-->
+  <a class="btn btn-default btn-close" href="{{ route('atividades.listar') }}">Cancel</a>
   <button class="btnSave">Salvar</button>
 </div>

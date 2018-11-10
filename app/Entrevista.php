@@ -12,7 +12,7 @@ class Entrevista extends Model
      * @var array
      */
     protected $fillable = [
-        'descResposta',
+        'codCliente', 'codEmpresa',
     ];
 
     public function cliente()
@@ -31,8 +31,8 @@ class Entrevista extends Model
         return $this->hasOne('App\Peticao', 'codEntrevista', 'codEntrevista');
     }
 
-    public function questoes()
+    public function entrevistasQuestoes()
     {
-        return $this->belongsToMany('App\Questao', 'entrevistas_questoes', 'codEntrevista', 'eqCodEntrevista');
+        return $this->hasMany('App\EntrevistaQuestao', 'eq_CodEntrevista', 'CodEntrevista');
     }
 }
