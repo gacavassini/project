@@ -21,10 +21,10 @@
           <td>{{ $peticao->created_at }}</td>
           <td>
               <a href="{{ route('peticoes.editar',$peticao->codPeticao)}}">
-                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+                  <img width="10%" src="{{ url('images/edit-01.png') }}">
               </a>
-              <a href="{{ route('peticoes.visualizar',$peticao->codPeticao)}}">
-                  <img width="18%" src="{{ url('images/see-01.png') }}">
+              <a href="">
+                  <img width="12%" src="{{ url('images/see-01.png') }}">
               </a>
           </td>
         </tr>

@@ -29,10 +29,10 @@
                 <td>{{$atividade->status}}</td>
     			<td>
               <a href="{{ route('atividades.editar',$atividade->codAtividade)}}">
-                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+                  <img width="6%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="javascript:void(0)">
-                  <img width="18%" src="{{ url('images/see-01.png') }}">
+                  <img width="8%" src="{{ url('images/see-01.png') }}">
               </a>
           </td>
     		</tr>

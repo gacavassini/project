@@ -2,6 +2,7 @@
 @section('titulo','Visualizar Cliente')
 
 @section('conteudo')
+<div class="conteudoForm">
     <h3 class="center">Visualizar Cliente</h3>
     <strong>Nome</strong><br />
     <div>{{$registro->nome}}</div><br />
@@ -55,4 +56,5 @@
 
     <strong>Email</strong>
     <div>{{$registro->email}}</div><br />
+    </div>
 @endsection

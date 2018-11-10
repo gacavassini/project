@@ -60,11 +60,87 @@
 	</div>
 
 	<div class="listaAtividades" id="amanha">
-		<h2> AMANHA</h2>
+		<h2> AMANHÃ</h2><br>
+
+<table class="consultarAtividade" >
+			<thead>
+    		<tr>
+    			<th id="maior">Atividade</th>
+    			<th id="maior">Cliente</th>
+    			<th id="peq">Ação</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		
+    		<tr>
+    			<td>fazer cha para acalmar o juiz</td>
+    			<td>cleonice bertioga james</td>
+    			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
+    				<input id="checkAtiv" type="checkbox" value="">
+    			<br> 
+				<a href="">Detalhes</a>
+				</td>
+
+    		</tr>
+
+
+    		<tr>
+    			<td>ligar testemunhas</td>
+    			<td>paola bracho</td>
+    			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
+    				<input id="checkAtiv" type="checkbox" value="">
+    			<br> 
+				<a href="">Detalhes</a>
+				</td>
+
+    		</tr>
+    	
+    	</tbody>
+		</table>
+		
+	
+
 	</div>
 
 	<div class="listaAtividades" id="depoisAmanha">
-		<h2> DEPOIS DE AMANHA</h2>
+		<h2> DEPOIS DE AMANHÃ</h2><br>
+		<table class="consultarAtividade" >
+			<thead>
+    		<tr>
+    			<th id="maior">Atividade</th>
+    			<th id="maior">Cliente</th>
+    			<th id="peq">Ação</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		
+    		<tr>
+    			<td>fazer cha para acalmar o juiz</td>
+    			<td>cleonice bertioga james</td>
+    			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
+    				<input id="checkAtiv" type="checkbox" value="">
+    			<br> 
+				<a href="">Detalhes</a>
+				</td>
+
+    		</tr>
+
+
+    		<tr>
+    			<td>ligar testemunhas</td>
+    			<td>paola bracho</td>
+    			<td> <a href=""><img width="13%" src="{{ url('images/edit-01.png') }}"> </a>
+    				<input id="checkAtiv" type="checkbox" value="">
+    			<br> 
+				<a href="">Detalhes</a>
+				</td>
+
+    		</tr>
+    	
+    	</tbody>
+		</table>
+		
+	
 	</div>
 	
 </div>
