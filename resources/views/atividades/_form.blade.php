@@ -23,7 +23,7 @@
 </div>
 
 
-  <div class="t3">
+<div class="t3">
   <label> <br>Dias:<br> </label>
   <input type="radio" name="dias" value="0"  id="radio" {{ $registro->dias == '0' ? 'checked' : '' }}>Corrido
   <input  type="radio" name="dias" value="1" id="radio" {{ $registro->dias == '1' ? 'checked' : '' }}>Útil
@@ -61,3 +61,7 @@
   <a class="btn btn-default btn-close" href="{{ route('atividades.listar') }}">Cancel</a>
   <button class="btnSave">Salvar</button>
 </div>
+
+@section('javascript')
+    <script src="{{ url('/js/atividades.js') }}"></script>
+@endsection
