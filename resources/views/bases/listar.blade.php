@@ -7,7 +7,7 @@
     <h3 class="center">Lista de Bases</h3>
     <div class="search">
     	<form>
-			<input type="search" placeholder="Nome da Base">
+			<input type="search" placeholder="Nome da Base"> <a class="btnSave" style="width: 27%" href="{{route('bases.novo')}}">Nova</a> 
 		</form>
     </div>
 
@@ -27,10 +27,13 @@
                 <td>{{$base->rotulo}}</td>
     			<td>
               <a href="{{ route('bases.editar',$base->codBase)}}">
-                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+                  <img width="4%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('bases.visualizar', $base->codBase) }}">
-                  <img width="18%" src="{{ url('images/see-01.png') }}">
+                  <img width="6%" src="{{ url('images/see-01.png') }}">
+              </a>
+              <a href="">
+                  <img width="3%" src="{{ url('images/delet.png') }}">
               </a>
           </td>
     		</tr>

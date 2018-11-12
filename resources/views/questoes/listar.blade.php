@@ -7,9 +7,10 @@
     <h3 class="center">Lista de Questões</h3>
     <div class="search">
     	<form>
-			<input type="search" placeholder="Nome da Questão">
+			<input type="search" placeholder="Nome da Questão"> <a class="btnSave" style="width: 27%" href="{{route('questoes.novo')}}">Nova</a> 
 		</form>
     </div>
+    <div> </div>
 
 
     <table class="consulta">
@@ -27,10 +28,13 @@
                 <td>{{$questao->descQuestao}}</td>
     			<td>
               <a href="{{ route('questoes.editar',$questao->codQuestao)}}">
-                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+                  <img width="8%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('questoes.visualizar', $questao->codQuestao) }}">
-                  <img width="18%" src="{{ url('images/see-01.png') }}">
+                  <img width="12%" src="{{ url('images/see-01.png') }}">
+              </a>
+              <a href="">
+                  <img width="6%" src="{{ url('images/delet.png') }}">
               </a>
           </td>
     		</tr>
