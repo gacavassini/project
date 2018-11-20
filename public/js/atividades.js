@@ -30,15 +30,15 @@ function calculaDataLimite(){
   var prazo = $("input[name=prazo]").val();
   var dias = $("input[name=dias]:checked").val();
 
-  console.log(dataOficial);
-  console.log(prazo);
-  console.log(dias);
+  if(dias == "0"){
+      calculaCorrido();
+  }
 }
 
 function calculaCorrido(){
 	//declaração das variaveis
 	var dataDiarioOficial = $("#datepicker").val();
-	var qtdeDias = $("input[name=prazo]").val();
+	var qtdeDias = parseInt($("input[name=prazo]").val());
 	var dataLimite = $("input[name=dataLimite]");
 	var dataLimiteObj = new Date();
 
@@ -46,9 +46,9 @@ function calculaCorrido(){
 	var arrData = dataDiarioOficial.split('/');
 	var stringFormatada = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
 	var dataOficialObj = new Date(stringFormatada);
+    dataOficialObj.setDate(dataOficialObj.getDate() + qtdeDias);
 
 	//adiciona qtde de dias a dataOficial
-	dataOficialObj.setDate(dataOficialObj.getDate() + parseInt(qtdeDias));
 	if(dataOficialObj.getDay() == 0){
 		alert(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear() + " caiu num domingo");
 		dataOficialObj.setDate(dataOficialObj.getDate() - 2);
@@ -58,13 +58,15 @@ function calculaCorrido(){
 		dataOficialObj.setDate(dataOficialObj.getDate() - 1);
 	}
 
+    //TODO consertar funcao q verifica se eh feriado
 	//verifica se é feriado
-	if(verificaSeFeriado(dataOficialObj)){
-		dataOficialObj.setDate(dataOficialObj.getDate() - 1);
-	}
+	//if(verificaSeFeriado(dataOficialObj)){
+	//	dataOficialObj.setDate(dataOficialObj.getDate() - 1);
+	//}
 
 	//seta o valor da data limite com o valor calculado
-	dataLimite.val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
+    var dia = (dataOficialObj.getDate() < 10) ? "0"+dataOficialObj.getDate() : dataOficialObj.getDate();
+	dataLimite.val(dia + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
 }
 
 function calculaUtil(){
@@ -83,7 +85,26 @@ function calculaUtil(){
 		var dataStr = dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear();
 		var adicionado = false;
 
-		while(adicionado == false){
+        if(dataOficialObj.getDay() == 6){
+            console.log(dataStr + "é um sábado, adicionando mais um dia");
+            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            i -= 1;
+        }
+        else if(dataOficialObj.getDay() == 0){
+            console.log(dataStr + "é um domingo, adicionando mais um dia");
+            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            i -= 1;
+        }
+        else if(verificaSeFeriado(dataOficialObj)){
+            console.log(dataStr + "é um feriado, adicionando mais um dia");
+            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            i -= 1;
+        }
+        else{
+            adicionado = true;
+        }
+
+		/*while(adicionado == false){
 			if(dataOficialObj.getDay() == 6){
 				console.log(dataStr + "é um sábado, adicionando mais um dia");
 				dataOficialObj.setDate(dataOficialObj.getDate() + 1);
@@ -99,7 +120,7 @@ function calculaUtil(){
 			else{
 				adicionado = true;
 			}
-		}
+		}*/
 
 
 		/*var dataStr;

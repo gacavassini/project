@@ -19,9 +19,8 @@
 
 <div class="t2">
   <label> <br>Numero Processo:<br> </label>
-  <input id="medio" type="text" name="numProcesso" value="{{ isset($registro->atividade) ? $registro->atividade : '' }}">
+  <input id="medio" type="text" name="numProcesso" value="{{ isset($registro->numProcesso) ? $registro->numProcesso : '' }}">
 </div>
-
 
 <div class="t3">
   <label> <br>Dias:<br> </label>
@@ -29,25 +28,25 @@
   <input  type="radio" name="dias" value="1" id="radio" {{ $registro->dias == '1' ? 'checked' : '' }}>Útil
 </div>
 
-
 <div class="t3">
   <label> <br>Tipo: <br> </label>
   <input id="radio" type="radio" name="tipo" value="fisico" {{ $registro->tipo == 'fisico' ? 'checked' : '' }}> Físico
   <input id="radio" type="radio" name="tipo" value="eletronico" {{ $registro->tipo == 'eletronico' ? 'checked' : '' }}> Eletrônico
 </div>
 
-
-
 <div class="t3">
   <label><br>Data do Diário Oficial:<br></label>
-  <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;" value="{{ isset($registro->atividade) ? $registro->atividade : '' }}">
+  <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;" value="{{ isset($registro->dataDiarioOficial) ? $registro->dataDiarioOficial : '' }}">
 </div>
-
-
 
 <div class="t3">
   <label> <br>Data Limite:<br> </label>
-  <input id="medio" type="text" name="dataLimite" value="{{ isset($registro->atividade) ? $registro->atividade : '' }}">
+  <input id="medio" type="text" name="dataLimite" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}">
+</div>
+
+<div class="t3">
+  <label> <br>Prazo:<br></label>
+  <input name="prazo" id="pequeno" type="text" value="{{ isset($registro->prazo) ? $registro->prazo : '' }}">
 </div>
 
 <div class="t1">
