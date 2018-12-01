@@ -62,5 +62,15 @@
 </div>
 
 @section('javascript')
+    <script>
+        var url = "https://api.calendario.com.br/?json=true&ano=2018&estado=SP&cidade=MOGI_GUACU&token=ZGdvLmRpZWdvY2FydmFsaG9AZ21haWwuY29tJmhhc2g9MTYzMjcxMDY3";
+    	var feriados = [];
+    	$.getJSON(url).then(function(data){
+    		for(var i = 0; i < data.length; i++){
+    		    var obj = {dia: data[i].date, nome: data[i].name};
+    			feriados[i] = obj;
+    		}
+    	});
+    </script>
     <script src="{{ url('/js/atividades.js') }}"></script>
 @endsection

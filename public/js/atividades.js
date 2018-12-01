@@ -1,3 +1,20 @@
+//isso aqui eh na tela de lembrete
+function mudaOsLabelsEmLembrete(){
+    var date = new Date();
+    var diaSemana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+
+    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
+    $("#today").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+
+    date.setDate(date.getDate() + 1);
+    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
+    $("#tomorrow").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+
+    date.setDate(date.getDate() + 1);
+    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
+    $("#afterTomorrow").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+}
+
 //no change do prazo
 $("input[name=prazo]").change(function(){
   if($("input[name=dataDiarioOficial]").val() != ""){
@@ -33,6 +50,9 @@ function calculaDataLimite(){
   if(dias == "0"){
       calculaCorrido();
   }
+  if(dias == "1"){
+      calculaUtil();
+  }
 }
 
 function calculaCorrido(){
@@ -60,9 +80,10 @@ function calculaCorrido(){
 
     //TODO consertar funcao q verifica se eh feriado
 	//verifica se é feriado
-	//if(verificaSeFeriado(dataOficialObj)){
-	//	dataOficialObj.setDate(dataOficialObj.getDate() - 1);
-	//}
+	if(verificaFeriado(dataOficialObj)){
+        alert(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear() + " caiu num feriado");
+		dataOficialObj.setDate(dataOficialObj.getDate() - 1);
+	}
 
 	//seta o valor da data limite com o valor calculado
     var dia = (dataOficialObj.getDate() < 10) ? "0"+dataOficialObj.getDate() : dataOficialObj.getDate();
@@ -82,72 +103,37 @@ function calculaUtil(){
 
 	for(var i = 1; i <= parseInt(qtdeDias); i++){
 		dataOficialObj.setDate(dataOficialObj.getDate() + 1);
-		var dataStr = dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear();
+        var dia = (dataOficialObj.getDate() < 10) ? "0"+dataOficialObj.getDate() : dataOficialObj.getDate();
+    	var dataStr = dia + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear();
 		var adicionado = false;
 
         if(dataOficialObj.getDay() == 6){
             console.log(dataStr + "é um sábado, adicionando mais um dia");
-            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            //dataOficialObj.setDate(dataOficialObj.getDate() + 1);
             i -= 1;
         }
         else if(dataOficialObj.getDay() == 0){
             console.log(dataStr + "é um domingo, adicionando mais um dia");
-            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            //dataOficialObj.setDate(dataOficialObj.getDate() + 1);
             i -= 1;
         }
-        else if(verificaSeFeriado(dataOficialObj)){
+        else if(verificaFeriado(dataOficialObj)){
             console.log(dataStr + "é um feriado, adicionando mais um dia");
-            dataOficialObj.setDate(dataOficialObj.getDate() + 1);
+            //dataOficialObj.setDate(dataOficialObj.getDate() + 1);
             i -= 1;
         }
-        else{
-            adicionado = true;
-        }
-
-		/*while(adicionado == false){
-			if(dataOficialObj.getDay() == 6){
-				console.log(dataStr + "é um sábado, adicionando mais um dia");
-				dataOficialObj.setDate(dataOficialObj.getDate() + 1);
-			}
-			else if(dataOficialObj.getDay() == 0){
-				console.log(dataStr + "é um domingo, adicionando mais um dia");
-				dataOficialObj.setDate(dataOficialObj.getDate() + 1);
-			}
-			else if(verificaSeFeriado(dataOficialObj)){
-				console.log(dataStr + "é um feriado, adicionando mais um dia");
-				dataOficialObj.setDate(dataOficialObj.getDate() + 1);
-			}
-			else{
-				adicionado = true;
-			}
-		}*/
-
-
-		/*var dataStr;
-		dataOficialObj.setDate(dataOficialObj.getDate() + 1);
-		dataStr = dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear();
-		if(dataOficialObj.getDay() == 6){
-			console.log(dataStr + "é um sábado");
-		}else if(dataOficialObj.getDay() == 0){}*/
 	}
 	//seta o valor da data limite com o valor calculado
-	dataLimite.val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());b
+	dataLimite.val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
 }
 
-function verificaSeFeriado(data){
-	var url = "https://api.calendario.com.br/?json=true&ano=2018&estado=SP&cidade=MOGI_GUACU&token=ZGdvLmRpZWdvY2FydmFsaG9AZ21haWwuY29tJmhhc2g9MTYzMjcxMDY3";
-	var dataString = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
-	var feriado = $.getJSON(url, function(feriados){
-		var toReturn = false;
-		for(var i = 0; i < feriados.length; i++){
-			if(feriados[i].date == dataString){
-				toReturn = true;
-				break;
-			}
-		}
-		//retorna valor do toReturn para a variavel feriado
-		return toReturn
-	});
-	//retorna o valor de feriado para quem chamou a função
-	return feriado;
+function verificaFeriado(data){
+	var dia = (data.getDate() < 10) ? "0"+data.getDate() : data.getDate();
+	var dataString = dia + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+	if($(".feriado:contains("+dataString+")").text() == dataString){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
