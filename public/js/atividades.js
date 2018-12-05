@@ -2,17 +2,32 @@
 function mudaOsLabelsEmLembrete(){
     var date = new Date();
     var diaSemana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+    var hoje = $("#today")[0].innerText;
+    var amanha = $("#tomorrow")[0].innerText;
+    var depois = $("#afterTomorrow")[0].innerText;
+    var hojeObj = new Date();
+    var amanhaObj = new Date();
+    var depoisObj = new Date();
 
-    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
-    $("#today").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+	//tratamento da data, metodos date precisam estar nesse formato mm-dd-yyyy
+	var arrData = hoje.split('/');
+	var stringFormatada = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
+	hojeObj = new Date(stringFormatada);
 
-    date.setDate(date.getDate() + 1);
-    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
-    $("#tomorrow").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+    arrData = amanha.split('/');
+	stringFormatada = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
+	amanhaObj = new Date(stringFormatada);
 
-    date.setDate(date.getDate() + 1);
-    var dia = (date.getDate() < 10) ? "0"+date.getDate() : date.getDate();
-    $("#afterTomorrow").text(dia + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() + " - " + diaSemana[date.getDay()]);
+    arrData = depois.split('/');
+	stringFormatada = arrData[1] + '-' + arrData[0] + '-' + arrData[2];
+	depoisObj = new Date(stringFormatada);
+
+    var dia = (hojeObj.getDate() < 10) ? "0"+hojeObj.getDate() : hojeObj.getDate();
+    $("#today").text(dia + "/" + (hojeObj.getMonth() + 1) + "/" + hojeObj.getFullYear() + " - " + diaSemana[hojeObj.getDay()]);
+    dia = (amanhaObj.getDate() < 10) ? "0"+amanhaObj.getDate() : amanhaObj.getDate();
+    $("#tomorrow").text(dia + "/" + (amanhaObj.getMonth() + 1) + "/" + amanhaObj.getFullYear() + " - " + diaSemana[amanhaObj.getDay()]);
+    dia = (depoisObj.getDate() < 10) ? "0"+depoisObj.getDate() : depoisObj.getDate();
+    $("#afterTomorrow").text(dia + "/" + (depoisObj.getMonth() + 1) + "/" + depoisObj.getFullYear() + " - " + diaSemana[depoisObj.getDay()]);
 }
 
 //no change do prazo
@@ -136,4 +151,62 @@ function verificaFeriado(data){
 	else{
 		return false;
 	}
+}
+
+function clickCB(el){
+    var cbx = $(this);
+
+    //aqui começa a brincadeira de atualizar o status
+    var codAtividade = cbx.first().parent().parent().find("td #codAtividade").text();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+        }
+    });
+    $.extend({
+        confirm: function(message, title) {
+            $("<div></div>").dialog({
+                // Remove the closing 'X' from the dialog
+                open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                width: 500,
+                buttons: [{
+                    text: "Sim",
+                    click: function () {
+                        $.ajax({
+                            type: "PUT",
+                            url: "/api/atividades/atualizaStatus/" + codAtividade,
+                            context: this,
+                            success: function(){
+                                cbx.parent().parent().children().eq(0).css("text-decoration", "line-through");
+                                cbx.parent().parent().children().eq(0).css("color", "gray");
+                                cbx.parent().parent().children().eq(1).css("color", "gray");
+                                cbx.parent().parent().children().eq(1).css("text-decoration", "line-through");
+                                cbx.prop("disabled", true);
+                                cbx.parent().parent().hide();
+                            },
+                            error: function(error){
+                                console.log(error);
+                            }
+                        });
+                        $(this).dialog("close");
+                    }
+                },
+                    {
+                    text: "Nao",
+                    click: function() {
+                        cbx.prop('checked', false);
+                        $(this).dialog("close");
+                    }
+                }],
+                close: function(event, ui) { $(this).remove(); },
+                resizable: false,
+                title: title,
+                modal: true
+            }).text(message);
+        }
+    });
+
+    $.confirm("Tem certeza que quer atualizar esta atividade?", //message
+        "Confirmar" //title
+    );
 }

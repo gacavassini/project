@@ -60,7 +60,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/questoes/editar/{id}', ['as' => 'questoes.editar', 'uses' => 'Questoes@editar']);
   Route::get('/questoes/visualizar/{id}', ['as' => 'questoes.visualizar', 'uses' => 'Questoes@visualizar']);
   Route::get('/questoes/atualizar/{id}', ['as' => 'questoes.atualizar', 'uses' => 'Questoes@atualizar']);
-  Route::post('/questoes/salvar', ['as' => 'questoes.salvar', 'uses' => 'Questao@salvar']);
+  Route::post('/questoes/salvar', ['as' => 'questoes.salvar', 'uses' => 'Questoes@salvar']);
 
   //rota Bases
   Route::get('/bases', ['as' => 'bases.listar', 'uses' => 'Bases@listar']);

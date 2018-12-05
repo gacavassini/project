@@ -28,3 +28,5 @@ Route::get('/bases/rotulo/{codRot}', 'Bases@getBasesPorRotuloJson');
 Route::get('/bases/{codRot}', 'Bases@getBaseJson');
 
 Route::get('/pedidos/{codPedido}', 'Pedidos@getPedidosByCodJson');
+
+Route::put('/atividades/atualizaStatus/{codAtividade}', 'Atividades@atualizaStatus');
