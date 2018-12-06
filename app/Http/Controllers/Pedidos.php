@@ -18,8 +18,16 @@ class Pedidos extends Controller
     }
 
     public function salvar(Request $req){
-      $dados = $req->all();
-      Pedido::create($dados);
+		$dados = $req->all();
+		if($dados['tipo'] == "false"){
+			$dados['tipo'] = 0;
+		}
+		else{
+			$dados['tipo'] = 1;
+		}
+
+	  //dd($dados);
+	  Pedido::create($dados);
       return redirect()->route('pedidos.listar');
     }
 

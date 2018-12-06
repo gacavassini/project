@@ -7,7 +7,7 @@
     <h3 class="center">Lista de Pedidos</h3>
     <div class="search">
     	<form>
-			<input type="search" placeholder="Nome do Pedido"> <a class="btnSave" style="width: 27%" href="{{route('bases.novo')}}">Novo</a> 
+			<input type="search" placeholder="Nome do Pedido"> <a class="btnSave" style="width: 27%" href="{{route('pedidos.novo')}}">Novo</a> 
 		</form>
     </div>
 
