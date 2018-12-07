@@ -7,7 +7,7 @@
     <h3 class="center">Lista de Bases</h3>
     <div class="search">
     	<form>
-			<input type="search" placeholder="Nome da Base"> <a class="btnSave" style="width: 27%" href="{{route('bases.novo')}}">Nova</a> 
+			<input type="search" placeholder="Nome da Base"> <a class="btnSave" style="width: 27%" href="{{route('bases.novo')}}">Nova</a>
 		</form>
     </div>
 
@@ -32,7 +32,7 @@
               <a href="{{ route('bases.visualizar', $base->codBase) }}">
                   <img width="6%" src="{{ url('images/see-01.png') }}">
               </a>
-              <a href="">
+              <a href="{{ route('bases.excluir', $base->codBase) }}">
                   <img width="3%" src="{{ url('images/delet.png') }}">
               </a>
           </td>

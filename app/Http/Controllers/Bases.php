@@ -31,10 +31,15 @@ class Bases extends Controller
     public function atualizar(Request $req, $id){
       $dados = $req->all();
 
-      Base::where('codBase', $id)->first()->update($dados);
+      Base::where('codBase', $id)->update(['rotulo' => $dados['rotulo'], 'texto' => $dados['texto']]);
 
       return redirect()->route('bases.listar');
     }
+
+	public function excluir($id){
+		Base::where('codBase', $id)->delete();
+		return redirect()->route('bases.listar');
+	}
 
     public function visualizar($id){
       $registro = Base::where('codBase', $id)->first();
