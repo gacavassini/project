@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddFileNameToPeticoes' => $baseDir . '/database/migrations/2018_12_08_161854_add_file_name_to_peticoes.php',
     'BaseSeeder' => $baseDir . '/database/seeds/BaseSeeder.php',
     'ClienteSeeder' => $baseDir . '/database/seeds/ClienteSeeder.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',

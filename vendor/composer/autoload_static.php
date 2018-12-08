@@ -338,6 +338,7 @@ class ComposerStaticInit33e689a5d749c6edc4aa0f3c68ad50bf
     );
 
     public static $classMap = array (
+        'AddFileNameToPeticoes' => __DIR__ . '/../..' . '/database/migrations/2018_12_08_161854_add_file_name_to_peticoes.php',
         'BaseSeeder' => __DIR__ . '/../..' . '/database/seeds/BaseSeeder.php',
         'ClienteSeeder' => __DIR__ . '/../..' . '/database/seeds/ClienteSeeder.php',
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',

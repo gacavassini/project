@@ -20,6 +20,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::post('/peticoes/salvar',['as'=>'peticoes.salvar','uses'=>'Peticoes@salvar']);
   Route::get('/peticoes/editar/{id}',['as'=>'peticoes.editar','uses'=>'Peticoes@editar']);
   Route::put('/peticoes/atualizar/{id}',['as'=>'peticoes.atualizar','uses'=>'Peticoes@atualizar']);
+  Route::get('/peticoes/visualizarDocumento/{id}', ['as'=>'peticoes.visualizarDocumento', 'uses' => 'Peticoes@visualizarDocumento']);
 
   //Rota clientes
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);

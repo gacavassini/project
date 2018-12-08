@@ -1,7 +1,7 @@
 @extends('layout.site')
 @section('titulo','Lista de Petições')
 @section('conteudo')
- 
+
 <div class="conteudoForm">
   <h3 class="center">Lista de Petições<br></h3>
   <table class="consulta" id="tpeq">
@@ -26,6 +26,7 @@
               <a href="">
                   <img width="12%" src="{{ url('images/see-01.png') }}">
               </a>
+              <a href="{{ route('peticoes.visualizarDocumento', $peticao->codPeticao) }}" target="_blank">Ver PDF</a>
           </td>
         </tr>
       @endforeach
