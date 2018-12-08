@@ -36,7 +36,7 @@
 
 <div class="t3">
   <label><br>Data do Diário Oficial:<br></label>
-  <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;" value="{{ isset($registro->dataDiarioOficial) ? $registro->dataDiarioOficial : '' }}">
+  <input id="datepicker" type="text" name="dataDiarioOficial" autocomplete="off" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;" value="{{ isset($registro->dataDiarioOficial) ? $registro->dataDiarioOficial : '' }}">
 </div>
 
 <div class="t3">
@@ -46,7 +46,8 @@
 
 <div class="t3">
   <label> <br>Data Limite:<br> </label>
-  <input id="medio" type="text" name="dataLimite" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}">
+  <input id="medio" type="hidden" name="dataLimite" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}">
+  <input id="medio" type="text" name="dataLimiteShow" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}" disabled>
 </div>
 
 <div class="t1">
@@ -73,4 +74,13 @@
     	});
     </script>
     <script src="{{ url('/js/atividades.js') }}"></script>
+    <script type="text/javascript" src="{{ url('/js/jquery.mask.js') }}"></script>
+    <script>
+    $(document).ready(function(){
+        var data = $("input[name=dataLimiteShow]").val();
+        var dataArr = data.split("-");
+        $("input[name=dataLimiteShow]").val(dataArr[2] + "-" + dataArr[1] + "-" + dataArr[0])
+        $("input[name=dataLimiteShow]").mask('00/00/0000', { reverse : true });
+    });
+    </script>
 @endsection

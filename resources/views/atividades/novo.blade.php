@@ -47,7 +47,7 @@
 
       <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
+        <input id="datepicker" type="text" name="dataDiarioOficial" autocomplete="off" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
       </div>
 
       <div class="t3">
@@ -57,7 +57,8 @@
 
       <div class="t3">
         <label> <br>Data Limite:<br> </label>
-        <input id="medio" type="text" name="dataLimite">
+        <input id="medio" type="text" name="dataLimiteShow" disabled>
+        <input id="medio" type="hidden" name="dataLimite">
       </div>
 
       <div class="t1">

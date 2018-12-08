@@ -44,7 +44,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/atividades/novo', ['as'=>'atividades.novo', 'uses'=>'Atividades@novo']);
   Route::get('/atividades/visualizar/{id}', ['as'=>'atividades.visualizar', 'uses'=>'Atividades@visualizar']);
   Route::get('/atividades/editar/{id}', ['as'=>'atividades.editar', 'uses'=>'Atividades@editar']);
-  Route::put('/atividades/atualizar/{id}', ['as'=>'atividades.atualizar', 'uses'=>'Atividades@atualizar']);
+  Route::get('/atividades/atualizar/{id}', ['as'=>'atividades.atualizar', 'uses'=>'Atividades@atualizar']);
   Route::post('/atividades/salvar', ['as'=>'atividades.salvar', 'uses'=>'Atividades@salvar']);
 
   //rota Entrevistas

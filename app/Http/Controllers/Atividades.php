@@ -86,9 +86,10 @@ class Atividades extends Controller
     }
 
     public function atualizar(Request $req, $id){
-      $dados = $req->all();
-
-      Atividade::where('codAtividade', $id)->first()->update($dados);
+      $dados = $req->except('_token');
+      //$dataLimite = $dados['datalimite'];
+      //dd($dados);
+      Atividade::where('codAtividade', $id)->update($dados);
 
       return redirect()->route('atividades.listar');
     }

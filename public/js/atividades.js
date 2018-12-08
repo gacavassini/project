@@ -102,7 +102,9 @@ function calculaCorrido(){
 
 	//seta o valor da data limite com o valor calculado
     var dia = (dataOficialObj.getDate() < 10) ? "0"+dataOficialObj.getDate() : dataOficialObj.getDate();
-	dataLimite.val(dia + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
+	//dataLimite.val(dia + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
+    dataLimite.val(dataOficialObj.getFullYear() + "-" + dataOficialObj.getMonth() + "-" + dataOficialObj.getDate());
+    $("input[name=dataLimiteShow]").val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
 }
 
 function calculaUtil(){
@@ -139,7 +141,9 @@ function calculaUtil(){
         }
 	}
 	//seta o valor da data limite com o valor calculado
-	dataLimite.val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
+	//dataLimite.val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
+	dataLimite.val(dataOficialObj.getFullYear() + "-" + dataOficialObj.getMonth() + "-" + dataOficialObj.getDate());
+    $("input[name=dataLimiteShow]").val(dataOficialObj.getDate() + "/" + (dataOficialObj.getMonth() + 1) + "/" + dataOficialObj.getFullYear());
 }
 
 function verificaFeriado(data){
