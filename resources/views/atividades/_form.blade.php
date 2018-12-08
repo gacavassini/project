@@ -40,13 +40,13 @@
 </div>
 
 <div class="t3">
-  <label> <br>Data Limite:<br> </label>
-  <input id="medio" type="text" name="dataLimite" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}">
+  <label> <br>Prazo:<br></label>
+  <input name="prazo" id="pequeno" type="text" value="{{ isset($registro->prazo) ? $registro->prazo : '' }}">
 </div>
 
 <div class="t3">
-  <label> <br>Prazo:<br></label>
-  <input name="prazo" id="pequeno" type="text" value="{{ isset($registro->prazo) ? $registro->prazo : '' }}">
+  <label> <br>Data Limite:<br> </label>
+  <input id="medio" type="text" name="dataLimite" value="{{ isset($registro->dataLimite) ? $registro->dataLimite : '' }}">
 </div>
 
 <div class="t1">

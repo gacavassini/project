@@ -70,7 +70,6 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/bases/editar/{id}', ['as' => 'bases.editar', 'uses' => 'Bases@editar']);
   Route::get('/bases/visualizar/{id}', ['as' => 'bases.visualizar', 'uses' => 'Bases@visualizar']);
   Route::get('/bases/atualizar/{id}', ['as' => 'bases.atualizar', 'uses' => 'Bases@atualizar']);
-  Route::get('/bases/excluir/{id}', ['as' => 'bases.excluir', 'uses' => 'Bases@excluir']);
 
   //rota Pedidos
   Route::get('/pedidos', ['as' => 'pedidos.listar', 'uses' => 'Pedidos@listar']);

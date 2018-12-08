@@ -32,8 +32,8 @@
               <a href="{{ route('bases.visualizar', $base->codBase) }}">
                   <img width="6%" src="{{ url('images/see-01.png') }}">
               </a>
-              <a href="{{ route('bases.excluir', $base->codBase) }}">
-                  <img width="3%" src="{{ url('images/delet.png') }}">
+              <a href="javascript:void(0)">
+                  <img class="toDelete" width="3%" src="{{ url('images/delet.png') }}">
               </a>
           </td>
     		</tr>
@@ -44,4 +44,62 @@
     </div>
 
 
+@endsection
+
+@section('javascript')
+    <script>
+        var deletebuttons = $(".toDelete");
+        for(var i = 0, len = deletebuttons.length; i<len; i++){
+            deletebuttons[i].onclick = clickCB;
+        }
+
+        function clickCB(el){
+            var codBase = $(this).parent().parent().parent().children().first().text();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                }
+            });
+            $.extend({
+                confirm: function(message, title) {
+                    $("<div></div>").dialog({
+                        // Remove the closing 'X' from the dialog
+                        open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        width: 500,
+                        buttons: [{
+                            text: "Sim",
+                            click: function () {
+                                $.ajax({
+                                    type: "DELETE",
+                                    url: "/api/bases/excluir/" + codBase,
+                                    context: this,
+                                    success: function(){
+                                        window.location.replace("{{ route('bases.listar') }}");
+                                    },
+                                    error: function(error){
+                                        console.log(error);
+                                    }
+                                });
+                                $(this).dialog("close");
+                            }
+                        },
+                            {
+                            text: "Nao",
+                            click: function() {
+                                $(this).dialog("close");
+                            }
+                        }],
+                        close: function(event, ui) { $(this).remove(); },
+                        resizable: false,
+                        title: title,
+                        modal: true
+                    }).text(message);
+                }
+            });
+
+            $.confirm("Tem certeza que quer excluir esta base?", //message
+                "Confirmar" //title
+            );
+        }
+    </script>
 @endsection

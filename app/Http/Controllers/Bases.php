@@ -38,7 +38,7 @@ class Bases extends Controller
 
 	public function excluir($id){
 		Base::where('codBase', $id)->delete();
-		return redirect()->route('bases.listar');
+		return response()->json(['success'=>"Base Deleted successfully.", 'tr'=>'tr_'.$id]);
 	}
 
     public function visualizar($id){
