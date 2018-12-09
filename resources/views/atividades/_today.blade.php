@@ -1,4 +1,5 @@
 @if($atrasados->isNotEmpty())
+<h3 style="color: red">Atrasados</h3>
     <table class="consultarAtividade" >
         <thead>
             <tr>
@@ -32,6 +33,7 @@
 @endif
 
 @if($fisicos->isNotEmpty())
+<h3 style="color: #0b3e93">Físicos</h3>
     <table class="consultarAtividade">
         <thead>
             <tr>
@@ -63,6 +65,7 @@
 @endif
 
 @if($eletronicos->isNotEmpty())
+<h3 style="color: black">Eletrônicos</h3>
     <table class="consultarAtividade">
         <thead>
             <tr>

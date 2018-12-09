@@ -9,7 +9,7 @@
     
     <div class="conteudoLogin">
       <div class="login"> 
-        <p style="font-size: 20px; text-align: center"><b>Entrar</b> </p>
+        <p style="font-size: 20px; text-align: center"><b>Login</b> </p>
 
         <form action="{{route('login.entrar')}}" method="post">
           {{ csrf_field() }}

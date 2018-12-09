@@ -71,9 +71,9 @@ class Atividades extends Controller
     }
 
     public function salvar(Request $req){
-        $date = DateTime::createFromFormat('d/m/Y', $req->input('dataLimite'));
-        $date = $date->format('Y-m-d H:i:s');
-        $req->merge(array('dataLimite' => $date));
+        //$date = DateTime::createFromFormat('d/m/Y', $req->input('dataLimite'));
+        //$date = $date->format('Y-m-d H:i:s');
+        //$req->merge(array('dataLimite' => $date));
         $dados = $req->all();
         Atividade::create($dados);
         return redirect()->route('atividades.listar');

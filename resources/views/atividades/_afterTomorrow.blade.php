@@ -1,4 +1,5 @@
 @if($fisicosAfterTomorrow->isNotEmpty())
+<h3 style="color: #0b3e93">Físicos</h3>
     <table class="consultarAtividade">
         <thead>
             <tr>
@@ -30,6 +31,7 @@
 @endif
 
 @if($eletronicosAfterTomorrow->isNotEmpty())
+<h3 style="color: black">Eletrônicos</h3>
     <table class="consultarAtividade">
         <thead>
             <tr>

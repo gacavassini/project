@@ -214,3 +214,21 @@ function clickCB(el){
         "Confirmar" //title
     );
 }
+
+$("#infoToday").hover(function(){
+    $("#infoTo").show();
+}, function(){
+    $("#infoTo").hide();
+});
+
+$("#infoTomorrow").hover(function(){
+    $("#infoTom").show();
+}, function(){
+    $("#infoTom").hide();
+});
+
+$("#infoAfterTomorrow").hover(function(){
+    $("#infoAt").show();
+}, function(){
+    $("#infoAt").hide();
+});

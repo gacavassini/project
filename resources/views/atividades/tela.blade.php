@@ -16,40 +16,62 @@
 		margin-top: -8px;
 	}
 
-	#fisico{
-		color:blue;
-	}
 
-	#eletronico{
-		color:green;
-	}
-
-	#atrasado{
-		color:red;
-	}
 </style>
-<div id="legenda" style="padding:5px;">
-	<h3>Legenda:</h3>
-	<strong style="color:red">Atrasado</strong><br />
-	<strong style="color:green">Eletrônico</strong><br />
-	<strong style="color:blue">Físico</strong><br />
-</div>
 
 <div class="telaLembretes">
 
 	<div class="listaAtividades" id="hoje">
-		<h2 id="today">{{ $hoje->format('d/m/Y') }} </h2> <br>
+		
+		<h2  id="today">{{ $hoje->format('d/m/Y') }} </h2>
+				<span class="ui-icon ui-icon-info" id="infoToday"></span>
+			<br>
+			
+			<div class="information" id="infoTo">
+				<span style="color: black">Legenda:</span><br>
+				<ul>
+					<li style="color: red; margin-top:3% ">Atrasado</li>
+					<li style="color: black; margin-top:3%">Eletrônico</li>
+					<li style="color: #0b3e93; margin-top:3%">Físico </li>
+				</ul>
+					
+			</div>
 		@include('atividades._today')
+	
 
 	</div>
 
 	<div class="listaAtividades" id="amanha">
-		<h2 id="tomorrow">{{ $amanha->format('d/m/Y') }} </h2><br>
+		<h2 id="tomorrow">{{ $amanha->format('d/m/Y') }} </h2>
+		<span class="ui-icon ui-icon-info" id="infoTomorrow"></span>
+			<br>
+			
+			<div class="information" id="infoTom">
+				<span style="color: black">Legenda:</span><br>
+				<ul>
+					<li style="color: red; margin-top:3% ">Atrasado</li>
+					<li style="color: black; margin-top:3%">E = Eletrônico</li>
+					<li style="color: #0b3e93; margin-top:3%">F = Físico </li>
+				</ul>
+					
+			</div>
 		@include('atividades._tomorrow')
 	</div>
 
 	<div class="listaAtividades" id="depoisAmanha">
-		<h2 id="afterTomorrow">{{ $depois->format('d/m/Y') }} </h2><br>
+		<h2 id="afterTomorrow">{{ $depois->format('d/m/Y') }} </h2>
+		<span class="ui-icon ui-icon-info" id="infoAfterTomorrow"></span>
+			<br>
+			
+			<div class="information" id="infoAt">
+				<span style="color: black">Legenda:</span><br>
+				<ul>
+					<li style="color: red; margin-top:3% ">Atrasado</li>
+					<li style="color: black; margin-top:3%">Eletrônico</li>
+					<li style="color: #0b3e93; margin-top:3%">Físico </li>
+				</ul>
+					
+			</div>
 		@include('atividades._afterTomorrow')
 	</div>
 
