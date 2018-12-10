@@ -2,7 +2,7 @@
 	width: 100%	
 }
 #tpeq{
-	width: 50%;
+ width: 90%;
 }
 .consulta th{
 	text-align: left;
@@ -31,8 +31,29 @@
 
 .search {
 	height: 10vh;
-	width: 40%;
+	width: 80%;
+	vertical-align: middle;
+		display: inline-block;
+
+}	
+#BuscaPet{
+margin-left: 4%;	
+margin-top: 0.2%;
 }
+
+#busca{
+	width: 100%
+	height:8vh;
+	display: inline-block;
+	float: left;
+}
+
+#busca img{
+	vertical-align: middle;
+	align-items: top;
+	align-items: center;
+}
+
 .search input {
 	outline: none;
 }
@@ -65,7 +86,7 @@
 .search input:focus {
 	width: 130px;
 	background-color: #fff;
-	border-color: #66CC75;
+	border-color: #378de5;
 	
 	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
