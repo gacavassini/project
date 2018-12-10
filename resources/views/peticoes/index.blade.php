@@ -6,7 +6,7 @@
   <h2 class="center" style="margin-bottom: 2%">Lista de Petições<br></h2>
 
   <div id="busca"> 
-    <a href="">
+    <a href="{{ route('peticoes.novo') }}">
             <img width="18%" style="margin-top: -6%;" src="{{ url('images/addPet.png') }}">
          </a>
   <div class="search">
