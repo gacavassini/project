@@ -90,5 +90,5 @@
 <br>
 <div class="btn">
     <button class="btnCancel">Cancelar</button>
-    <button class="btnSave">Salvar</button>
+    <button class="btnSave" style="margin-top: 2%">Salvar</button>
 </div>

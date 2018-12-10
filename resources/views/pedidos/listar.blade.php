@@ -4,18 +4,23 @@
 @section('conteudo')
 
  <div class="conteudoForm">
-    <h3 class="center">Lista de Pedidos</h3>
+    <h2 class="center" style="margin-bottom: 2%">Lista de Pedidos</h2>
+     <div id="busca"> 
+    <a href="{{ route('pedidos.novo') }}">
+            <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">
+         </a>
     <div class="search">
-    	<form>
-			<input type="search" placeholder="Nome do Pedido"> <a class="btnSave" style="width: 27%" href="{{route('pedidos.novo')}}">Novo</a> 
-		</form>
+      <form>
+         <input  type="search" id="BuscaPet" placeholder="Nome do Pedido">
+      </form>
     </div>
+  </div><br>
 
 
-    <table class="consulta">
+    <table class="consulta" style="width: 68%;margin-top: 2%">
     	<thead>
     		<tr>
-          		<th>ID</th>
+          	<th>ID</th>
     			<th>Nome</th>
     			<th>Ação</th>
     		</tr>
@@ -25,15 +30,15 @@
     		<tr>
     			<td>{{$pedido->codPedido}}</td>
                 <td>{{$pedido->nomePedido}}</td>
-    			<td>
+    			<td style="width: 18%">
               <a href="{{ route('pedidos.editar',$pedido->codPedido)}}">
-                  <img width="4%" src="{{ url('images/edit-01.png') }}">
+                  <img width="22%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('pedidos.visualizar', $pedido->codPedido) }}">
-                  <img width="6%" src="{{ url('images/see-01.png') }}">
+                  <img width="27%" src="{{ url('images/see-01.png') }}">
               </a>
               <a href="">
-                  <img width="3%" src="{{ url('images/delet.png') }}">
+                  <img width="16%" src="{{ url('images/delet.png') }}">
               </a>
           </td>
     		</tr>

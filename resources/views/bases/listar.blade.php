@@ -4,36 +4,41 @@
 @section('conteudo')
 
  <div class="conteudoForm">
-    <h3 class="center">Lista de Bases</h3>
+    <h2 class="center" style="margin-bottom: 2%">Lista de Bases</h2>
+   <div id="busca"> 
+    <a href="{{ route('bases.novo') }}">
+            <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">
+         </a>
     <div class="search">
-    	<form>
-			<input type="search" placeholder="Nome da Base"> <a class="btnSave" style="width: 27%" href="{{route('bases.novo')}}">Nova</a>
-		</form>
+      <form>
+         <input  type="search" id="BuscaPet" placeholder="Nome da base">
+      </form>
     </div>
+  </div>
 
 
-    <table class="consulta">
+    <table class="consulta" >
     	<thead>
     		<tr>
-          		<th>ID</th>
-    			<th>Rótulo</th>
+          		<th>Rótulo</th>
+    			<th>Descrição</th>
     			<th>Ação</th>
     		</tr>
     	</thead>
     	<tbody>
     		@foreach($bases as $base)
     		<tr>
-    			<td>{{$base->codBase}}</td>
-                <td>{{$base->rotulo}}</td>
-    			<td>
+    			<td style="width: 22%">{{$base->rotulo}}</td>
+                <td style="text-align: justify; padding-right: 2%">{{$base->texto}}</td>
+    			<td style="width: 12%;margin-left: 1%">
               <a href="{{ route('bases.editar',$base->codBase)}}">
-                  <img width="4%" src="{{ url('images/edit-01.png') }}">
+                  <img width="24%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('bases.visualizar', $base->codBase) }}">
-                  <img width="6%" src="{{ url('images/see-01.png') }}">
+                  <img width="27%" src="{{ url('images/see-01.png') }}">
               </a>
               <a href="javascript:void(0)">
-                  <img class="toDelete" width="3%" src="{{ url('images/delet.png') }}">
+                  <img class="toDelete" width="20%" src="{{ url('images/delet.png') }}">
               </a>
           </td>
     		</tr>

@@ -7,7 +7,7 @@
 
   <div id="busca"> 
     <a href="{{ route('peticoes.novo') }}">
-            <img width="18%" style="margin-top: -6%;" src="{{ url('images/addPet.png') }}">
+             <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">  
          </a>
   <div class="search">
       <form>
