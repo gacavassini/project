@@ -24,8 +24,8 @@ class CreateAtividadesTable extends Migration
             $table->string('tipo', 45)->nullable();
             $table->integer('prazo')->nullable(); //prazo em dias
             $table->string('dataDiarioOficial'); //data do dia q foi cadastrado
-            $table->integer('dias')->nullable(); //corrido ou util
-            $table->string('dataLimite')->nullable(); //data final de prazo
+            $table->string('dias')->nullable(); //corrido ou util
+            $table->date('dataLimite')->nullable(); //data final de prazo
             $table->text('observacao')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();

@@ -47,19 +47,18 @@
 
       <div class="t3">
         <label><br>Data do Diário Oficial:<br></label>
-        <input id="datepicker" type="text" name="dataDiarioOficial" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
-      </div>
-
-
-
-      <div class="t3">
-        <label> <br>Data Limite:<br> </label>
-        <input id="medio" type="text" name="dataLimite">
+        <input id="datepicker" type="text" name="dataDiarioOficial" autocomplete="off" style="width: 70; height: 4vh; margin: 0.5% 0%; display: inline-block;">
       </div>
 
       <div class="t3">
         <label> <br>Prazo:<br></label>
         <input name="prazo" id="pequeno" type="text">
+      </div>
+
+      <div class="t3">
+        <label> <br>Data Limite:<br> </label>
+        <input id="medio" type="text" name="dataLimiteShow" disabled>
+        <input id="medio" type="hidden" name="dataLimite">
       </div>
 
       <div class="t1">
@@ -69,12 +68,15 @@
 
       <br>
       <div class="btn">
-        <button class="btnCancel">Cancelar</button>
+        <!--<button class="btnCancel">Cancelar</button>-->
+        <a class="btnCancel" href="{{ route('atividades.listar') }}">Cancel</a>
         <button class="btnSave">Salvar</button>
       </div>
 
     </form>
 </div>
+
+<div id="feriados" style="display: none;"></div>
 @endsection
 
 @section('javascript')
@@ -89,4 +91,18 @@
       display: inline-block;
     }
   </style>
+
+    <script>
+        var url = "https://api.calendario.com.br/?json=true&ano=2018&estado=SP&cidade=MOGI_GUACU&token=ZGdvLmRpZWdvY2FydmFsaG9AZ21haWwuY29tJmhhc2g9MTYzMjcxMDY3";
+        var feriados = [];
+        $.getJSON(url).then(function(data){
+            for(var i = 0; i < data.length; i++){
+                var obj = {dia: data[i].date, nome: data[i].name};
+                feriados[i] = obj;
+                var feriadoTag = "<div class='feriado'>" + data[i].date + "</div>";
+                $("#feriados").append(feriadoTag);
+            }
+        });
+    </script>
+  <script src="{{ url('/js/atividades.js') }}"></script>
 @endsection

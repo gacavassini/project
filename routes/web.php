@@ -20,6 +20,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::post('/peticoes/salvar',['as'=>'peticoes.salvar','uses'=>'Peticoes@salvar']);
   Route::get('/peticoes/editar/{id}',['as'=>'peticoes.editar','uses'=>'Peticoes@editar']);
   Route::put('/peticoes/atualizar/{id}',['as'=>'peticoes.atualizar','uses'=>'Peticoes@atualizar']);
+  Route::get('/peticoes/visualizarDocumento/{id}', ['as'=>'peticoes.visualizarDocumento', 'uses' => 'Peticoes@visualizarDocumento']);
 
   //Rota clientes
   Route::get('/clientes/novo',['as'=>'clientes.novo', 'uses'=>'Clientes@novo']);
@@ -39,11 +40,11 @@ Route::group(['middleware'=>'auth'],function(){
 
   //rota atividades
   Route::get('/atividades', ['as'=>'atividades.listar', 'uses'=>'Atividades@listar']);
-  Route::get('/atividades/tela', ['as'=>'atividades.tela', 'uses'=>'Atividades@tela']);
+  Route::get('/atividades/lembretes', ['as'=>'atividades.tela', 'uses'=>'Atividades@tela']);
   Route::get('/atividades/novo', ['as'=>'atividades.novo', 'uses'=>'Atividades@novo']);
   Route::get('/atividades/visualizar/{id}', ['as'=>'atividades.visualizar', 'uses'=>'Atividades@visualizar']);
   Route::get('/atividades/editar/{id}', ['as'=>'atividades.editar', 'uses'=>'Atividades@editar']);
-  Route::put('/atividades/atualizar/{id}', ['as'=>'atividades.atualizar', 'uses'=>'Atividades@atualizar']);
+  Route::get('/atividades/atualizar/{id}', ['as'=>'atividades.atualizar', 'uses'=>'Atividades@atualizar']);
   Route::post('/atividades/salvar', ['as'=>'atividades.salvar', 'uses'=>'Atividades@salvar']);
 
   //rota Entrevistas
@@ -60,7 +61,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/questoes/editar/{id}', ['as' => 'questoes.editar', 'uses' => 'Questoes@editar']);
   Route::get('/questoes/visualizar/{id}', ['as' => 'questoes.visualizar', 'uses' => 'Questoes@visualizar']);
   Route::get('/questoes/atualizar/{id}', ['as' => 'questoes.atualizar', 'uses' => 'Questoes@atualizar']);
-  Route::post('/questoes/salvar', ['as' => 'questoes.salvar', 'uses' => 'Questao@salvar']);
+  Route::post('/questoes/salvar', ['as' => 'questoes.salvar', 'uses' => 'Questoes@salvar']);
 
   //rota Bases
   Route::get('/bases', ['as' => 'bases.listar', 'uses' => 'Bases@listar']);

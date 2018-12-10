@@ -23,6 +23,9 @@
 	position: absolute;
 	width: 1px;
 }
+.infor{
+	float: left;
+}
 .ui-helper-reset {
 	margin: 0;
 	padding: 0;
@@ -1065,10 +1068,10 @@ a.ui-button:active,
 }
 .ui-icon,
 .ui-widget-content .ui-icon {
-	background-image: url("../images/ui-icons_444444_256x240.png");
+	background-image: url("../images/ui-icons_007fff_256x240.png");
 }
 .ui-widget-header .ui-icon {
-	background-image: url("../images/ui-icons_444444_256x240.png");
+	background-image: url("../images/ui-icons_007fff_256x240.png");
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,

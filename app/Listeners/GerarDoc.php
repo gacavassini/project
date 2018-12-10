@@ -37,6 +37,9 @@ class GerarDoc
         $clienteNome = str_replace(' ', '', $cliente->nome);
         $nomeArquivo = $clienteNome."_".$formatDate.".pdf";
 
+        Peticao::where('codPeticao', $peticao->codPeticao)->update(['filename' => $nomeArquivo]);
+
+
         //=====================================================
         //$pdf = \App::make('dompdf.wrapper');
         //$pdf->loadHTML($peticao->fatos);

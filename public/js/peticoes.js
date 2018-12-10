@@ -115,8 +115,7 @@ function insereBase(){
   var codBase;
   var texto;
 
-  $.each([ 1,2,4,5,6,8,9,10 ], function( i, value ) {
-    console.log(value);
+  $.each([ 1,2,4,6,5,8,9,10 ], function( i, value ) {
     if(value == 1){
       $.getJSON('/api/bases/rotulo/' + value, function(data){
         codBase = data[0].codBase;
@@ -186,11 +185,14 @@ $('.inserePedido').click(function(){
       //se pedido for especifico
       if(data.tipo === 0){
         editor = CKEDITOR.instances.editor;
-        range = editor.createRange();
-        range.setStart(editor.document.getById( 'dadosContrato' ), CKEDITOR.POSITION_AFTER_START);
+        //range = editor.createRange();
+        //range.setStart(editor.document.getById( 'dadosContrato' ), CKEDITOR.POSITION_AFTER_START);
         // insere fundamento e resumo no meio do texto
-        editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.fundamento + "<p/>"), range );
-        editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
+        //editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.fundamento + "<p/>"), range );
+        //editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
+
+        //essa linha adiciona o texto na posicao do cursor
+        CKEDITOR.instances.editor.insertHtml("<p>" + data.fundamento + "<p/>" + "<p>" + data.resumo + "</p>");
 
         //insere soh o resumo apos o titulo dos pedidos
         editor = CKEDITOR.instances.editor;
@@ -199,10 +201,19 @@ $('.inserePedido').click(function(){
         editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
       }
       else{//se o pedido for padrao
-
+          //insere soh o resumo apos o titulo dos pedidos
+          editor = CKEDITOR.instances.editor;
+          range = editor.createRange();
+          range.setStart(editor.document.getById( 'tituloPedido' ), CKEDITOR.POSITION_AFTER_START);
+          editor.editable().insertElement( CKEDITOR.dom.element.createFromHtml("<p>" + data.resumo + "<p/>"), range );
       }
       criarPeticaoPedido(data.codPedido);
     });
+  });
+
+  //isso aqui desmarca as checkboxes
+  $('input:checked').each(function(){
+      $(this).prop('checked', false);
   });
 });
 

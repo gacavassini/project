@@ -35,8 +35,13 @@
         <nav>
           <div class="nav-fostrap">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="{{route('atividades.tela')}}">Atividades</a>
+              <li><a href="/">Página Inicial</a></li>
+              <li><a href="javascript:void(0)" >Atividades<span class="arrow-down"></span></a>
+                  <ul class="dropdown">
+                      <li><a href="{{route('atividades.tela')}}">Lembretes</a></li>
+                      <li><a href="{{route('atividades.novo')}}">Cadastrar Atividade</a></li>
+                      <li><a href="{{route('atividades.listar')}}">Consultar Atividade</a></li>
+                  </ul>
               </li>
               <li><a href="javascript:void(0)" >Petição<span class="arrow-down"></span></a>
                 <ul class="dropdown">

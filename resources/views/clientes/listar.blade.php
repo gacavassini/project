@@ -4,20 +4,25 @@
 @section('conteudo')
 
  <div class="conteudoForm">
-    <h3 class="center">Lista de Clientes</h3>
-    <div class="search">
-    	<form>
-			<input type="search" placeholder="Nome do Cliente">
-		</form>
-    </div>
+
+      <h2 class="center" style="margin-bottom: 2%">Lista de Clientes</h2>
+   <div id="busca"> 
+      <a href="{{ route('clientes.novo') }}">
+              <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">
+           </a>
+      <div class="search">
+        <form>
+           <input  type="search" id="BuscaPet" placeholder="Nome do Cliente">
+        </form>
+      </div>
+  </div><br>
 
 
     <table class="consulta">
     	<thead>
     		<tr>
-          <th>ID</th>
-    			<th>Nome</th>
-    			<th>CPF</th>
+          
+    			<th>Nome</th>    			
     			<th>RG</th>
     			<th>Telefone</th>
     			<th>Celular</th>
@@ -28,19 +33,18 @@
     	<tbody>
     		@foreach($clientes as $cliente)
     		<tr>
-    			<td>{{$cliente->codCliente}}</td>
-                <td>{{$cliente->nome}}</td>
-    			<td>{{$cliente->cpf}}</td>
-    			<td>{{$cliente->rg}}</td>
-    			<td>{{$cliente->telefoneRes}}</td>
-    			<td>{{$cliente->celular}}</td>
-    			<td>{{$cliente->email}}</td>
-    			<td>
+    			
+                <td style="width: 31%" id="consultaFonteMenor">{{$cliente->nome}}</td>
+    			<td id="consultaFonteMenor">{{$cliente->rg}}</td>
+    			<td id="consultaFonteMenor">{{$cliente->telefoneRes}}</td>
+    			<td id="consultaFonteMenor">{{$cliente->celular}}</td>
+    			<td id="consultaFonteMenor">{{$cliente->email}}</td>
+    			<td width="8%">
               <a href="{{ route('clientes.editar',$cliente->codCliente)}}">
-                  <img width="13%" src="{{ url('images/edit-01.png') }}">
+                  <img width="33%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('clientes.visualizar', $cliente->codCliente) }}">
-                  <img width="18%" src="{{ url('images/see-01.png') }}">
+                  <img width="43%" src="{{ url('images/see-01.png') }}">
               </a>
           </td>
     		</tr>

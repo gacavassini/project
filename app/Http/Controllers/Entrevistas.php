@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Entrevista;
 use App\Cliente;
 use App\Empresa;
+use App\Questao;
+use App\EntrevistaQuestao;
 
 class Entrevistas extends Controller
 {
@@ -18,20 +20,38 @@ class Entrevistas extends Controller
     public function novo(){
         $clientes = Cliente::all();
         $empresas = Empresa::all();
-        return view('entrevistas.novo', compact('clientes', 'empresas'));
+        $questoes = Questao::all();
+        return view('entrevistas.novo', compact('clientes', 'empresas', 'questoes'));
     }
 
     public function salvar(Request $req){
-      $dados = $req->all();
+      $dados = $req->only(['codCliente', 'codEmpresa']);
       Entrevista::create($dados);
+
+      //pega a ultima entrevista criada
+      $entrevista = Entrevista::orderBy('created_at', 'desc')->first();
+
+      $equestoes = $req->except(['codCliente', 'codEmpresa', '_token']);
+      //cria as entrevistas_questoes usando o id da entrevista q foi criada
+      //percorre os inputs das perguntas onde $key = nome do input e $value é o valor digitado na caixa de texto
+      foreach($equestoes as $key => $value){
+        if($value != ""){
+            $entrevistaQ = new EntrevistaQuestao;
+            $entrevistaQ['eq_codEntrevista'] = $entrevista->codEntrevista;
+            $entrevistaQ['eq_codQuestao'] = $key;
+            $entrevistaQ['descResposta'] = $value;
+            $entrevistaQ->save();
+        }
+      }
       return redirect()->route('entrevistas.listar');
     }
 
     public function editar($id){
         $clientes = Cliente::all();
         $empresas = Empresa::all();
+        $questoes = Questao::all();
         $registro = Entrevista::where('codEntrevista', $id)->first();
-        return view('entrevistas.editar',compact('registro', 'clientes', 'empresas'));
+        return view('entrevistas.editar',compact('registro', 'clientes', 'empresas', 'questoes'));
     }
 
     public function atualizar(Request $req, $id){

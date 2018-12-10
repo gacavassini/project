@@ -81,8 +81,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 #cancel{
 	margin-right: 1%;
-	width: 13%;
-	height: 5%;
+	width: 14%;
+	height: 7%;
 	margin-top: 2.5%;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -341,4 +341,7 @@ a:active{
 	clear: both;
 	width: 100%;
 	height: 95vh;
+}
+#enderecamentoSelect{
+	max-width: 90%;
 }

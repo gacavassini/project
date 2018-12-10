@@ -76,9 +76,10 @@ class Peticoes extends Controller
       event(new PeticaoCriada($peticao));
 
       //retorna pra index
-      $pdf = \App::make('dompdf.wrapper');
-      $pdf->loadHtml($peticao->fatos);
-      return $pdf->stream();
+      //$pdf = \App::make('dompdf.wrapper');
+      //$pdf->loadHtml($peticao->fatos);
+      //return $pdf->stream();
+      return redirect()->route('peticoes.index');
     }
 
     public function index(){
@@ -89,4 +90,11 @@ class Peticoes extends Controller
     public function editar(){}
 
     public function atualizar(){}
+
+    public function visualizarDocumento($id){
+        $peticao = Peticao::where('codPeticao', $id)->first();
+        $dompdf = \App::make('dompdf.wrapper');
+        $dompdf->loadHtml($peticao->fatos);
+        return $dompdf->stream();
+    }
 }
