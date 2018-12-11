@@ -9,6 +9,8 @@ use App\Cliente;
 use App\Empresa;
 use App\Questao;
 use App\EntrevistaQuestao;
+use App\Events\EntrevistaCriada;
+use PDF;
 
 class Entrevistas extends Controller
 {
@@ -43,6 +45,8 @@ class Entrevistas extends Controller
             $entrevistaQ->save();
         }
       }
+
+      event(new EntrevistaCriada($entrevista));
       return redirect()->route('entrevistas.listar');
     }
 

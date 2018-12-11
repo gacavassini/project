@@ -3,9 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Events\EntrevistaCriada;
 
 class Entrevista extends Model
 {
+  //recisou disso pq procurava tabela peticaos
+    protected $table = 'entrevistas';
+
+    protected $events = [
+      'created' => EntrevistaCriada::class
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

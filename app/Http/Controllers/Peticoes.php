@@ -75,6 +75,8 @@ class Peticoes extends Controller
       //faz o trigger do evento pós create, pra gerar o doc/pdf
       event(new PeticaoCriada($peticao));
 
+   
+
       //retorna pra index
       //$pdf = \App::make('dompdf.wrapper');
       //$pdf->loadHtml($peticao->fatos);
