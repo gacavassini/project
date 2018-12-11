@@ -69,7 +69,7 @@
       <br>
       <div class="btn">
         <!--<button class="btnCancel">Cancelar</button>-->
-        <a class="btnCancel" href="{{ route('atividades.listar') }}">Cancel</a>
+        <a class="btnCancel" href="{{ route('atividades.listar') }}">Cancelar</a>
         <button class="btnSave">Salvar</button>
       </div>
 
