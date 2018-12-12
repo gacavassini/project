@@ -26,7 +26,9 @@
     		<tr>
     			<td>{{$atividade->codAtividade}}</td>
     			<td>{{$atividade->atividade}}</td>
-                <td>{{$atividade->status}}</td>
+                <td>
+                    {{($atividade->status == 1) ? "Pendente" : "Concluído"}}
+                </td>
     			<td  style="width: 10%;">
               <a href="{{ route('atividades.editar',$atividade->codAtividade)}}">
                   <img width="24%" src="{{ url('images/edit-01.png') }}">
