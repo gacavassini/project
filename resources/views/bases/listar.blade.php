@@ -5,7 +5,7 @@
 
  <div class="conteudoForm">
     <h2 class="center" style="margin-bottom: 2%">Lista de Bases</h2>
-   <div id="busca"> 
+   <div id="busca">
     <a href="{{ route('bases.novo') }}">
             <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">
          </a>
@@ -31,16 +31,17 @@
     			<td style="width: 22%">{{$base->rotulo}}</td>
                 <td style="text-align: justify; padding-right: 2%">{{$base->texto}}</td>
     			<td style="width: 12%;margin-left: 1%">
-              <a href="{{ route('bases.editar',$base->codBase)}}">
-                  <img width="24%" src="{{ url('images/edit-01.png') }}">
-              </a>
-              <a href="{{ route('bases.visualizar', $base->codBase) }}">
-                  <img width="27%" src="{{ url('images/see-01.png') }}">
-              </a>
-              <a href="javascript:void(0)">
-                  <img class="toDelete" width="20%" src="{{ url('images/delet.png') }}">
-              </a>
-          </td>
+                    <div hidden>{{$base->codBase}}</div>
+                    <a href="{{ route('bases.editar',$base->codBase)}}">
+                        <img width="24%" src="{{ url('images/edit-01.png') }}">
+                    </a>
+                    <a href="{{ route('bases.visualizar', $base->codBase) }}">
+                        <img width="27%" src="{{ url('images/see-01.png') }}">
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img class="toDelete" width="20%" src="{{ url('images/delet.png') }}">
+                    </a>
+                </td>
     		</tr>
     		@endforeach
     	</tbody>
@@ -59,7 +60,7 @@
         }
 
         function clickCB(el){
-            var codBase = $(this).parent().parent().parent().children().first().text();
+            var codBase = $(this).parent().parent().children().first().text();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
@@ -75,7 +76,7 @@
                             text: "Sim",
                             click: function () {
                                 $.ajax({
-                                    type: "DELETE",
+                                    type: "GET",
                                     url: "/api/bases/excluir/" + codBase,
                                     context: this,
                                     success: function(){

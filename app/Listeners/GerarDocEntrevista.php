@@ -23,21 +23,20 @@ class GerarDocEntrevista
     /**
      * Handle the event.
      *
-     * @param  PeticaoCriada  $event
+     * @param  EntrevistaCriada  $event
      * @return void
      */
     public function handle(EntrevistaCriada $event)
     {
-        
         $entrevista = $event->entrevista;
         $cliente = $entrevista->cliente;
 
         $date = new \DateTime($entrevista->created_at);
         $formatDate = $date->format('dmY');
         $clienteNome = str_replace(' ', '', $cliente->nome);
-        $nomeArquivo = $clienteNome."_".$formatDate.".pdf";
+        $nomeArquivo = $clienteNome."_Entrevista_".$formatDate.".pdf";
 
-        Entrevista::where('codEntrevista', $entrevista->codEntrevista)->update(['filename' => $nomeArquivo]);
+        //Entrevista::where('codEntrevista', $entrevista->codEntrevista)->update(['filename' => $nomeArquivo]);
 
 
         //=====================================================
@@ -48,9 +47,16 @@ class GerarDocEntrevista
         // \Log::info('criada', ['peticao' => $peticao,
         //   'dataEntrevista' => $formatDate, 'cliente' => $cliente->nome,
         //   'nomeDoArquivo' => $nomeArquivo]);
+        $html = '';
+        foreach($entrevista->entrevistasQuestoes as $eq){
+            $html .= '<p><strong>'.$eq->questao->descQuestao.'</strong>: '.$eq->descResposta.'</p>';
+        }
+        $html .= "<br /><br /><br />";
+
+        \Log::info('html', [$html]);
 
         $dompdf = \App::make('dompdf.wrapper');
-        $dompdf->loadHtml($entrevista->descResposta);
+        $dompdf->loadHtml($html);
 
         $dompdf->save(base_path('storage/documentos/'.$clienteNome.'/'.$nomeArquivo));
     }

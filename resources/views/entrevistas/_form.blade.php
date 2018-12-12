@@ -32,9 +32,9 @@
         @if($questao->descQuestao == "Qual era a jornada de trabalho?" || $questao->descQuestao == "Narre qualquer outra situação que possa ter te incomodado")
             <textarea name="{{$questao->codQuestao}}" id="grande" cols="80" rows="4" style="height: 90%"></textarea>
         @elseif($questao->descQuestao == "Data de Admissão")
-            <input name="{{$questao->codQuestao}}" id="datepickerAd" class="grande">
+            <input name="{{$questao->codQuestao}}" id="datepickerAd" class="grande" autocomplete="off">
         @elseif($questao->descQuestao == "Data de Demissão")
-            <input name="{{$questao->codQuestao}}" id="datepickerDe" class="grande">
+            <input name="{{$questao->codQuestao}}" id="datepickerDe" class="grande" autocomplete="off">
         @else
             <input name="{{$questao->codQuestao}}" type="text" id="grande">
         @endif

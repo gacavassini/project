@@ -26,7 +26,7 @@ Route::get('/entrevistas/questoes/{codEntrevista}', 'Entrevistas@questoesJson');
 
 Route::get('/bases/rotulo/{codRot}', 'Bases@getBasesPorRotuloJson');
 Route::get('/bases/{codRot}', 'Bases@getBaseJson');
-Route::delete('/bases/excluir/{id}', 'Bases@excluir');
+Route::get('/bases/excluir/{id}', 'Bases@excluir');
 
 Route::get('/pedidos/{codPedido}', 'Pedidos@getPedidosByCodJson');
 

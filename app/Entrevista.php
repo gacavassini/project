@@ -41,6 +41,6 @@ class Entrevista extends Model
 
     public function entrevistasQuestoes()
     {
-        return $this->hasMany('App\EntrevistaQuestao', 'eq_CodEntrevista', 'CodEntrevista');
+        return $this->hasMany('App\EntrevistaQuestao', 'eq_codEntrevista', 'codEntrevista');
     }
 }

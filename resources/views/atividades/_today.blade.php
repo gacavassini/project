@@ -23,7 +23,23 @@
                         </a>
                         <input id="checkAtiv" class="checkAtiv" type="checkbox" value="{{$atrasado->codAtividade}}">
                         <br>
-                        <a href="">Detalhes</a>
+
+                        <button id="dialog-link" class="ui-button ui-corner-all ui-widget">
+                            <span class="ui-icon ui-icon-newwin"></span>Detalhes
+                        </button>
+                        <!-- ui-dialog -->
+                        <div id="dialog" title="{{$atrasado->atividade}}">
+                            <p><strong>Cliente: </strong>{{$atrasado->cliente->nome}}</p>
+                            <p><strong>Número do Processo: </strong>{{$atrasado->numProcesso}}</p>
+                            <p><strong>Dias: </strong>{{($atrasado->dias == 0) ? "Corrido" : "Útil"}}</p>
+                            <p><strong>Tipo: </strong>{{($atrasado->tipo == "fisico") ? "Físico" : "Eletrônico"}}</p>
+                            <p><strong>Data Diário Oficial: </strong>{{$atrasado->dataDiarioOficial}}</p>
+                            <p><strong>Prazo: </strong>{{$atrasado->prazo}} dias</p>
+                            <p><strong>Data Limite: </strong>{{$atrasado->formataDataLimite($atrasado->dataLimite)}}</p>
+                            <p><strong>Status: </strong>{{($atrasado->status == 1) ? "Pendente" : "Concluído"}}</p>
+                            <p><strong>Observações: </strong>{{ isset($atrasado->observacao) ? $atrasado->observacao : '' }}</p>
+                        </div><!-- Final do dialog -->
+
                     </td>
                 </tr>
                 @endif
@@ -56,7 +72,21 @@
                         </a>
                         <input id="checkAtiv" class="checkAtiv" type="checkbox" value="">
                         <br>
-                        <a href="">Detalhes</a>
+                        <button id="dialog-link" class="ui-button ui-corner-all ui-widget">
+                            <span class="ui-icon ui-icon-newwin"></span>Detalhes
+                        </button>
+                        <!-- ui-dialog -->
+                        <div id="dialog" title="{{$fisico->atividade}}">
+                            <p><strong>Cliente: </strong>{{$fisico->cliente->nome}}</p>
+                            <p><strong>Número do Processo: </strong>{{$fisico->numProcesso}}</p>
+                            <p><strong>Dias: </strong>{{($fisico->dias == 0) ? "Corrido" : "Útil"}}</p>
+                            <p><strong>Tipo: </strong>{{($fisico->tipo == "fisico") ? "Físico" : "Eletrônico"}}</p>
+                            <p><strong>Data Diário Oficial: </strong>{{$fisico->dataDiarioOficial}}</p>
+                            <p><strong>Prazo: </strong>{{$fisico->prazo}} dias</p>
+                            <p><strong>Data Limite: </strong>{{$fisico->formataDataLimite($fisico->dataLimite)}}</p>
+                            <p><strong>Status: </strong>{{($fisico->status == 1) ? "Pendente" : "Concluído"}}</p>
+                            <p><strong>Observações: </strong>{{ isset($fisico->observacao) ? $fisico->observacao : '' }}</p>
+                        </div><!-- Final do dialog -->
                     </td>
                 </tr>
             @endforeach
