@@ -84,7 +84,7 @@
 					<textarea id="editor" class="ckeditor" name="fatos" cols="80" rows="30" style="height: 90%"></textarea>
 					<!-- (3): Javascript code to replace textarea with id='editor1' by CKEditor -->
 					<button class="myButton">Salvar</button>
-					<a  class="btnCancel" href="{{ route('peticoes.index') }}">Cancelar</a>
+					<a  id="cancel" class="btnCancel" href="{{ route('peticoes.index') }}">Cancelar</a>
 				</div>
 			</div><!--Fechou peticao -->
 		</div><!--Fechou conteudo -->
