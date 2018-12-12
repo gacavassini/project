@@ -89,6 +89,6 @@
 
 <br>
 <div class="btn">
-    <button class="btnCancel">Cancelar</button>
+    <a  class="btnCancel" href="{{ route('clientes.listar') }}">Cancelar</a>
     <button class="btnSave" style="margin-top: 2%">Salvar</button>
 </div>
