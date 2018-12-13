@@ -15,7 +15,7 @@ class Atividades extends Controller
         while($hoje->format("w") == 0 || $hoje->format("w") == 6){
             $hoje->modify('+1 day');
         }
-        $atrasados = Atividade::where('dataLimite', '<', $hoje->format('Y-m-d 00:00:00'))->get();
+        $atrasados = Atividade::where('dataLimite', '<=', $hoje->format('Y-m-d 00:00:00'))->get();
         $eletronicos = Atividade::where([
             ['dataLimite', '=', $hoje->format('Y-m-d 00:00:00')],
             ['tipo', '=', 'eletronico']

@@ -24,11 +24,11 @@
                         <input id="checkAtiv" class="checkAtiv" type="checkbox" value="{{$atrasado->codAtividade}}">
                         <br>
 
-                        <button id="dialog-link" class="ui-button ui-corner-all ui-widget">
-                            <span class="ui-icon ui-icon-newwin"></span>Detalhes
+                        <button id="dialog-link" class="ui-button ui-corner-all ui-widget dialog-link">
+                            <span id="ui-icon ui-icon-newwin"></span>Detalhes
                         </button>
                         <!-- ui-dialog -->
-                        <div id="dialog" title="{{$atrasado->atividade}}">
+                        <div id="dialog" class="dialog" title="{{$atrasado->atividade}}">
                             <p><strong>Cliente: </strong>{{$atrasado->cliente->nome}}</p>
                             <p><strong>Número do Processo: </strong>{{$atrasado->numProcesso}}</p>
                             <p><strong>Dias: </strong>{{($atrasado->dias == 0) ? "Corrido" : "Útil"}}</p>

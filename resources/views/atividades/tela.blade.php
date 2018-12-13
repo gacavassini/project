@@ -22,11 +22,11 @@
 <div class="telaLembretes">
 
 	<div class="listaAtividades" id="hoje">
-		
+
 		<h2  id="today">{{ $hoje->format('d/m/Y') }} </h2>
 				<span class="ui-icon ui-icon-info" id="infoToday"></span>
 			<br>
-			
+
 			<div class="information" id="infoTo">
 				<span style="color: black">Legenda:</span><br>
 				<ul>
@@ -34,10 +34,10 @@
 					<li style="color: black; margin-top:3%">Eletrônico</li>
 					<li style="color: #0b3e93; margin-top:3%">Físico </li>
 				</ul>
-					
+
 			</div>
 		@include('atividades._today')
-	
+
 
 	</div>
 
@@ -45,7 +45,7 @@
 		<h2 id="tomorrow">{{ $amanha->format('d/m/Y') }} </h2>
 		<span class="ui-icon ui-icon-info" id="infoTomorrow"></span>
 			<br>
-			
+
 			<div class="information" id="infoTom">
 				<span style="color: black">Legenda:</span><br>
 				<ul>
@@ -53,7 +53,7 @@
 					<li style="color: black; margin-top:3%">E = Eletrônico</li>
 					<li style="color: #0b3e93; margin-top:3%">F = Físico </li>
 				</ul>
-					
+
 			</div>
 		@include('atividades._tomorrow')
 	</div>
@@ -62,7 +62,7 @@
 		<h2 id="afterTomorrow">{{ $depois->format('d/m/Y') }} </h2>
 		<span class="ui-icon ui-icon-info" id="infoAfterTomorrow"></span>
 			<br>
-			
+
 			<div class="information" id="infoAt">
 				<span style="color: black">Legenda:</span><br>
 				<ul>
@@ -70,7 +70,7 @@
 					<li style="color: black; margin-top:3%">Eletrônico</li>
 					<li style="color: #0b3e93; margin-top:3%">Físico </li>
 				</ul>
-					
+
 			</div>
 		@include('atividades._afterTomorrow')
 	</div>
@@ -79,47 +79,8 @@
 @endsection
 
 @section('javascript')
-<script>
-	$( "#dialog" ).dialog({
-		autoOpen: false,
-		width: 400,
-		buttons: [
-			{
-				text: "Ok",
-				click: function() {
-					$( this ).dialog( "close" );
-				}
-			},
-		]
-	});
-
-	// Link to open the dialog
-	$( "#dialog-link" ).click(function( event ) {
-		$( "#dialog" ).dialog( "open" );
-		event.preventDefault();
-	});
-
-
-	$( "#dialog2" ).dialog({
-		autoOpen: false,
-		width: 400,
-		buttons: [
-			{
-				text: "Ok",
-				click: function() {
-					$( this ).dialog( "close" );
-				}
-			},
-		]
-	});
-
-	// Link to open the dialog
-	$( "#dialog-link2" ).click(function( event ) {
-		$( "#dialog2" ).dialog( "open" );
-		event.preventDefault();
-	});
-</script>
 <script src="{{ url('/js/atividades.js') }}"></script>
+<!-- <script src="{{ url('/js/detalhes-lembretes.js') }}"></script> -->
 <script type="text/javascript">
 	mudaOsLabelsEmLembrete();
 
@@ -128,6 +89,35 @@
 		atividades[i].onclick = clickCB;
 	}
 
-	$(".checkAtiv").on("click", "input[type=checkbox]", clickCB);
+	$( ".dialog" ).dialog({
+	    autoOpen: false,
+	    width: 400,
+	    buttons: [
+	        {
+	            text: "Ok",
+	            click: function() {
+	                $( this ).dialog( "close" );
+	            }
+	        },
+	    ]
+	});
+</script>
+<script>
+var buttons = $( "button[id='dialog-link']" );
+var dialogs = $(".dialog");
+
+for(var i = 0; i < buttons.length; i++){
+	buttons.eq(i).click(function(){
+		dialogs.eq(i).dialog("open");
+	});
+}
+
+// for(var i = 0, len = buttons.length; i<len; i++){
+// 	buttons[i].onclick(function( event ) {
+// 		console.log("ola");
+// 		console.log($("div[aria-labelledby='ui-id-${i}']"));
+// 		dialogs[i].dialog( "open" );
+// 	});
+// }
 </script>
 @endsection
