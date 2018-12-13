@@ -26,5 +26,5 @@
 <br>
 <div class="btn">
     <a  class="btnCancel" href="{{ route('pedidos.listar') }}">Cancelar</a>
-    <button class="btnSave" style="margin-top: 2%" >Salvar</button>
+    <button class="btnSave"  >Salvar</button>
 </div>

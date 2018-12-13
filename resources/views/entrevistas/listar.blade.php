@@ -30,15 +30,18 @@
     	<tbody>
     		@foreach($entrevistas as $entrevista)
     		<tr>
-    			<td style="width:40%">{{$entrevista->cliente->nome}}</td>
+    			<td style="width:38%">{{$entrevista->cliente->nome}}</td>
     			<td>{{$entrevista->empresa->nome}}</td>
     			<td style="width:19%">{{$entrevista->created_at}}</td>
-    			<td style="width:9%">
+    			<td style="width:14%; padding-left: 1% ">
               <a href="{{ route('entrevistas.editar',$entrevista->codEntrevista)}}">
-                  <img width="28%" src="{{ url('images/edit-01.png') }}">
+                  <img width="20%" src="{{ url('images/edit-01.png') }}">
               </a>
               <a href="{{ route('entrevistas.visualizar', $entrevista->codEntrevista) }}">
-                  <img width="36%" src="{{ url('images/see-01.png') }}">
+                  <img width="26%" src="{{ url('images/see-01.png') }}">
+              </a>
+               <a href="" target="_blank">
+                   <img width="23%" src="{{ url('images/pdf.png') }}">
               </a>
           </td>
     		</tr>

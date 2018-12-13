@@ -44,8 +44,8 @@
   <input type="text" name="telefone" id ="medio" value="{{isset($empresa->telefone) ? $empresa->telefone : ''}}">
 </div>
 
- <br>
-<div class="btn">
+ <br> <br>
+<div class="btn" style="margin-top: 5%">
   <a  class="btnCancel" href="{{ route('empresas.listar') }}">Cancelar</a>
-  <button class="btnSave" style="margin-top: 2%" >Salvar</button>
+  <button class="btnSave" >Salvar</button>
 </div>

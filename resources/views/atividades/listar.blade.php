@@ -12,7 +12,7 @@
     </div>
 
 
-    <table class="consulta" >
+    <table class="consulta" width="90%" >
     	<thead>
     		<tr>
           	<th>ID</th>
@@ -25,7 +25,7 @@
     		@foreach($atividades as $atividade)
     		<tr>
     			<td>{{$atividade->codAtividade}}</td>
-    			<td>{{$atividade->atividade}}</td>
+    			<td width="65%">{{$atividade->atividade}}</td>
                 <td>
                     {{($atividade->status == 1) ? "Pendente" : "Concluído"}}
                 </td>
