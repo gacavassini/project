@@ -26,6 +26,11 @@
 					<img style="margin-top:2%;" width="16%"  src="{{ url('images/see-01.png') }}" >  <span>  Consultar</span> 
 				</a>
 			</td></tr>
+			<tr><td> 
+				<a href="{{route('atividades.tela')}}">
+					<img style="margin-top:2%;" width="13%"  src="{{ url('images/ok-01.png') }}" >  <span>  Lembretes</span> 
+				</a>
+			</td></tr>
 		</tbody>
 		</table>
 

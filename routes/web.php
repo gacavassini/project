@@ -54,6 +54,7 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/entrevistas/visualizar/{id}', ['as' => 'entrevistas.visualizar', 'uses' => 'Entrevistas@visualizar']);
   Route::post('/entrevistas/salvar', ['as' => 'entrevistas.salvar', 'uses' => 'Entrevistas@salvar']);
   Route::put('/entrevistas/atualizar/{id}', ['as' => 'entrevistas.atualizar', 'uses' => 'Entrevistas@atualizar']);
+  Route::get('/entrevistas/visualizarDocumento/{id}', ['as'=>'entrevistas.visualizarDocumento', 'uses' => 'Entrevistas@visualizarDocumento']);
 
   //rota Questoes
   Route::get('/questoes', ['as' => 'questoes.listar', 'uses' => 'Questoes@listar']);

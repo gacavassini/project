@@ -121,6 +121,7 @@ margin-top: 0.2%;
 	height: 100%;
 	border-right: solid 0.1vw gray;
 	padding: 1% 1.5%;	
+	overflow-y: scroll;
 
 
 	/*overflow-y: scroll;*/

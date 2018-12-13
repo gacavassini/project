@@ -40,7 +40,7 @@
               <a href="{{ route('entrevistas.visualizar', $entrevista->codEntrevista) }}">
                   <img width="26%" src="{{ url('images/see-01.png') }}">
               </a>
-               <a href="" target="_blank">
+               <a href="{{ route('entrevistas.visualizarDocumento', $entrevista->codEntrevista) }}" target="_blank">
                    <img width="23%" src="{{ url('images/pdf.png') }}">
               </a>
           </td>

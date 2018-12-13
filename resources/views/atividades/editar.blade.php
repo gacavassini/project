@@ -3,7 +3,7 @@
 
 @section('conteudo')
 <div class="conteudoForm">
-  <h3 class="center">Cadastrar Atividade</h3>
+  <h2  class="center">Editar Atividade</h2>
     <form class="" action="{{route('atividades.atualizar', $registro->codAtividade)}}" method="put">
       {{ csrf_field() }}
 

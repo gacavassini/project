@@ -31,8 +31,8 @@
 				<span style="color: black">Legenda:</span><br>
 				<ul>
 					<li style="color: red; margin-top:3% ">Atrasado</li>
-					<li style="color: black; margin-top:3%">Eletrônico</li>
-					<li style="color: #0b3e93; margin-top:3%">Físico </li>
+					<li style="color: black; margin-top:3%">E = Eletrônico</li>
+					<li style="color: #0b3e93; margin-top:3%">F = Físico </li>
 				</ul>
 
 			</div>
@@ -50,8 +50,8 @@
 				<span style="color: black">Legenda:</span><br>
 				<ul>
 					<li style="color: red; margin-top:3% ">Atrasado</li>
-					<li style="color: black; margin-top:3%">E = Eletrônico</li>
-					<li style="color: #0b3e93; margin-top:3%">F = Físico </li>
+					<li style="color: black; margin-top:3%">Eletrônico</li>
+					<li style="color: #0b3e93; margin-top:3%">Físico </li>
 				</ul>
 
 			</div>

@@ -4,12 +4,18 @@
 @section('conteudo')
 
  <div class="conteudoForm">
-    <h3 class="center">Lista de Atividades</h3>
-    <div class="search">
-    	<form>
-			<input type="search" placeholder="Nome da Atividade">
-		</form>
-    </div>
+
+     <h2 class="center" style="margin-bottom: 2%">Lista de Atividades</h2>
+   <div id="busca"> 
+      <a href="{{ route('atividades.novo') }}">
+              <img width="10%" style="margin-top: -6%;" src="{{ url('images/add-01.png') }}">
+           </a>
+      <div class="search">
+        <form>
+           <input  type="search" id="BuscaPet" placeholder="Nome do Cliente">
+        </form>
+      </div>
+  </div><br>
 
 
     <table class="consulta" width="90%" >

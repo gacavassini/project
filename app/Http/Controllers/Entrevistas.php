@@ -92,4 +92,24 @@ class Entrevistas extends Controller
     		where('entrevistas.codEntrevista', '=', $id)->get();
     	return json_encode($questoes);
     }
+
+    public function visualizarDocumento($id){
+        $entrevista = Entrevista::where('codEntrevista', $id)->first();
+        $dompdf = \App::make('dompdf.wrapper');
+
+        $html = '<h2>Entrevista '.$entrevista->cliente->nome.' na '.$entrevista->created_at.'</h2>';
+        foreach($entrevista->entrevistasQuestoes as $eq){
+            $html .= '<p><strong>'.$eq->questao->descQuestao.'</strong>: '.$eq->descResposta.'</p>';
+        }
+        $html .= "<br><br><br><p style='text-align: justify; '> Afirmo que as informações deste
+    documento foram declaradas por mim e poderão ser usadas em um processo judicial. </p> <br><br>";
+        $html .= '<div style="width: 95%;display: inline-block; margin-left: 220px;" >';
+        $html .= '<div style="width: 40%; text-align: center; display: inline-block;"> ';
+        $html .= '<p>  ___________________________________________<br>  '.$entrevista->cliente->nome.' <br> '.$entrevista->cliente->cpf.'</p></div>';
+        $html .= '<div style="width: 40%; text-align: center;"> ';
+        $html .= '<p><br><br>  ___________________________________________<br>  Advogado <br></p></div></div>';
+
+        $dompdf->loadHtml($html);
+        return $dompdf->stream();
+    }
 }

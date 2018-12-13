@@ -15,13 +15,13 @@ class Atividades extends Controller
         while($hoje->format("w") == 0 || $hoje->format("w") == 6){
             $hoje->modify('+1 day');
         }
-        $atrasados = Atividade::where('dataLimite', '<=', $hoje->format('Y-m-d 00:00:00'))->get();
+        $atrasados = Atividade::where('dataLimite', '<', $hoje->format('Y-m-d 00:00:00'))->get();
         $eletronicos = Atividade::where([
-            ['dataLimite', '=', $hoje->format('Y-m-d 00:00:00')],
+            ['dataLimite', '=', $hoje->format('Y-m-d')],
             ['tipo', '=', 'eletronico']
         ])->get();
         $fisicos = Atividade::where([
-            ['dataLimite', '=', $hoje->format('Y-m-d 00:00:00')],
+            ['dataLimite', '=', $hoje->format('Y-m-d')],
             ['tipo', '=', 'fisico']
         ])->get();
 
@@ -32,11 +32,11 @@ class Atividades extends Controller
             $amanha->modify('+1 day');
         }
         $eletronicosTomorrow = Atividade::where([
-            ['dataLimite', '=', $amanha->format('Y-m-d H:i:s')],
+            ['dataLimite', '=', $amanha->format('Y-m-d')],
             ['tipo', '=', 'eletronico']
         ])->get();
         $fisicosTomorrow = Atividade::where([
-            ['dataLimite', '=', $amanha->format('Y-m-d H:i:s')],
+            ['dataLimite', '=', $amanha->format('Y-m-d')],
             ['tipo', '=', 'fisico']
         ])->get();
 
@@ -47,14 +47,15 @@ class Atividades extends Controller
             $depois->modify('+1 day');
         }
         $eletronicosAfterTomorrow = Atividade::where([
-            ['dataLimite', '=', $depois->format('Y-m-d H:i:s')],
+            ['dataLimite', '=', $depois->format('Y-m-d')],
             ['tipo', '=', 'eletronico']
         ])->get();
         $fisicosAfterTomorrow = Atividade::where([
-            ['dataLimite', '=', $depois->format('Y-m-d H:i:s')],
+            ['dataLimite', '=', $depois->format('Y-m-d')],
             ['tipo', '=', 'fisico']
         ])->get();
 
+        //dd($eletronicosTomorrow);
     	return view('atividades.tela', compact('atrasados', 'eletronicos',
             'fisicos', 'eletronicosTomorrow', 'fisicosTomorrow',
             'eletronicosAfterTomorrow', 'fisicosAfterTomorrow', 'hoje', 'amanha', 'depois'));
