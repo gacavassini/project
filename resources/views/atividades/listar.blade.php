@@ -23,6 +23,7 @@
     		<tr>
           	<th>ID</th>
     			<th>Atividade</th>
+          <th>Cliente</th>
     			<th>Status</th>
     			<th >Ação</th>
     		</tr>
@@ -31,7 +32,8 @@
     		@foreach($atividades as $atividade)
     		<tr>
     			<td>{{$atividade->codAtividade}}</td>
-    			<td width="65%">{{$atividade->atividade}}</td>
+    			<td width="40%">{{$atividade->atividade}}</td>
+          <td width="25%">{{$atividade->cliente->nome}}</td>
                 <td>
                     {{($atividade->status == 1) ? "Pendente" : "Concluído"}}
                 </td>
