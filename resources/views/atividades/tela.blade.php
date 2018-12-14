@@ -89,35 +89,23 @@
 		atividades[i].onclick = clickCB;
 	}
 
-	$( ".dialog" ).dialog({
-	    autoOpen: false,
-	    width: 400,
-	    buttons: [
-	        {
-	            text: "Ok",
-	            click: function() {
-	                $( this ).dialog( "close" );
-	            }
-	        },
-	    ]
+	$( "#dialog" ).dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+		]
+	});
+
+	$( "#dialog-link" ).click(function( event ) {
+		$( "#dialog" ).dialog( "open" );
+		event.preventDefault();
 	});
 </script>
-<script>
-var buttons = $( "button[id='dialog-link']" );
-var dialogs = $(".dialog");
 
-for(var i = 0; i < buttons.length; i++){
-	buttons.eq(i).click(function(){
-		dialogs.eq(i).dialog("open");
-	});
-}
-
-// for(var i = 0, len = buttons.length; i<len; i++){
-// 	buttons[i].onclick(function( event ) {
-// 		console.log("ola");
-// 		console.log($("div[aria-labelledby='ui-id-${i}']"));
-// 		dialogs[i].dialog( "open" );
-// 	});
-// }
-</script>
 @endsection

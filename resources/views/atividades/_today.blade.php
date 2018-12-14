@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($atrasados as $atrasado)
+            @foreach($atrasados as $key => $atrasado)
                 @if($atrasado->status == 1)
                 <tr  id="atrasado">
                     <td>
@@ -23,8 +23,24 @@
                         </a>
                         <input id="checkAtiv" class="checkAtiv" type="checkbox" value="{{$atrasado->codAtividade}}">
                         <br>
-                        <a href="">Detalhes</a>
-                        
+                        @if($key == 0)
+                            <a href="javascript:void(0)" id="dialog-link">Detalhes</a>
+                            <!-- ui-dialog -->
+
+                            <div id="dialog" title="{{$atrasado->atividade}}">
+                                <p><strong>Status: </strong>{{($atrasado->status == 1) ? "Pendente" : "Concluido"}}</p>
+                                <p><strong>Cliente: </strong>{{$atrasado->cliente->nome}}</p>
+                                <p><strong>Número do Processo: </strong>{{$atrasado->numProcesso}}</p>
+                                <p><strong>Dias: </strong>{{($atrasado->dias == 0) ? "Corrido" : "Útil"}}</p>
+                                <p><strong>Tipo: </strong>{{($atrasado->tipo == "fisico") ? "Físico" : "Eletrônico"}}</p>
+                                <p><strong>Data Diário Oficial: </strong>{{$atrasado->dataDiarioOficial}}</p>
+                                <p><strong>Prazo: </strong>{{$atrasado->prazo}} dias</p>
+                                <p><strong>Data Limite: </strong>{{$atrasado->formataDataLimite($atrasado->dataLimite)}}</p>
+                                <p><strong>Obervação: </strong>{{$atrasado->observacao}}</p>
+                            </div>
+                        @else
+                            <a href="javascript:void(0)">Detalhes</a>
+                        @endif
 
                     </td>
                 </tr>

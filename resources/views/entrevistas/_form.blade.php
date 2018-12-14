@@ -29,7 +29,7 @@
 @foreach($questoes as $questao)
     <div class="t1">
         <label><span><br />{{$questao->descQuestao}}</span><br /></label>
-        @if($questao->descQuestao == "Qual era a jornada de trabalho?" || $questao->descQuestao == "Narre qualquer outra situação que possa ter te incomodado")
+        @if($questao->descQuestao == "Qual era a jornada de trabalho?" || $questao->descQuestao == "Narre qualquer outra situação que possa ter te incomodado" || $questao->descQuestao == "O que exatamente fazia?")
             <textarea name="{{$questao->codQuestao}}" id="grande" cols="80" rows="4" style="height: 90%"></textarea>
         @elseif($questao->descQuestao == "Data de Admissão")
             <input name="{{$questao->codQuestao}}" id="datepickerAd" class="grande" autocomplete="off">
