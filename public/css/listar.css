@@ -117,7 +117,7 @@ margin-top: 0.2%;
 }
 .listaAtividades{
 	float: left;
-	width: 33.33%;
+	width: 32.7%;
 	height: 100%;
 	border-right: solid 0.1vw gray;
 	padding: 1% 1.5%;	
@@ -130,6 +130,9 @@ margin-top: 0.2%;
 	border-right: solid 0px ;
 	
 	/*overflow-y: scroll;*/
+}
+#amanha{
+		border-right: solid 0.1vw gray;
 }
 #maior{
 	width: 40%;

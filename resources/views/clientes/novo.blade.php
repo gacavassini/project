@@ -7,7 +7,7 @@
 <div class="conteudoForm">
 
 
-    <h3 class="center">Cadastrar Cliente</h3>
+    <h2 class="center">Cadastrar Cliente</h3>
 
       <form class="" action="{{route('clientes.salvar')}}" method="post">
         {{ csrf_field() }}

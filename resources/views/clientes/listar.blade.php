@@ -34,7 +34,7 @@
     		@foreach($clientes as $cliente)
     		<tr>
     			
-                <td style="width: 31%" id="consultaFonteMenor">{{$cliente->nome}}</td>
+                <td style="width: 29%" id="consultaFonteMenor">{{$cliente->nome}}</td>
     			<td id="consultaFonteMenor">{{$cliente->rg}}</td>
     			<td id="consultaFonteMenor">{{$cliente->telefoneRes}}</td>
     			<td id="consultaFonteMenor">{{$cliente->celular}}</td>
